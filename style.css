@@ -30,3 +30,16 @@ body {
 @keyframes example {
   100% {top: 50%; opacity: 1.0;}
 }
+
+#firstBlock {
+  height: 50%;
+  background-color: dimgrey
+}
+
+#firstBlockCover{
+  height: 50%;
+}
+
+#secondBlock {
+  height: 50%;
+}
