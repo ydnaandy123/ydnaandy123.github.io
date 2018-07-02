@@ -4,16 +4,16 @@ $(document).ready(function(e) {
 });
 
 $(window).on('load', function(e){
-  //when html page complete loaded
   console.log("completely loaded");   
-  $("#landing-content").addClass("top-to-center-animation").removeClass("ready-to-appear");
+  if ($(window).scrollTop() < window.innerHeight){
+    $("#landing-content").addClass("top-to-center-animation").removeClass("ready-to-appear");
+  }  
 })
 $(window).scroll(function() {
   $(".ready-to-appear").each(function(){
     var pos = $(this).offset().top;
-
     var winTop = $(window).scrollTop();
-    if (pos < winTop + 1000) {
+    if (pos < winTop +  window.innerHeight && pos > winTop) {
       $(this).addClass("top-to-center-animation").removeClass("ready-to-appear");
       console.log('hi')
     }

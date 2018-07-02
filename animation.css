@@ -9,21 +9,14 @@
   visibility: visible; 
 }
 
-#cover-content {
-  animation-timing-function: ease-in-out;
-  animation-fill-mode: forwards;
-  animation-duration: 1.6s;
-  visibility:hidden;
-}
-
 .ready-to-appear{
   visibility: hidden;
 }
 .top-to-center-animation {
   animation-name: toCenter;
   -webkit-animation-name: toCenter; 
-  animation-duration: 1.6s; 
-  -webkit-animation-duration: 1.6s;
+  animation-duration: 1.2s; 
+  -webkit-animation-duration: 1.2s;
   animation-timing-function: ease-in-out;
   visibility: visible; 
 }

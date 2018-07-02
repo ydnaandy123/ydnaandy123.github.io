@@ -25,7 +25,7 @@ body {
 
 
 #firstBlock {
-  height: 50%;
+  height: 150%;
   position: relative;
 }
 
@@ -37,7 +37,7 @@ body {
   max-width: 100%;  
 }
 #secondBlock {
-  height: 50%;
+  height: 150%;
 }
 
 #military-wrapper {
