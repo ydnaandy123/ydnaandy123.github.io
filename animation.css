@@ -1,0 +1,36 @@
+.slide {
+  /* The name of the animation */
+  animation-name: slide;
+  -webkit-animation-name: slide; 
+  /* The duration of the animation */
+  animation-duration: 1s; 
+  -webkit-animation-duration: 1s;
+  /* Make the element visible */
+  visibility: visible; 
+}
+
+#cover-content {
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-duration: 1.6s;
+  visibility:hidden;
+}
+
+.ready-to-appear{
+  visibility: hidden;
+}
+.top-to-center-animation {
+  animation-name: toCenter;
+  -webkit-animation-name: toCenter; 
+  animation-duration: 1.6s; 
+  -webkit-animation-duration: 1.6s;
+  animation-timing-function: ease-in-out;
+  visibility: visible; 
+}
+@keyframes toCenter {
+  0% {opacity: 0.0; transform: translate(-50%, -80%);}
+}
+
+@keyframes toAppear {
+  100% {opacity: 1.0;}
+}
