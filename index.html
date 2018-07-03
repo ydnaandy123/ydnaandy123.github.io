@@ -13,9 +13,10 @@
 </head>
 
 <body>
-  <nav id="testt" class="navbar navbar-expand-lg navbar-light  fixed-top">
+  <nav id="top-nav" class="navbar navbar-expand-sm navbar-dark fixed-top">
     <a class="navbar-brand" href="#">
-      <img src="src/temBrand.png" style="width: 40px; height: 40px;" class="d-inline-block" alt=""> temBrand
+      <img id="brand-img" src="src/brand.png" class="d-inline-block" alt="" />
+      <b id="brand-text"></b>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
       aria-expanded="false" aria-label="Toggle navigation">
@@ -51,13 +52,15 @@
     </div>
   </nav>
 
-  <div id="landing-wrapper" class="parallax-window" data-parallax="scroll" data-image-src="src/landing.png">
+  <div id="landing-wrapper" class="parallax-window" data-parallax="scroll" data-image-src="src/landing3.jpg">
     <div id="landing-content" class="center-block ready-to-appear">
       <img class="img-fluid" src="src/headRound.png" style="max-width: 220px;" alt="Jui-ting Chien">
-      <h1>Jui-ting Chien</h1>
-      <h1 style="font-family: 微軟正黑體">
-        <small>簡瑞霆</small>
-      </h1>
+      <div id="landing-text">
+          <h1>Jui-ting Chien</h1>
+          <h1 style="font-family: 微軟正黑體">
+            <small>簡瑞霆</small>
+          </h1>
+      </div>
       <a href="https://github.com/ydnaandy123">
         <i class="fab fa-github fa-3x" style="color: #000;"></i>
       </a>
@@ -70,18 +73,35 @@
     </div>
   </div>
 
-  <div class="container-fluid">
-    <p class="display-4" style="font-family: 'Bookman Old Style'; color:black;">
-      <small>
-        M.S. in Computer Science
-        <br/> National Tsing-Hua University
-        <br/>
-        <small>2014 - 2016</small>
-      </small>
-    </p>
+  <div id="first-block" class="container-fluid my-2 my-sm-5">
+    <div class="row align-items-center">
+
+      <div class="col-sm-4 offset-md-2 mb-3 mb-sm-0 text-center">
+        <img class="img-fluid" src="src/nthu.png" alt="Jui-ting Chien">
+      </div>
+      <div class="col-sm-auto">
+        <h2>
+          Education
+        </h2>
+        <p style="font-family: 'Bookman Old Style';">
+          M.S. in Computer Science
+          <br/> National Tsing-Hua University
+          <br/>
+          <small>2015 - 2017</small>
+        </p>
+        <hr />
+        <h4>
+          Research Area
+        </h4>
+        <p style="font-family: 'Bookman Old Style';">
+          Computer Vision & Deep Learning
+        </p>
+      </div>
+    </div>
+  </div>
   </div>
 
-  <div id="graduation-wrapper" class="parallax-window" data-parallax="scroll" data-image-src="src/graduate.jpg">
+  <div id="graduation-wrapper" class="parallax-window" data-parallax="scroll" data-image-src="src/graduate2.jpg">
     <div id="graduation-content" class="center-block ready-to-appear">
       <!--<h1 class="display-1" style="font-family: 'Comic Sans MS'; color:black;
           text-shadow: 0px 0px 28px white; 
@@ -93,7 +113,7 @@
 
   <div class="container-fluid" id="secondBlock">
   </div>
-  <div id="military-wrapper" class="parallax-window" data-parallax="scroll" data-image-src="src/military.jpg">
+  <div id="military-wrapper" class="parallax-window" data-parallax="scroll" data-image-src="src/military4.jpg">
     <div id="military-content" class="center-block ready-to-appear">
       <h1 class="display-1 hero-text">FOR THE COUNTRY</h1>
     </div>
