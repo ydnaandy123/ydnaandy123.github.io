@@ -22,6 +22,13 @@ $(window).scroll(function () {
       console.log('hi')
     }
   });
+  $(".ready-to-appear2").each(function () {
+    var pos = $(this).offset().top;
+    if (pos < winTop + window.innerHeight && pos > winTop) {
+      $(this).addClass("down-to-center-animation").removeClass("ready-to-appear2");
+      console.log('hi')
+    }
+  });
   // Check navbar
   if (winTop < window.innerHeight / 2){
     //$("#testt").css({"opacity" : "1.0"})

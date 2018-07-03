@@ -32,7 +32,15 @@ body {
 #landing-content {
   color: white;
   text-shadow: 0px 0px 10px black;
+  cursor: default;
 }
+#landing-content *{
+  transition: 0.7s;
+}
+#landing-content *:hover{
+  transform: scale(1.2);
+}
+/*
 #landing-text {
   padding: 10px;
   border-radius: 20px;
@@ -41,7 +49,7 @@ body {
 }#landing-text:hover {
   background-color: rgba(0, 0, 0, 0.6);
 }
-
+*/
 #first-block {
   margin: 10px 0px 10px 0px;
 }

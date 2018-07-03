@@ -56,10 +56,10 @@
     <div id="landing-content" class="center-block ready-to-appear">
       <img class="img-fluid" src="src/headRound.png" style="max-width: 220px;" alt="Jui-ting Chien">
       <div id="landing-text">
-          <h1>Jui-ting Chien</h1>
-          <h1 style="font-family: 微軟正黑體">
-            <small>簡瑞霆</small>
-          </h1>
+        <h1>Jui-ting Chien</h1>
+        <h1 style="font-family: 微軟正黑體">
+          <small>簡瑞霆</small>
+        </h1>
       </div>
       <a href="https://github.com/ydnaandy123">
         <i class="fab fa-github fa-3x" style="color: #000;"></i>
@@ -74,7 +74,7 @@
   </div>
 
   <div id="first-block" class="container-fluid my-2 my-sm-5">
-    <div class="row align-items-center">
+    <div class="row align-items-center ready-to-appear2">
 
       <div class="col-sm-4 offset-md-2 mb-3 mb-sm-0 text-center">
         <img class="img-fluid" src="src/nthu.png" alt="Jui-ting Chien">
@@ -112,6 +112,16 @@
 
 
   <div class="container-fluid" id="secondBlock">
+    <div class="row">
+      <div class="col-sm-6">
+        <h2>Job</h2>
+        <p>
+          我現在在當替代役 在新湖國小服務
+
+        </p>
+      </div>
+    </div>
+
   </div>
   <div id="military-wrapper" class="parallax-window" data-parallax="scroll" data-image-src="src/military4.jpg">
     <div id="military-content" class="center-block ready-to-appear">
@@ -119,10 +129,43 @@
     </div>
   </div>
 
+  <div class="container-fluid text-center bg-grey" id="third">
+    <h2>Core</h2>
+    <h4>The basic elememts of my life</h4>
+    <div class="row text-center">
+      <div class="col-sm-4">
+        <div class="thumbnail">
+          <img src="paris.jpg" alt="Paris">
+          <p>
+            <strong>diet</strong>
+          </p>
+          <p>Yes, we built Paris</p>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="thumbnail">
+          <img src="newyork.jpg" alt="New York">
+          <p>
+            <strong>exercise</strong>
+          </p>
+          <p>We built New York</p>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="thumbnail">
+          <img src="sanfran.jpg" alt="San Francisco">
+          <p>
+            <strong>sleep</strong>
+          </p>
+          <p>Yes, San Fran is ours</p>
+        </div>
+      </div>
 
-  <div class="container-fluid" id="footer">
-  </div>
-  <!--
+    </div>
+
+    <div class="container-fluid" id="footer">
+    </div>
+    <!--
     <div class="container-fluid">
       <p>"成癮的相反是連結"</p>
       <p>如果__，其他還有什麼好計較呢</p>
@@ -139,27 +182,27 @@
 -->
 
 
-  <!-- jQuery CDN -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <!-- jQuery local fallback -->
-  <script>window.jQuery || document.write('<script src="javascript/jquery-3.3.1.min.js"><\/script>')</script>
-  <!-- Bootstrap JS CDN -->
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-  <!-- Bootstrap JS local fallback -->
-  <script>if (typeof ($.fn.modal) === 'undefined') { document.write('<script src="javascript/bootstrap.min.js"><\/script>') }</script>
-  <!-- Bootstrap CSS local fallback -->
-  <div id="bootstrapCssTest" class="hidden"></div>
-  <script>
-    $(function () {
-      if ($('#bootstrapCssTest').is(':visible')) {
-        $("head").prepend('<link rel="stylesheet" href="bootstrap.min.css">');
-      }
-    });
-  </script>
+    <!-- jQuery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- jQuery local fallback -->
+    <script>window.jQuery || document.write('<script src="javascript/jquery-3.3.1.min.js"><\/script>')</script>
+    <!-- Bootstrap JS CDN -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <!-- Bootstrap JS local fallback -->
+    <script>if (typeof ($.fn.modal) === 'undefined') { document.write('<script src="javascript/bootstrap.min.js"><\/script>') }</script>
+    <!-- Bootstrap CSS local fallback -->
+    <div id="bootstrapCssTest" class="hidden"></div>
+    <script>
+      $(function () {
+        if ($('#bootstrapCssTest').is(':visible')) {
+          $("head").prepend('<link rel="stylesheet" href="bootstrap.min.css">');
+        }
+      });
+    </script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-  <script src="javascript/parallax.min.js"></script>
-  <script src="javascript/landing.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="javascript/parallax.min.js"></script>
+    <script src="javascript/landing.js"></script>
 </body>
 
 </html>
