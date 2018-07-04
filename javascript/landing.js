@@ -32,10 +32,10 @@ $(window).scroll(function () {
   // Check navbar
   if (winTop < window.innerHeight / 2){
     //$("#testt").css({"opacity" : "1.0"})
-    $("#testt").css({"background-color" : "rgba(255, 255, 255, 0.6)"});
+    //$("#testt").css({"background-color" : "rgba(255, 255, 255, 0.6)"});
   } else{
     //$("#testt").css({"opacity" : "0.3"})
-    $("#testt").css({"background-color" : "rgba(227, 242, 253, 0.8)"});
+    //$("#testt").css({"background-color" : "rgba(227, 242, 253, 0.8)"});
   }  
   
 });

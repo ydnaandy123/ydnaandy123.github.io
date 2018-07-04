@@ -7,9 +7,7 @@ body {
   overflow-y: scroll;
   position: relative;
 }
-.dropdown:hover>.dropdown-menu {
-  display: block;
-}
+
 #top-nav{
   background-color: rgba(0, 0, 0, 0.0);
   transition: 0.7s;
@@ -24,21 +22,33 @@ body {
 #brand-text{
   font-family: "Palatino";
 }
+.dropdown:hover>.dropdown-menu {
+  display: block;
+}
 
 #landing-wrapper{
   height: 100%;
   position: relative;
-}
-#landing-content {
+  cursor: default;
   color: white;
   text-shadow: 0px 0px 10px black;
-  cursor: default;
+}
+#landing-content > div{
+  margin: 20px 0px;  
+}
+#name-eng {
+  letter-spacing: 3px;
+}
+#name-ch {
+  word-spacing: 10px;
+  letter-spacing: 3px;
+  font-family: 微軟正黑體;
 }
 #landing-content *{
   transition: 0.7s;
 }
 #landing-content *:hover{
-  transform: scale(1.2);
+box-shadow:  0px 0px 100px black;
 }
 /*
 #landing-text {
