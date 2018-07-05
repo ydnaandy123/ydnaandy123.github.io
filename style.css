@@ -38,11 +38,12 @@ body {
 #name-eng {  
   text-shadow: 0px 0px 10px black;
   letter-spacing: 3px;
+  font-family: "Helvetica";
 }
 #name-ch {
   text-shadow: 0px 0px 10px black;
   letter-spacing: 4px;
-  font-family: 微軟正黑體;
+  font-family: "Yu Gothic";
 }
 i.fab{
   /* text-shadow: 0px 0px 1px black; */
@@ -64,8 +65,11 @@ i.fab{
   background-color: rgba(0, 0, 0, 0.6);
 }
 */
-#first-block {
-  margin: 10px 0px 10px 0px;
+#education-block {
+}
+#education-block p{
+  font-size: 20px;
+  font-family: 'Bookman Old Style';
 }
 
 #graduation-wrapper {
@@ -97,12 +101,13 @@ i.fab{
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
 .hero-text {
   font-family: 'Impact'; 
   color:white; 
   text-shadow: 0px 0px 28px black; 
 }
-@media (max-width: 768px) {   
+@media (max-width: 576px) {   
   .hero-text {
     font-size: 3rem;
     text-shadow: 0px 0px 10px black;
