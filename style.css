@@ -65,7 +65,14 @@ i.fab{
   background-color: rgba(0, 0, 0, 0.6);
 }
 */
+.section-title{
+  text-align: center;
+  font-size: 56px;
+  font-family: 'Helvetica';
+}
 #education-block {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.04);
 }
 #education-block p{
   font-size: 20px;

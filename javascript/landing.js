@@ -7,9 +7,9 @@ $(window).on('load', function (e) {
   console.log("completely loaded");
 
   // Check landing animation even no scroll events
-  if ($(window).scrollTop() < window.innerHeight) {
-    $("#landing-content").addClass("top-to-center-animation").removeClass("ready-to-appear");
-  }
+  //if ($(window).scrollTop() < window.innerHeight) {
+  //  $("#landing-content").addClass("top-to-center-animation").removeClass("ready-to-appear");
+  //}
 })
 
 $(window).scroll(function () {
