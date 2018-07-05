@@ -26,27 +26,26 @@ body {
   display: block;
 }
 
+/* Landing Content */
 #landing-wrapper{
   height: 100%;
   position: relative;
   cursor: default;
-  color: white;
 }
 #landing-content > div{
   margin: 20px 0px;  
 }
-#name-eng {  
+#landing-text{  
+  color: white;
   text-shadow: 0px 0px 10px black;
+}
+#name-eng {  
   letter-spacing: 3px;
   font-family: "Helvetica";
 }
 #name-ch {
-  text-shadow: 0px 0px 10px black;
   letter-spacing: 4px;
   font-family: "Yu Gothic";
-}
-i.fab{
-  /* text-shadow: 0px 0px 1px black; */
 }
 #landing-content i{
   transition: 0.1s;
@@ -55,30 +54,43 @@ i.fab{
   /* box-shadow:  0px 0px 100px white; */
   transform: scale(1.4);
 }
-/*
-#landing-text {
-  padding: 10px;
-  border-radius: 20px;
-  background-color: rgba(0, 0, 0, 0.0);
-  transition-duration: 1.6s;
-}#landing-text:hover {
-  background-color: rgba(0, 0, 0, 0.6);
-}
-*/
+
+/* Section General Default Setting */
 .section-title{
   text-align: center;
   font-size: 56px;
   font-family: 'Helvetica';
 }
+.section-background{
+  position: absolute; 
+  left: 0px; 
+  top: 0px; 
+  height: 100%;
+  overflow: hidden; 
+  opacity: 0.2; 
+}
+.section-hr{
+  height:2px;
+  border:none;
+  color:#333;
+  background-color:#333; 
+  width: 75%;
+}
+
+/* Education Section */
 #education-block {
   position: relative;
-  background-color: rgba(0, 0, 0, 0.04);
+  background-color: rgba(0, 0, 0, 0.1);
 }
 #education-block p{
   font-size: 20px;
   font-family: 'Bookman Old Style';
 }
 
+#publications-block {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.1);
+}
 #graduation-wrapper {
   height: 70%;
   position: relative;  
