@@ -58,7 +58,7 @@ body {
 /* Section General Default Setting */
 .section-title{
   text-align: center;
-  font-size: 56px;
+  font-size: 46px;
   font-family: 'Helvetica';
 }
 .section-background{
@@ -88,24 +88,24 @@ body {
 #education-block {
   cursor: default;
   position: relative;
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: rgba(245, 245, 245, 1.0);
 }
 #education-block p{
-  font-size: 20px;
+  font-size: 18px;
   font-family: 'Bookman Old Style';
 }
 .hover-shadow{
-  transition-duration: 0.7s;
+  transition-duration: 0.4s;
 }
 .hover-shadow:hover{
-  background-color: white;
-  box-shadow: 0px 0px 10px black;
+  background-color: rgba(255, 255, 255, 1.0);
+  box-shadow: 0px 0px 1px black;
 }
 /* Publications Section */
 #publications-block {
   cursor: default;
   position: relative;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.7);
 }
 #publications-block p{
   font-size: 18px;
