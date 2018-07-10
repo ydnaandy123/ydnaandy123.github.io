@@ -12,11 +12,11 @@
   <link rel="stylesheet" href="animation.css">
 </head>
 
-<body>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="20">
   <!-- NavBar -->
   <nav id="top-nav" class="navbar navbar-expand-sm navbar-dark fixed-top">
     <a class="navbar-brand" href="#">
-      <img id="brand-img" src="src/brand.png" class="d-inline-block" alt="" />
+      <img id="brand-img" src="src/brand.png" class="d-inline-block" alt="brand-img"/>
       <b id="brand-text"></b>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -25,26 +25,24 @@
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
       <ul class="navbar-nav navb">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">
+        <li class="nav-item">
+          <a class="nav-link" href="#landing-wrapper">
             Home
             <span class="sr-only">(current)</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link" href="#education-div">Education</a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false">Dropdown
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
+        <li class="nav-item">
+          <a class="nav-link" href="#publications-div">Publication</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#work-div">Work</a>
+        </li>
+        <li class="nav-item d-none d-sm-block">
+            <div style="height: 100%; width: 1px; background-color: white;"></div>
+        </li>        
         <li class="nav-item">
           <a class="nav-link disabled" href="#">Disabled</a>
         </li>
@@ -240,6 +238,9 @@
     </div>
   </div>
   <!-- Work Division -->
+  <div id="work-div" class="container">
+    Hello
+  </div>
   <!-- Hero Image MILITARY -->
   <div id="military-wrapper" class="parallax-window" data-parallax="scroll" data-image-src="src/military.jpg">
     <div id="military-content" class="center-block ready-to-appear">
