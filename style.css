@@ -142,9 +142,10 @@ body {
 #secondBlock {
   height: 50%;
 }
-
-#footer {
-  height: 50%;
+/* Footer */
+#footer-div i{
+  color: white;
+  margin: 0px 5px;
 }
 
 @media (max-width: 576px) {   
@@ -161,7 +162,7 @@ body {
   #name-ch {
     font-size: 32px;
   }
-  i.fab {
+  #landing-content i.fab {
     font-size: 40px;
   }
  }
