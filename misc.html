@@ -300,33 +300,81 @@
       <h1 class="display-1 hero-text">FOR THE COUNTRY</h1>
     </div>
   </div>
-
-  <!-- jQuery CDN -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <!-- jQuery local fallback -->
-  <script>
-    window.jQuery || document.write('<script src="javascript/jquery-3.3.1.min.js"><\/script>')
-  </script>
-  <!-- Bootstrap JS CDN -->
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-  <!-- Bootstrap JS local fallback -->
-  <script>
-    if (typeof ($.fn.modal) === 'undefined') {
-      document.write('<script src="javascript/bootstrap.min.js"><\/script>')
-    }
-  </script>
-  <!-- Bootstrap CSS local fallback -->
-  <div id="bootstrapCssTest" class="hidden"></div>
-  <script>
-    $(function () {
-      if ($('#bootstrapCssTest').is(':visible')) {
-        $("head").prepend('<link rel="stylesheet" href="bootstrap.min.css">');
+  <!-- Misc. -->
+  <div class="container-fluid text-center bg-grey" id="third">
+    <h2>Core</h2>
+    <h4>The basic elememts of my life</h4>
+    <div class="row text-center">
+      <div class="col-sm-4">
+        <div class="thumbnail">
+          <img class="img-fluid" src="src/sleep.jpg" alt="Paris">
+          <p>
+            <strong>diet</strong>
+          </p>
+          <p>Yes, we built Paris</p>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="thumbnail">
+          <img class="img-fluid" src="src/diet.jpg" alt="New York">
+          <p>
+            <strong>exercise</strong>
+          </p>
+          <p>We built New York</p>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="thumbnail">
+          <img class="img-fluid" src="src/exercise.jpg" alt="San Francisco">
+          <p>
+            <strong>sleep</strong>
+          </p>
+          <p>Yes, San Fran is ours</p>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid" id="footer"></div>
+    <!--
+    <div class="container-fluid">
+      <p>"成癮的相反是連結"</p>
+      <p>如果__，其他還有什麼好計較呢</p>
+      <p>如果__，我一定要好好努力認真生活</p>
+      <p>原來其他人能想得到的痛苦也都不過那樣而已</p>
+      <p>能夠有機會努力，是非常幸運的</p>
+    </div>
+    <div class="container-fluid">
+      <p>"要是我沒男友..."</p>
+      <p>"我們現在是朋友，你怎麼知道三個月後還是"</p>
+      <p>"現在因為實驗室還可以見面，以後你當兵怎麼辦啊"</p>
+      <p>"我只是覺得有點不敢相信"</p>
+    </div>
+-->
+    <!-- jQuery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- jQuery local fallback -->
+    <script>
+      window.jQuery || document.write('<script src="javascript/jquery-3.3.1.min.js"><\/script>')
+    </script>
+    <!-- Bootstrap JS CDN -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <!-- Bootstrap JS local fallback -->
+    <script>
+      if (typeof ($.fn.modal) === 'undefined') {
+        document.write('<script src="javascript/bootstrap.min.js"><\/script>')
       }
-    });
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-  <script src="javascript/parallax.min.js"></script>
-  <script src="javascript/landing.js"></script>
+    </script>
+    <!-- Bootstrap CSS local fallback -->
+    <div id="bootstrapCssTest" class="hidden"></div>
+    <script>
+      $(function () {
+        if ($('#bootstrapCssTest').is(':visible')) {
+          $("head").prepend('<link rel="stylesheet" href="bootstrap.min.css">');
+        }
+      });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="javascript/parallax.min.js"></script>
+    <script src="javascript/landing.js"></script>
 </body>
 
 </html>
