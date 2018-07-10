@@ -86,7 +86,7 @@
       </div>
     </div>
   </div>
-  <!-- About -->
+  <!-- About
   <div class="container-fluid" style="background-color: rgba(0, 0, 0, 0.2)">
     <div class="row row-eq-height justify-content-center align-items-center">
       <div class="col-sm-4" style="background-color: rgb(169, 206, 255); height: auto;">
@@ -103,49 +103,54 @@
       </div>
     </div>
   </div>
-  <!-- Student Block-->
-  <!-- Education Section-->
+-->
+  <!-- Education Division-->
   <div id="education-block" class="container-fluid py-3 px-5">
-    <!-- Background Color-->
-    <div class="container-fluid section-background"></div>
-    <!-- Title -->
-    <h2 class="section-title my-3">Education</h2>
-    <hr class="section-hr my-3" />
-    <div class="py-0 py-sm-1"></div>
-    <!-- Main content-->
-    <div class="container-fluid">
-      <div class="row justify-content-center">
-        <div class="col-sm-4  ready-to-appear2 p-0 p-sm-3 hover-shadow">
-          <div>
-            <p>
-              <strong>B.S.</strong>
-              in Computer Science
-              <br> National Tsing-Hua University
-              <br>
-              <small>2011 - 2015</small>
-            </p>
+    <!-- Background -->
+    <!--
+      <div id="education-bg" class="div-background"></div>
+    -->    
+    <!-- Foreground -->
+    <div class="div-foreground container">
+      <!-- Title -->
+      <h2 class="div-title my-3">Education</h2>
+      <hr class="div-hr my-3" />
+      <div class="py-0 py-sm-1"></div>
+      <!-- Main content-->
+      <div class="container-fluid">
+        <div class="row justify-content-center">
+          <div class="col-sm-4  ready-to-appear2 p-0 p-sm-3 hover-shadow">
+            <div>
+              <p>
+                <strong>B.S.</strong>
+                in Computer Science
+                <br> National Tsing-Hua University
+                <br>
+                <small>2011 - 2015</small>
+              </p>
+            </div>
+            <div class="text-center">
+              <a href="http://www.nthu.edu.tw/" target="_blank">
+                <img class="img-fluid" src="src/nthus.png" alt="NTHU badge">
+              </a>
+            </div>
           </div>
-          <div class="text-center">
-            <a href="http://www.nthu.edu.tw/" target="_blank">
-              <img class="img-fluid" src="src/nthus.png" alt="NTHU badge">
-            </a>
-          </div>
-        </div>
-        <div class="col-sm-1 py-3 py-sm-0"></div>
-        <div class="col-sm-4  ready-to-appear2 p-0 p-sm-3 hover-shadow">
-          <div>
-            <p>
-              <strong>M.S.</strong>
-              in Computer Science
-              <br/> National Tsing-Hua University
-              <br/>
-              <small>2015 - 2017</small>
-            </p>
-          </div>
-          <div class="text-center">
-            <a href="http://www.nthu.edu.tw/" target="_blank">
-              <img class="img-fluid" src="src/nthus.png" alt="NTHU badge">
-            </a>
+          <div class="col-sm-1 py-3 py-sm-0"></div>
+          <div class="col-sm-4  ready-to-appear2 p-0 p-sm-3 hover-shadow">
+            <div>
+              <p>
+                <strong>M.S.</strong>
+                in Computer Science
+                <br/> National Tsing-Hua University
+                <br/>
+                <small>2015 - 2017</small>
+              </p>
+            </div>
+            <div class="text-center">
+              <a href="http://www.nthu.edu.tw/" target="_blank">
+                <img class="img-fluid" src="src/nthus.png" alt="NTHU badge">
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -195,119 +200,108 @@
     </div>
   </div>
 
-
-  <div>
-    <!-- Publications Section-->
-    <div id="publications-block" class="container-fluid py-3">
-      <div class="section-background" style="background-image: url('src/conferencess.jpg'); opacity: 0.2; z-index: 10;"></div>
+  <!-- Publications Division-->
+  <div id="publications-div" class="general-div container-fluid py-3">
+    <!-- Background -->
+    <div id="publications-bg" class="div-background"></div>
+    <!-- Foreground -->
+    <div class="div-foreground container">
       <!-- Title -->
-      <div class="container" style="position: relative; z-index: 11;">
-        <h2 class="section-title my-3">Publications</h2>
-        <hr class="section-hr my-3" />
-        <div class="py-0 py-sm-1"></div>
-        <!-- Main content-->
-
-        <!-- Single Publication -->
-        <div class="row justify-content-center align-items-center ready-to-appear2 p-0 p-sm-4 hover-shadow">
-          <div class="col-sm-4">
-            <img class="img-fluid" src="src/pubFig4.png" />
+      <h2 class="div-title my-3">Publications</h2>
+      <hr class="div-hr my-3" />
+      <div class="py-0 py-md-1"></div>
+      <!-- Main content-->
+      <div id="publications-content">
+        <!-- Tap and Shoot -->
+        <div class="row justify-content-center align-items-center ready-to-appear2 p-1 p-md-4 hover-shadow my-2">
+          <div class="col-md-4">
+            <img class="img-fluid" src="src/publications/figTap.png" />
           </div>
-          <div class="col-sm-6">
-            <div>
-              <b>
-                Tap and Shoot Segmentation
-                <br/>
-              </b>
-              <i>
-                Ding-Jie Chen,
-                <strong>Jui-Ting Chien,</strong>
-                Hwann-Tzong Chen, Long-Wen Chang
-                <br/>
-              </i>
-              <small>AAAI 2018</small>
+          <div class="col-md-6">
+            <div class="pub-meta">
+              <div class="pub-title">
+                <strong>Tap and Shoot Segmentation</strong>
+              </div>
+              <div class="pub-author my-1">
+                Ding-Jie Chen, Jui-Ting Chien, Hwann-Tzong Chen, Long-Wen Chang
+              </div>
+              <div class="pub-year my-1">AAAI 2018</div>
             </div>
-            <button class="btn btn-outline-primary">Project Page</button>
-            <button class="btn btn-outline-secondary">Paper</button>
+            <a role="button" class="btn btn-outline-primary disabled" href="#" target="_blank" aria-disabled="true">Project Page</a>
+            <a role="button" class="btn btn-outline-secondary" href="http://www.cs.nthu.edu.tw/~htchen/tap-and-shoot.pdf" target="_blank">Paper</a>
+            <a role="button" class="btn btn-outline-success" href="https://www.youtube.com/watch?v=rxeahpGAZiY" target="_blank">Video</a>
           </div>
         </div>
-        <div class="w-100 py-1 py-sm-2"></div>
-        <!-- Single Publication -->
-        <div class="row justify-content-center align-items-center ready-to-appear2 p-0 p-sm-4 hover-shadow">
-          <div class="col-sm-4">
-            <img class="img-fluid" src="src/network.png" />
+        <!-- Detecting -->
+        <div class="row justify-content-center align-items-center ready-to-appear2 p-1 p-md-4 hover-shadow my-2">
+          <div class="col-md-4">
+            <img class="img-fluid" src="src/publications/figDetect.png" />
           </div>
-          <div class="col-sm-6">
-            <div>
-              <strong>Jui-Ting Chien,</strong>
-              Chia-Jung Chou, Ding-Jie Chen, Hwann-Tzong Chen
-              <br/> Detecting Nonexistent Pedestrians.
-              <br/>ICCV Workshops 2017: 182-189
+          <div class="col-md-6">
+            <div class="pub-meta">
+              <div class="pub-title">
+                <strong>Detecting Nonexistent Pedestrians</strong>
+              </div>
+              <div class="pub-author my-1">
+                Jui-Ting Chien, Chia-Jung Chou, Ding-Jie Chen, Hwann-Tzong Chen
+              </div>
+              <div class="pub-year my-1">ICCV Workshops 2017</div>
             </div>
-
-            <button class="btn btn-outline-primary">Project Page</button>
-            <button class="btn btn-outline-secondary">Paper</button>
-            <button class="btn btn-outline-success">Video</button>
-
-
-
-
-
+            <a role="button" class="btn btn-outline-primary" href="https://ydnaandy123.github.io/streetview_synthesize/" target="_blank">Project Page</a>
+            <a role="button" class="btn btn-outline-secondary" href="http://openaccess.thecvf.com/content_ICCV_2017_workshops/papers/w3/Chien_Detecting_Nonexistent_Pedestrians_ICCV_2017_paper.pdf"
+              target="_blank">Paper</a>
+            <a role="button" class="btn btn-outline-success" href="https://www.youtube.com/watch?v=MF70VeZYajo" target="_blank">Video</a>
           </div>
         </div>
-        <div class="w-100 py-1 py-sm-2"></div>
-        <!-- Single Publication -->
-        <div class="row justify-content-center align-items-center ready-to-appear2 p-0 p-sm-4 hover-shadow">
-          <div class="col-sm-4">
-            <img class="img-fluid" src="src/pubFig2.png" />
+        <!-- Self Adversarial -->
+        <div class="row justify-content-center align-items-center ready-to-appear2 p-1 p-md-4 hover-shadow my-2">
+          <div class="col-md-4">
+            <img class="img-fluid" src="src/publications/figSelf.png" />
           </div>
-          <div class="col-sm-6">
-            <div>
-              Chia-Jung Chou,
-              <strong>Jui-Ting Chien,</strong>
-              Hwann-Tzong Chen
-              <br/> Self Adversarial Training for Human Pose Estimation.
-              <br/>CoRR abs/1707.02439 (2017)
+          <div class="col-md-6">
+            <div class="pub-meta">
+              <div class="pub-title">
+                <strong>Self Adversarial Training for Human Pose Estimation</strong>
+              </div>
+              <div class="pub-author my-1">
+                Chia-Jung Chou, Jui-Ting Chien, Hwann-Tzong Chen
+              </div>
+              <div class="pub-year my-1">
+                (1st place on the
+                <a href="http://www.sysu-hcp.net/lip/pose_lb.php?type=1" target="_blank">Single-Pose-CVPR'17</a> leaderboard)
+              </div>
+              <div class="pub-year my-1">CoRR abs/1707.02439</div>
             </div>
-            <button class="btn btn-outline-primary">Project Page</button>
-            <button class="btn btn-outline-secondary">Paper</button>
-
-
-
-
-
+            <a role="button" class="btn btn-outline-primary" href="https://github.com/jessiechouuu/adversarial-pose" target="_blank">Project Page</a>
+            <a role="button" class="btn btn-outline-secondary" href="https://arxiv.org/pdf/1707.02439.pdf" target="_blank">Paper</a>
           </div>
         </div>
-        <div class="w-100 py-1 py-sm-2"></div>
-        <!-- Single Publication -->
-        <div class="row justify-content-center align-items-center ready-to-appear2 p-0 p-sm-4 hover-shadow">
-          <div class="col-sm-4">
-            <img class="img-fluid" src="src/pubFig1.png" />
+        <!-- Extracting -->
+        <div class="row justify-content-center align-items-center ready-to-appear2 p-1 p-md-4 hover-shadow my-2">
+          <div class="col-md-4">
+            <img class="img-fluid" src="src/publications/figExtract.png" />
           </div>
-          <div class="col-sm-6">
-            <div>
-              Shao-Pin Chang,
-              <strong>Jui-Ting Chien,</strong>
-              Fu-En Wang, Shang-Da Yang, Hwann-Tzong Chen, Min Sun
-              <br/> Extracting Driving Behavior: Global Metric Localization from Dashcam Videos in the Wild.
-              <br/>ECCV Workshops (1) 2016: 136-148
+          <div class="col-md-6">
+            <div class="pub-meta">
+              <div class="pub-title">
+                <strong>Extracting Driving Behavior: Global Metric Localization from Dashcam Videos in the Wild</strong>
+              </div>
+              <div class="pub-author my-1">
+                Shao-Pin Chang, Jui-Ting Chien, Fu-En Wang, Shang-Da Yang, Hwann-Tzong Chen, Min Sun
+              </div>
+              <div class="pub-year my-1">ECCV Workshops 2016</div>
             </div>
-
-            <button class="btn btn-outline-primary">Project Page</button>
-            <button class="btn btn-outline-secondary">Paper</button>
-            <button class="btn btn-outline-success">Video</button>
-
-
-
-
+            <a role="button" class="btn btn-outline-primary disabled" href="#" target="_blank" aria-disabled="true">Project Page</a>
+            <a role="button" class="btn btn-outline-secondary disabled" href="http://www.cs.nthu.edu.tw/~htchen/tap-and-shoot.pdf" target="_blank"
+              aria-disabled="true">Paper</a>
+            <a role="button" class="btn btn-outline-success" href="https://www.youtube.com/watch?v=qeIMMk8E17o" target="_blank">Video</a>
           </div>
         </div>
-        <div class="w-100 py-1 py-sm-2"></div>
       </div>
     </div>
   </div>
-
   <!-- Hero Image Research -->
-  <div class="parallax-window" data-parallax="scroll" data-image-src="src/conference.jpg">
+  <div class="parallax-window" data-parallax="scroll" data-image-src="src/conferencea.jpg">
     <div class="d-none d-sm-block" style="height: 200px;"></div>
     <div class="container" style="background-color: rgba(255, 255, 255, 0.5)">
       <div class="row justify-content-center align-items-center">
@@ -330,8 +324,6 @@
       </div>
     </div>
   </div>
-
-
   <div class="container-fluid" id="secondBlock">
     <div class="row">
       <div class="col-sm-6">

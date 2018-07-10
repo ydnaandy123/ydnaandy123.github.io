@@ -55,13 +55,12 @@ body {
   transform: scale(1.4);
 }
 
-/* Section General Default Setting */
-.section-title{
-  text-align: center;
-  font-size: 46px;
-  font-family: 'Helvetica';
+/* General Division Default Setting */
+.general-div{
+  position: relative;
+  cursor: default;
 }
-.section-background{
+.div-background{
   position: absolute; 
   left: 0px; 
   top: 0px; 
@@ -71,8 +70,18 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  z-index: 0;
 }
-.section-hr{
+.div-foreground{
+  position: relative;
+  z-index: 1;
+}
+.div-title{
+  text-align: center;
+  font-size: 46px;
+  font-family: 'Helvetica';
+}
+.div-hr{
   height:2px;
   border:none;
   color:#333;
@@ -88,6 +97,10 @@ body {
 }
 
 /* Education Section */
+#education-bg{
+  background-image: url('src/night.jpg');
+  opacity: 0.3;
+}
 #education-block {
   cursor: default;
   position: relative;
@@ -104,15 +117,19 @@ body {
   background-color: rgba(255, 255, 255, 1.0);
   box-shadow: 0px 0px 1px black;
 }
-/* Publications Section */
-#publications-block {
-  cursor: default;
-  position: relative;
-  background-color: rgba(255, 255, 255, 0.7);
+/* Publications Division */
+#publications-bg{
+  background-image: url('src/conference.jpg');
+  opacity: 0.15;
 }
-#publications-block p{
+.pub-meta{
   font-size: 18px;
-  font-family: 'Verdana';
+}
+.pub-title{
+  font-size: 20px;
+}
+.pub-year {
+  font-style: italic; 
 }
 
 #graduation-wrapper {
