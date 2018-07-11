@@ -7,18 +7,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="keywords" content="Jui-ting Chien, 簡瑞霆">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">  
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="animation.css">
 </head>
 
-<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="20">
+<body id="mainBody" data-spy="scroll" data-target=".navbar" data-offset="1">
   <!-- NavBar -->
   <nav id="top-nav" class="navbar navbar-expand-sm navbar-dark fixed-top">
+    <!--
     <a class="navbar-brand" href="#">
       <img id="brand-img" src="src/brand.png" class="d-inline-block" alt="brand-img"/>
       <b id="brand-text"></b>
     </a>
+    -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
       aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -26,25 +28,19 @@
     <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
       <ul class="navbar-nav navb">
         <li class="nav-item">
-          <a class="nav-link" href="#landing-wrapper">
-            Home
-            <span class="sr-only">(current)</span>
-          </a>
+          <a class="nav-link py-3" href="#landing-wrapper">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#education-div">Education</a>
+          <a class="nav-link py-3" href="#education-div">Education</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#publications-div">Publication</a>
+          <a class="nav-link py-3" href="#publications-div">Publications</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#work-div">Work</a>
+          <a class="nav-link py-3" href="#work-div">Work</a>
         </li>
-        <li class="nav-item d-none d-sm-block">
-            <div style="height: 100%; width: 1px; background-color: white;"></div>
-        </li>        
         <li class="nav-item">
-          <a class="nav-link disabled" href="#">Disabled</a>
+          <a class="nav-link py-3" href="#">Misc.</a>
         </li>
       </ul>
     </div>
@@ -210,7 +206,7 @@
               <div class="pub-year my-1">CoRR abs/1707.02439</div>
             </div>
             <a role="button" class="btn btn-outline-primary" href="https://github.com/jessiechouuu/adversarial-pose" target="_blank">Project Page</a>
-            <a role="button" class="btn btn-outline-secondary" href="https://arxiv.org/pdf/1707.02439.pdf" target="_blank">Paper</a>
+            <a role="button" class="btn btn-outline-secondary" href="https://arxiv.org/abs/1707.02439" target="_blank">Paper</a>
           </div>
         </div>
         <!-- Extracting -->
@@ -257,28 +253,36 @@
     </div>
   </div>
   <!-- Footer -->
-  <div id="footer-div" class="container-fluid py-3 text-white bg-dark">
+  <footer id="footer-div" class="container-fluid py-3 text-white bg-dark">
     <div class="row justify-content-center align-items-center">
+      <!--
       <div class="col-auto">
-          <a href="https://github.com/ydnaandy123">
-            <i class="fab fa-github fa-2x"></i>
-          </a>
-          <a href="https://www.youtube.com/channel/UCihH04VLf7AjpxdLwwb0-EA">
-            <i class="fab fa-youtube fa-2x"></i>
-          </a>
-          <a href="https://twitter.com/JuiTingChien">
-            <i class="fab fa-twitter fa-2x"></i>
-          </a>
-          <a href="https://github.com/ydnaandy123">
-            <i class="fab fa-github fa-2x"></i>
-          </a>
+        <a href="#landing-wrapper" title="To Top">
+          <i class="fas fa-angle-up fa-2x"></i>
+        </a>
+      </div>
+      <div class="w-100 py-1"></div>
+      -->
+      <div class="col-auto">
+        <a href="https://github.com/ydnaandy123">
+          <i class="fab fa-github fa-2x"></i>
+        </a>
+        <a href="https://www.youtube.com/channel/UCihH04VLf7AjpxdLwwb0-EA">
+          <i class="fab fa-youtube fa-2x"></i>
+        </a>
+        <a href="https://twitter.com/JuiTingChien">
+          <i class="fab fa-twitter fa-2x"></i>
+        </a>
+        <a href="https://github.com/ydnaandy123">
+          <i class="fab fa-github fa-2x"></i>
+        </a>
       </div>
       <div class="w-100 py-2"></div>
       <div class="col-auto">
         © 2018 by Jui-Ting Chien.
       </div>
     </div>
-  </div>
+  </footer>
 
   <!-- jQuery CDN -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

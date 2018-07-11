@@ -11,9 +11,20 @@ body {
 #top-nav{
   background-color: rgba(0, 0, 0, 0.0);
   transition: 0.7s;
+  padding: 0px 1rem;
 }
 #top-nav:hover{
   background-color: rgba(0, 0, 0, 0.75);  
+}
+li a{
+  transition: 0.5s;
+}
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: rgba(255,255,255,1.0);
+}
+li a.active {
+  color: rgba(255,255,255,1.0);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 #brand-img{
   width: 40px;
@@ -21,13 +32,6 @@ body {
 }
 #brand-text{
   font-family: "Palatino";
-}
-.dropdown:hover>.dropdown-menu {
-  display: block;
-}
-li a.active {
-  color: white;
-  background-color: rgba(0, 0, 0, 0.3);
 }
 /* Landing Content */
 #landing-wrapper{
@@ -150,7 +154,6 @@ li a.active {
   color: white;
   margin: 0px 5px;
 }
-
 @media (max-width: 576px) {   
   .hero-text {
     font-size: 3rem;
