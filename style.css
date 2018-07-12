@@ -54,10 +54,10 @@ li a.active {
   letter-spacing: 4px;
   font-family: "Yu Gothic";
 }
-#landing-content i{
+i.fab, i.fas{
   transition: 0.1s;
 }
-#landing-content i:hover{
+i.fab:hover, i.fas:hover{
   /* box-shadow:  0px 0px 100px white; */
   transform: scale(1.4);
 }
@@ -153,6 +153,9 @@ li a.active {
 #footer-div i{
   color: white;
   margin: 0px 5px;
+}
+#copyright a:link, #copyright a:visited, #copyright a:hover, #copyright a:active {
+  color: white;
 }
 @media (max-width: 576px) {   
   .hero-text {
