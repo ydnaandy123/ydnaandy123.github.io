@@ -141,6 +141,14 @@ i.fab:hover, i.fas:hover{
 .pub-year {
   font-style: italic; 
 }
+/* Work Division */
+#work-content div.row > div{
+  background-color: rgb(233, 233, 233 0.1);
+}
+.grid-cell{
+ position: relative;
+ padding: 0px;
+}
 /* Hero Image MILITARY */
 #military-wrapper {
   height: 70%;
