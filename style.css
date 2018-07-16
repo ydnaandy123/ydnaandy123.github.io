@@ -150,8 +150,7 @@ i.fab:hover, i.fas:hover{
   height: 50%;
 }
 /* Work Division */
-#work-content div.row > div{
-  background-color: rgb(233, 233, 233 0.1);
+#work-div{  
 }
 .grid-cell{
   position: relative;
@@ -172,8 +171,8 @@ i.fab:hover, i.fas:hover{
   font-size: 28px;
   font-family: "SimSun";
   font-style: "bold";
-  color: white;
-  text-shadow: 0 0 5px white;
+  color: black;
+  text-shadow: 0 0 5px black;
 }
 .grid-background{  
   position: absolute; 
@@ -181,13 +180,44 @@ i.fab:hover, i.fas:hover{
   top: 0px; 
   height: 100%;
   width: 100%;
-  background-color: #000000;
+  background-color: #ffffff;
   opacity: 0.65;
   transition-duration: 0.6s;
   z-index: 0;
 }
 .grid-background:hover{
   opacity: 0.0;
+}
+/* MISC Division */
+#misc-div{
+  height: 100%;
+}
+#misc-bg{
+  background-image: url('src/misc.jpg');
+  opacity: 0.9;
+}
+#misc-fg{
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+}
+#misc-fg a{
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-style: hidden;
+}
+#misc-content {  
+  font-size: 22px;
+  letter-spacing: 3px;
+  font-family: "Trebuchet MS";
+}
+#misc-fg .div-title{
+  font-family: "Trebuchet MS";
+}
+#misc-claim {  
+  font-family: "Trebuchet MS";
+  font-size: 16px;
+  font-style: italic;
 }
 /* Footer */
 #footer-div i{
@@ -197,7 +227,7 @@ i.fab:hover, i.fas:hover{
 #copyright a:link, #copyright a:visited, #copyright a:hover, #copyright a:active {
   color: white;
 }
-@media (max-width: 576px) {   
+@media (max-width: 768px) {   
   .hero-text {
     font-size: 3rem;
     text-shadow: 0px 0px 10px black;
@@ -212,6 +242,19 @@ i.fab:hover, i.fas:hover{
     font-size: 32px;
   }
   #landing-content i.fab {
+    font-size: 40px;
+  }
+  #misc-fg{
+    width: 90%;
+  }
+  #misc-content {
+    font-size: 16px;
+    letter-spacing: 1px;
+  }
+  #misc-claim {
+    font-size: 13px;
+  }
+  #misc-fg i.fas {
     font-size: 40px;
   }
  }
