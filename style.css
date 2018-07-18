@@ -16,15 +16,16 @@ body {
 #top-nav:hover{
   background-color: rgba(0, 0, 0, 0.75);  
 }
-li a{
-  transition: 0s;
+#top-nav i.fas{
+  padding-right: 3px;
+}
+#top-nav a.active {
+  color: rgba(255,255,255,1.0);
+  background-color: rgba(0, 0, 0, 0.45);  
 }
 .navbar-dark .navbar-nav .nav-link:hover {
+  /* Why selector has to be written like this */
   color: rgba(255,255,255,1.0);
-}
-li a.active {
-  color: rgba(255,255,255,1.0);
-  background-color: rgba(0, 0, 0, 0.4);
 }
 #brand-img{
   width: 40px;
@@ -54,14 +55,13 @@ li a.active {
   letter-spacing: 4px;
   font-family: "Yu Gothic";
 }
-i.fab, i.fas{
+i.fab{
   transition: 0.1s;
 }
-i.fab:hover, i.fas:hover{
+i.fab:hover{
   /* box-shadow:  0px 0px 100px white; */
   transform: scale(1.4);
 }
-
 /* General Division Default Setting */
 .general-div{
   position: relative;
@@ -104,7 +104,7 @@ i.fab:hover, i.fas:hover{
 }
 /* Education Section */
 #education-div{
-  background-color: rgba(246, 246, 246, 0.8);
+  background-color: rgb(246, 246, 246);
 }
 #education-div p{
   font-size: 18px;
@@ -147,15 +147,9 @@ i.fab:hover, i.fas:hover{
   height: 70%;
   position: relative;
 }
-#secondBlock {
-  height: 50%;
-}
 /* Work Division */
-#work-div{  
-  height: 1125px;
-}
 .work-row{
-  height: 375px;
+  height: 320px;
 }
 .grid-frame{
   position: relative;
@@ -185,46 +179,6 @@ i.fab:hover, i.fas:hover{
 #work-text5{
   
 }
-/*
-#work-div{  
-}
-.grid-cell{
-  position: relative;
-  padding: 0px;
-  border-style: none;
-  border-width: 4px;
-}
-.grid-border{
-  border-style: solid;
-  border-width: 4px;
-}
-.center-grid {
-  text-align: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 28px;
-  font-family: "SimSun";
-  font-style: "bold";
-  color: black;
-  text-shadow: 0 0 5px black;
-}
-.grid-background{  
-  position: absolute; 
-  left: 0px; 
-  top: 0px; 
-  height: 100%;
-  width: 100%;
-  background-color: #ffffff;
-  opacity: 0.65;
-  transition-duration: 0.6s;
-  z-index: 0;
-}
-.grid-background:hover{
-  opacity: 0.0;
-}
-*/
 /* MISC Division */
 #misc-div{
   height: 100%;
@@ -255,6 +209,13 @@ i.fab:hover, i.fas:hover{
   font-family: "Trebuchet MS";
   font-size: 16px;
   font-style: italic;
+}
+#misc-div i.fas{
+  transition: 0.1s;
+}
+#misc-div i.fas:hover{
+  /* box-shadow:  0px 0px 100px white; */
+  transform: scale(1.4);
 }
 /* Footer */
 #footer-div i{
