@@ -1,0 +1,269 @@
+
+/* General */
+html, body { 
+  height: 100%; 
+  width: 100%; 
+  margin: 0; 
+}
+body {
+  min-height: 100%;  
+  font-family: "Microsoft YaHei";
+}
+div{
+  position: relative;
+}
+.center-block {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.div-title{
+  text-align: center;
+  font-size: 46px;
+  font-family: 'Helvetica';
+}
+.div-hr{
+  height:2px;
+  border:none;
+  color:#333;
+  background-color:#333; 
+  width: 75%;
+}
+.background-div{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+span.text-zh{
+  font-weight: 400;
+  font-family: "Microsoft YaHei";
+}
+/* NavBar */
+#top-nav{
+  background-color: rgba(0, 0, 0, 0.0);
+  transition: 0.5s;
+}
+#top-nav:hover{
+  background-color: rgba(0, 0, 0, 0.75);  
+}
+#top-nav a.active {
+  color: rgba(255,255,255,1.0);
+  background-color: rgba(0, 0, 0, 0.45);  
+}
+#top-nav .nav-link:hover {
+  color: rgba(255,255,255,1.0);
+}
+#brand-img{
+  width: 80px;
+  height: 40px;
+}
+/* Landing */
+#landing-div{
+  position: relative;
+  height: 100%;
+  padding: 0px;
+}
+#landing-div .background-div{
+  background-color: rgba(255, 255, 255, 0.);
+}
+#landing-div .center-block{
+  padding: 25px 10px;
+  color: white;  
+  border-radius: 15px;
+  background-color: rgba(0, 0, 0,0.6);  
+  font-family: "Microsoft YaHei";  
+}
+#landing-text-title{
+  cursor: default;
+}
+#landing-zh{
+  margin-bottom: 16px;
+  font-size: 50px;
+  letter-spacing: 5px;
+}
+#landing-button-group{
+  margin-top: 30px;
+}
+#landing-button-group a.btn{
+  width: 95%;
+}
+/* Intro */
+#intro-div, #intro-grid{
+  padding: 0 0;
+  position: relative;
+}
+#intro-div .grid-row{
+  position: relative;
+  margin: 0px;
+  height: 320px;
+}
+.grid-frame{
+  position: relative;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.grid-20{
+  width: 20%;
+}
+.grid-40{
+  width: 40%;
+}
+#intro-grid{
+  font-family: "Microsoft YaHei";  
+  font-size: 24px;
+}
+#intro-text2{
+  color:white;
+}
+#intro-text4{
+  color:white;
+}
+/* About */
+#about-div{
+  color: white;
+  text-shadow: 0 0 5px black;
+  position: relative;
+  background-image: url('src/aa9.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#about-div div.background-div{
+  background-color: rgba(0, 0, 0, 0.5);
+}
+#about-div hr.div-hr{
+  color:white;
+  background-color: white; 
+  margin-left: 0;
+  width: 60%;
+}
+#about-cores .card{
+  border-style: none;
+  background-color: rgba(0, 0, 0, 0);
+}
+#about-cores .card .card-title{
+  font-size: 25px;
+}
+#about-div .blockquote-footer {
+  color: white;
+}
+/* Gallery */
+#gallery-div > .row > div{
+  padding: 0px;
+}
+#gallery-div .card{
+  border-style: none;
+}
+#gallery-div .card-title{
+  font-size: 30px;
+}
+/* Trophy */
+#trophy-div{
+  padding: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+#trophy-div .container-fluid{
+  padding: 0;
+}
+#trophy-div .parallax-window {
+  height: 400px;
+}
+#trophy-div .parallax-window > .center-block {
+  color: white;
+  text-shadow: 0 0 10px black;
+  letter-spacing: 5px;
+  font-size: 40px;
+}
+#trophy-overview{
+  margin: -100px 0 0 0;
+  
+}
+#trophy-overview hr{
+  margin-left: 0;
+}
+#trophy-overview > div{
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#trophy-overview .card-body{
+  background-color: white;
+}
+/* History */
+#history-div{
+  color:black;
+  background-image: url('src/aa12.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+#history-div .background-div{
+  z-index: 0;
+}
+#history-div .foreground-div{
+  position: relative;
+  z-index: 1;
+}
+#history-div .foreground-div .container{
+  background-color: rgba(255, 255, 255, 0.6);
+}
+#history-div hr.div-hr{
+  color:black;
+  background-color: black; 
+  margin-left: 0;
+}
+/* Footer */
+#footer-div i{
+  color: white;
+  margin: 0px 5px;
+}
+#copyright a:link, #copyright a:visited, #copyright a:hover, #copyright a:active {
+  color: white;
+}
+
+@media (max-width: 992px) {   
+  .div-title{
+    font-size: 33px;
+  }
+  #landing-zh{
+    letter-spacing: 2px;
+    font-size: 38px;
+  }
+  #landing-eng{
+    font-size: 28px;
+  }
+  #intro-grid{
+    font-family: "Microsoft YaHei";  
+    font-size: 18px;
+  }
+ }
+@media (max-width: 768px) {   
+  .div-title{
+    font-size: 33px;
+  }
+  #landing-zh{
+    font-size: 24px;
+  }
+  #landing-eng{
+    font-size: 18px;
+  }
+  .grid-discard{
+    display: none;
+  }
+  .grid-stay{
+    width: 100%;
+  }
+  #intro-text4{
+    font-size: 22px;
+  }
+  #intro-grid{
+    font-family: "Microsoft YaHei";  
+    font-size: 28px;
+  }
+ }

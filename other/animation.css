@@ -1,0 +1,33 @@
+.ready-to-appear{
+  visibility: hidden;
+}
+.ready-to-appear2{
+  visibility: hidden;
+}
+.top-to-center-animation {
+  animation-name: toCenter;
+  -webkit-animation-name: toCenter; 
+  animation-duration: 1.2s; 
+  -webkit-animation-duration: 1.2s;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-timing-function: ease-in-out;
+  visibility: visible; 
+}
+.down-to-center-animation {
+  animation-name: goUp;
+  -webkit-animation-name: goUp; 
+  animation-duration: 1.2s; 
+  -webkit-animation-duration: 1.2s;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-timing-function: ease-in-out;
+  visibility: visible; 
+}
+@keyframes toCenter {
+  0% {opacity: 0.0; transform: translate(-50%, -80%);}
+}
+@keyframes goUp {
+  0% {opacity: 0.0; transform: translate(0%, 70%);}
+}
+@keyframes toAppear {
+  100% {opacity: 1.0;}
+}
