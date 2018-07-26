@@ -1,0 +1,33 @@
+/* General */
+html{
+  width: 100%;
+  height: 100%;
+}
+body{
+  width: 100%;
+  min-height: 100%;
+  overflow-y: scroll;
+}
+.center-block {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* TOP */
+#top-div{
+  padding: 40px;
+}
+/* Gallery */
+#gallery-div{
+  background-color: rgba(0, 0, 0, 0.4)
+}
+#gallery-div > .container{
+  transition-duration: 0.7s;
+}
+#gallery-div > .container > .row .card{
+  transition-duration: 0.7s;
+}
+#gallery-div > .container > .row {
+  transition-duration: 0.7s;
+}
