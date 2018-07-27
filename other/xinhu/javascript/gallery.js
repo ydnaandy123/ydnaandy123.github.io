@@ -1,42 +1,51 @@
+var col_template, gallery_row;
 $(document).ready(function (e) {
-  // console.log("page is loading now");
-  $(".navbar a, footer a[href='#main-body'], #landing-button-group a.btn").on('click', function (event) {
-    console.log(this.hash)
-    if (this.hash !== "") {
-      event.preventDefault();
-      var hash = this.hash;$('html, body').animate({
-        scrollTop: $(hash).offset().top
-      }, 900, function () {
-        window.location.hash = hash;
-      });
-    }
-  });
-  $(window).scroll(function () {
-    animatedObjectCheck();
-  });  
-  $(".col-md-3").click(function(){  
-    $(this).fadeOut(800, function(){
-      $(this).addClass("d-none");
-    });
-  });  
+  // Debug
+  checkDuplicateID();
+  // Get elements after document ready.
+  col_template = $(".video-template").clone();
+  gallery_row = $("#gallery-div > .container > .row");
+  galleryInitial();
 });
+function galleryInitial(){
+  gallery_row.children().remove();
+  let gallery_videos_len = gallery_videos.length
+  for (let i = 0; i < gallery_videos_len; i++) {
+    let col_cur = col_template.clone()
+    let video_id = gallery_videos[i]["ID"];
+    col_cur.attr("title", gallery_videos[i]["title"]);
+    col_cur.find(".video-title").text(gallery_videos[i]["title"]);
+    col_cur.find(".video-date").text(gallery_videos[i]["year"] + "-" + gallery_videos[i]["month"] + "-" + gallery_videos[i]["day"]);
+    col_cur.find("a").attr("href", "http://www.youtube.com/watch?v=" + video_id);
+    col_cur.find("img").attr("src", "https://img.youtube.com/vi/" + video_id + "/mqdefault.jpg");
+    col_cur.appendTo(gallery_row);
+  }
+}
 
+//------------------------------------------------------------------------
+function checkDuplicateID() {
+  // Warning Duplicate IDs
+  $('[id]').each(function() {
+      var ids = $('[id="' + this.id + '"]');
+      if (ids.length > 1 && ids[0] == this)
+          console.warn('Multiple IDs #' + this.id);
+  });
+}
+// Animation after web loaded
 $(window).on('load', function (e) {
-  // console.log("completely loaded");
   animatedObjectCheck();
 })
-
 function animatedObjectCheck(){  
-  var winTop = $(window).scrollTop();
+  let winTop = $(window).scrollTop();
   // Check all ready-to-appear elements
   $(".ready-to-appear").each(function () {
-    var pos = $(this).offset().top;
+    let pos = $(this).offset().top;
     if (pos < winTop + window.innerHeight && pos > winTop) {
       $(this).addClass("top-to-center-animation").removeClass("ready-to-appear");
     }
   });
   $(".ready-to-appear2").each(function () {
-    var pos = $(this).offset().top;
+    let pos = $(this).offset().top;
     if (pos < winTop + window.innerHeight && pos > winTop) {
       $(this).addClass("down-to-center-animation").removeClass("ready-to-appear2");
     }

@@ -7,6 +7,7 @@ body{
   width: 100%;
   min-height: 100%;
   overflow-y: scroll;
+  font-family: "Microsoft YaHei";
 }
 .center-block {
   position: absolute;
@@ -20,14 +21,37 @@ body{
 }
 /* Gallery */
 #gallery-div{
+  cursor: default;
   background-color: rgba(0, 0, 0, 0.4)
 }
-#gallery-div > .container{
-  transition-duration: 0.7s;
+.video-title, .video-date, .video-category {
+  margin-bottom: 5px; 
 }
-#gallery-div > .container > .row .card{
-  transition-duration: 0.7s;
+.video-title{
+  font-size: 16px;
 }
-#gallery-div > .container > .row {
-  transition-duration: 0.7s;
+.video-date{
+  font-size: 12px;
 }
+.video-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 21px;
+}
+
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+  /* Default CSS */
+ }
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+
+ }
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
+
+ }
