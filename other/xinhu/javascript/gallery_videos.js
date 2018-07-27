@@ -1,5 +1,5 @@
 var gallery_videos = [{
-  title: "20180310新湖國小全國音樂賽",
+  title: "新湖國小全國音樂賽",
   ID: "kQPnbimrj_c",
   year: 2018,
   month: 3,

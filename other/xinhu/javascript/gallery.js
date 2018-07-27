@@ -3,7 +3,7 @@ $(document).ready(function (e) {
   // Debug
   checkDuplicateID();
   // Get elements after document ready.
-  col_template = $(".video-template").clone();
+  col_template = $("#video-template > div").clone();
   gallery_row = $("#gallery-div > .container > .row");
   galleryInitial();
 });
@@ -13,11 +13,17 @@ function galleryInitial(){
   for (let i = 0; i < gallery_videos_len; i++) {
     let col_cur = col_template.clone()
     let video_id = gallery_videos[i]["ID"];
+    let video_category = gallery_videos[i]["category"];
+    let video_category_class = category2class(video_category)
+    // Whole Block
     col_cur.attr("title", gallery_videos[i]["title"]);
-    col_cur.find(".video-title").text(gallery_videos[i]["title"]);
-    col_cur.find(".video-date").text(gallery_videos[i]["year"] + "-" + gallery_videos[i]["month"] + "-" + gallery_videos[i]["day"]);
+    // Image
     col_cur.find("a").attr("href", "http://www.youtube.com/watch?v=" + video_id);
     col_cur.find("img").attr("src", "https://img.youtube.com/vi/" + video_id + "/mqdefault.jpg");
+    // Description
+    col_cur.find(".video-title").text(gallery_videos[i]["title"]);
+    col_cur.find(".video-date").text(gallery_videos[i]["year"] + "-" + gallery_videos[i]["month"] + "-" + gallery_videos[i]["day"]);
+    col_cur.find(".video-category").text(video_category);
     col_cur.appendTo(gallery_row);
   }
 }

@@ -24,20 +24,17 @@ body{
   cursor: default;
   background-color: rgba(0, 0, 0, 0.4)
 }
+.my-video-frame{
+  margin: 0 0 5px 0;
+}
 .video-title, .video-date, .video-category {
   margin-bottom: 5px; 
 }
-.video-title{
-  font-size: 16px;
-}
 .video-date{
-  font-size: 12px;
+  font-size: 80%;
 }
 .video-title {
-  white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis;
-  height: 21px;
 }
 
 
