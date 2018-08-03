@@ -14,6 +14,7 @@ $(document).ready(function (e) {
   $(window).scroll(function () {
     animatedObjectCheck();
   });  
+  $('.carousel').bcSwipe({ threshold: 50 });
 });
 
 $(window).on('load', function (e) {
