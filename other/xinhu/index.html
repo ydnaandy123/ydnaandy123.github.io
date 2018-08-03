@@ -2,14 +2,14 @@
 <html lang="en">
 
 <head>
-    <title>Nixhu</title>
+    <title>台北市內湖區新湖國小</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords" content="Xinhu Elementary School, 新湖國小">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style_index.css">
-    <link rel="stylesheet" href="animation.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/animation.css">
 </head>
 
 <body id="main-body" data-spy="scroll" data-target=".navbar" data-offset="1">
@@ -122,19 +122,19 @@
             <!-- 1st Row -->
             <div class="row grid-row">
                 <div class="grid-discard grid-frame grid-20" style="background-image: url('src/kid12.jpg')">
-                    <div style="height: 100%; background-color: rgba(255, 255, 255, 0.8)">
+                    <div id="grid-1_1">
                         <div id="intro-text1" class="center-block ready-to-appear">
                             多元智慧
                         </div>
                     </div>
                 </div>
-                <div class="grid-discard grid-frame grid-20" style="background-color: rgb(40, 40, 40)">
+                <div id="grid-1_2" class="grid-discard grid-frame grid-20">
                     <div id="intro-text2" class="center-block ready-to-appear">
                         多元明星
                     </div>
                 </div>
                 <div class="grid-discard grid-frame grid-20" style="background-image: url('src/aa16.jpg')">
-                    <div style="height: 100%; background-color: rgba(255, 255, 255, 0.8)">
+                    <div id="grid-1_3">
                         <div id="intro-text3" class="center-block">
                             提升專業
                         </div>
@@ -151,12 +151,12 @@
                     data-nature-width="800"
                         data-nature-height="502" style="height: 100%;"></div>
                 </div>
-                <div class="grid-stay grid-frame grid-40">
+                <div id="grid-2_2-wrap" class="grid-stay grid-frame grid-40">
                     <div class="parallax-window" data-speed="0.2" data-parallax="scroll" data-image-src="src/adult1.jpg"
                      data-nature-width="600"
                         data-nature-height="400" style="height: 100%;" data-position-x="center">
                     </div>
-                    <div class="background-div" style="background-color: rgba(0, 0, 0, 0.8)"></div>
+                    <div id="grid-2_2" class="background-div"></div>
                     <div id="intro-text4" class="center-block">
                         <p class="text-center">
                             今日以新湖為榮
@@ -164,11 +164,11 @@
                         </p>
                     </div>
                 </div>
-                <div class="grid-discard grid-frame grid-20">
+                <div id="grid-2_3-wrap" class="grid-discard grid-frame grid-20">
                     <div class="parallax-window" data-speed="0.2" data-parallax="scroll" data-image-src="src/aa17.jpg"
                      data-nature-width="277"
                         data-nature-height="400" style="height: 100%;" data-position-x="-80px"></div>
-                    <div class="background-div" style="background-color: rgba(255, 255, 255, 0.8)"></div>
+                    <div id="grid-2_3" class="background-div"></div>
                     <div id="intro-text5" class="center-block ready-to-appear">
                         <p class="text-center">
                             潛力無限
@@ -266,10 +266,10 @@
         </div>
     </div>
     <!-- Gallery Division-->
-    <div id="gallery-div" class="container-fluid">
-        <div class="row align-items-center">
+    <div id="gallery-div">
+        <div class="row align-items-center no-gutters">
             <div class="col-md-5">
-                <div class="row justify-content-center">
+                <div class="row justify-content-center  no-gutters">
                     <div class="col-auto">
                         <div class="card">
                             <div class="card-body  text-left">

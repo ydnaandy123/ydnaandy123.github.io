@@ -14,6 +14,37 @@ $(document).ready(function (e) {
   $(window).scroll(function () {
     animatedObjectCheck();
   });  
+  $("#grid-1_1").hover(function(){  
+    $(this).css("background-color", "rgba(255, 255, 255, 0.0)"); 
+    $("#intro-text1").css("opacity", "0"); 
+    }, function(){  
+    $(this).css("background-color", "rgba(255, 255, 255, 0.8)");  
+    $("#intro-text1").css("opacity", "1"); 
+  });  
+  $("#grid-1_3").hover(function(){  
+    $(this).css("background-color", "rgba(255, 255, 255, 0.0)"); 
+    $("#intro-text3").css("opacity", "0"); 
+    }, function(){  
+    $(this).css("background-color", "rgba(255, 255, 255, 0.8)");  
+    $("#intro-text3").css("opacity", "1"); 
+  });  
+  $("#grid-2_2-wrap").hover(function(){  
+    $("#grid-2_2").css("background-color", "rgba(0, 0, 0, 0.0)"); 
+    $("#intro-text4").css("opacity", "0"); 
+    }, function(){  
+    $("#grid-2_2").css("background-color", "rgba(0, 0, 0, 0.8)");  
+    $("#intro-text4").css("opacity", "1"); 
+  }); 
+  // parallax render overflow?
+  /*
+  $("#grid-2_3-wrap").hover(function(){  
+    $("#grid-2_3").css("background-color", "rgba(255, 255, 255, 0)"); 
+    $("#intro-text5").css("opacity", "0"); 
+    }, function(){  
+    $("#grid-2_3").css("background-color", "rgba(255, 255, 255, 0.8)");  
+    $("#intro-text5").css("opacity", "1"); 
+  });
+  */ 
 });
 
 $(window).on('load', function (e) {

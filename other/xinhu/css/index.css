@@ -1,16 +1,13 @@
-
-/* General */
+/* ROOT NECESSAORY */
 html, body { 
   height: 100%; 
   width: 100%; 
-  margin: 0; 
+  position: relative;
 }
 body {
   min-height: 100%;  
+  cursor: default;
   font-family: "Microsoft YaHei";
-}
-div{
-  position: relative;
 }
 .center-block {
   position: absolute;
@@ -18,6 +15,14 @@ div{
   left: 50%;
   transform: translate(-50%, -50%);
 }
+.background-div{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+/* Abandoned */
 .div-title{
   text-align: center;
   font-size: 46px;
@@ -29,13 +34,6 @@ div{
   color:#333;
   background-color:#333; 
   width: 75%;
-}
-.background-div{
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
 }
 span.text-zh{
   font-weight: 400;
@@ -49,7 +47,7 @@ span.text-zh{
 #top-nav:hover{
   background-color: rgba(0, 0, 0, 0.75);  
 }
-#top-nav a.active {
+#top-nav .nav-link.active {
   color: rgba(255,255,255,1.0);
   background-color: rgba(0, 0, 0, 0.45);  
 }
@@ -74,10 +72,6 @@ span.text-zh{
   color: white;  
   border-radius: 15px;
   background-color: rgba(0, 0, 0,0.6);  
-  font-family: "Microsoft YaHei";  
-}
-#landing-text-title{
-  cursor: default;
 }
 #landing-zh{
   margin-bottom: 16px;
@@ -91,30 +85,53 @@ span.text-zh{
   width: 95%;
 }
 /* Intro */
-#intro-div, #intro-grid{
+#intro-div, #intro-div #intro-grid{
   padding: 0 0;
   position: relative;
 }
-#intro-div .grid-row{
+#intro-div #intro-grid .grid-row{
   position: relative;
   margin: 0px;
   height: 320px;
+  transition-duration: .7s;
 }
-.grid-frame{
+#intro-div .grid-frame{
   position: relative;
   height: 100%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
-.grid-20{
+#intro-div .grid-20{
   width: 20%;
 }
-.grid-40{
+#intro-div .grid-40{
   width: 40%;
 }
+#intro-grid *{
+  transition-duration: 0.9s;
+}
+#grid-1_1{
+  height: 100%; 
+  background-color: rgba(255, 255, 255, 0.8);
+}
+#grid-1_2{
+  background-color: rgb(40, 40, 40);
+}
+#grid-1_2:hover{
+  background-color: rgb(0, 0, 0);
+}
+#grid-1_3{
+  height: 100%; 
+  background-color: rgba(255, 255, 255, 0.8);
+}
+#grid-2_2{
+  background-color: rgba(0, 0, 0, 0.8);
+}
+#grid-2_3{
+  background-color: rgba(255, 255, 255, 0.8);
+}
 #intro-grid{
-  font-family: "Microsoft YaHei";  
   font-size: 24px;
 }
 #intro-text2{
@@ -128,7 +145,7 @@ span.text-zh{
   color: white;
   text-shadow: 0 0 5px black;
   position: relative;
-  background-image: url('src/aa9.jpg');
+  background-image: url("../src/aa9.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -153,9 +170,6 @@ span.text-zh{
   color: white;
 }
 /* Gallery */
-#gallery-div > .row > div{
-  padding: 0px;
-}
 #gallery-div .card{
   border-style: none;
 }
@@ -171,6 +185,7 @@ span.text-zh{
   padding: 0;
 }
 #trophy-div .parallax-window {
+  position: relative;
   height: 400px;
 }
 #trophy-div .parallax-window > .center-block {
@@ -197,7 +212,7 @@ span.text-zh{
 /* History */
 #history-div{
   color:black;
-  background-image: url('src/aa12.jpg');
+  background-image: url('../src/aa12.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -256,7 +271,7 @@ span.text-zh{
   .grid-discard{
     display: none;
   }
-  .grid-stay{
+  #intro-div .grid-stay{
     width: 100%;
   }
   #intro-text4{
