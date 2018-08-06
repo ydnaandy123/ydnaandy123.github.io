@@ -1,4 +1,16 @@
 var col_template, gallery_row;
+function myFunction(x) {
+  if (x.matches) { // If media query matches
+      //document.body.style.backgroundColor = "yellow";
+  } else {
+      //document.body.style.backgroundColor = "pink";
+  }
+}
+
+var x = window.matchMedia("(min-width: 992px)")
+myFunction(x) // Call listener function at run time
+x.addListener(myFunction) // Attach listener function on state changes
+
 $(document).ready(function (e) {
   // Debug
   checkDuplicateID();
@@ -10,21 +22,24 @@ $(document).ready(function (e) {
 function galleryInitial(){
   gallery_row.children().remove();
   let gallery_videos_len = gallery_videos.length
-  for (let i = 0; i < gallery_videos_len; i++) {
-    let col_cur = col_template.clone()
-    let video_id = gallery_videos[i]["ID"];
-    let video_category = gallery_videos[i]["category"];
-    let video_category_class = category2class(video_category)
-    // Whole Block
-    col_cur.attr("title", gallery_videos[i]["title"]);
-    // Image
-    col_cur.find("a").attr("href", "http://www.youtube.com/watch?v=" + video_id);
-    col_cur.find("img").attr("src", "https://img.youtube.com/vi/" + video_id + "/mqdefault.jpg");
-    // Description
-    col_cur.find(".video-title").text(gallery_videos[i]["title"]);
-    col_cur.find(".video-date").text(gallery_videos[i]["year"] + "-" + gallery_videos[i]["month"] + "-" + gallery_videos[i]["day"]);
-    col_cur.find(".video-category").text(video_category);
-    col_cur.appendTo(gallery_row);
+  if (window.matchMedia("(min-width: 992px)").matches){
+    for (let i = 0; i < gallery_videos_len; i++) {    
+      let col_cur = col_template.clone()
+      let video_id = gallery_videos[i]["ID"];
+      let video_category = gallery_videos[i]["category"];
+      let video_category_class = category2class(video_category)
+      // Whole Block
+      col_cur.attr("title", gallery_videos[i]["title"]);
+      // Image
+      col_cur.find("a").attr("href", "http://www.youtube.com/watch?v=" + video_id);
+      col_cur.find("img").attr("src", "https://img.youtube.com/vi/" + video_id + "/mqdefault.jpg");
+      // Description
+      col_cur.find(".video-title").text(gallery_videos[i]["title"]);
+      col_cur.find(".video-date").text(gallery_videos[i]["year"] + "-" + gallery_videos[i]["month"] + "-" + gallery_videos[i]["day"]);
+      col_cur.find(".video-category").text(video_category);
+      col_cur.appendTo(gallery_row);
+    }
+    
   }
 }
 

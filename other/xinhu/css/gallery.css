@@ -2,6 +2,7 @@
 html{
   width: 100%;
   height: 100%;
+  font-size: 62.5%;
 }
 body{
   width: 100%;
@@ -22,13 +23,27 @@ body{
 /* Gallery */
 #gallery-div{
   cursor: default;
-  background-color: rgba(0, 0, 0, 0.4)
+  background-color: rgba(0, 0, 0, 0.)
 }
 .my-video-frame{
   margin: 0 0 5px 0;
+  transition: all .8s ease;
+}
+.my-video-frame > div.row{
+  background-color: rgba(0, 0, 0, 0.4)
 }
 .video-title, .video-date, .video-category {
   margin-bottom: 5px; 
+}
+p.video-title {
+  font-weight: 600;
+  font-size: 1.7em;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+p.video-date, p.video-category {
+  font-size: 1.5em;
 }
 .video-date{
   font-size: 80%;

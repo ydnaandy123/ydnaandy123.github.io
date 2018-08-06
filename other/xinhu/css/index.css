@@ -234,6 +234,10 @@ span.text-zh{
 #footer-div i{
   color: white;
   margin: 0px 5px;
+  transition: .2s;
+}
+#footer-div i:hover{
+  transform: scale(1.5);
 }
 #copyright a:link, #copyright a:visited, #copyright a:hover, #copyright a:active {
   color: white;

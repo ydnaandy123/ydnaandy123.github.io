@@ -2,14 +2,14 @@
 <html lang="en">
 
 <head>
-    <title>Nixhu Gallery</title>
+    <title>Xixhu Gallery</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords" content="Xinhu Elementary School, 新湖國小">
+    <meta name="keywords" content="Xinhu Elementary School, 新湖國小">    
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style_gallery.css">
-    <link rel="stylesheet" href="animation.css">
+    <link rel="stylesheet" href="css/gallery.css">
+    <link rel="stylesheet" href="css/animation.css">
 </head>
 
 <body>
@@ -20,25 +20,27 @@
         </div>
     </div>
     <!-- Gallery Division -->
-    <div id="gallery-div" class="p-1">   
-        <div class="container bg-success">
+    <div id="gallery-div">   
+        <div class="container">
             <div class="row align-items-center">
                 <!-- Col Template -->
                 <div id="video-template">
-                    <div class=" my-video-frame col-12 col-md-6" title="20180310新湖國小全國音樂賽">
+                    <div class=" my-video-frame col-12 col-lg-3" title="20180310新湖國小全國音樂賽">
                     <!-- Nesting Layout -->
-                        <div class="row align-items-center">
+                        <div class="row align-items-center pb-5">
                             <!-- Thumbail-->
-                            <div class="col-7">
+                            <div class="col-6 col-lg-12 mb-3">
                                 <a href="http://www.youtube.com/watch?v=kQPnbimrj_c" target="_blank">
                                     <img class="img-fluid" src="https://img.youtube.com/vi/kQPnbimrj_c/mqdefault.jpg"/>
                                 </a>            
                             </div>
                             <!-- Description-->
-                            <div class="col-5 video-description">
-                                <p class="video-title"></p>
-                                <p class="video-date"></p>
-                                <p class="video-category" >音樂</p>
+                            <div class="col-6 col-lg-12 video-description">
+                                <p class="video-title mb-4"></p>
+                                <div class="row align-items-center justify-content-between no-gutters">
+                                    <p class="video-date col-12 col-lg-auto"></p>
+                                    <p class="video-category col-12 col-lg-auto">音樂</p>
+                                </div>
                             </div>
                         </div>        
                     </div>
@@ -60,15 +62,6 @@
         if (typeof ($.fn.modal) === 'undefined') {
             document.write('<script src="javascript/bootstrap.min.js"><\/script>')
         }
-    </script>
-    <!-- Bootstrap CSS local fallback -->
-    <div id="bootstrapCssTest" class="hidden"></div>
-    <script>
-        $(function () {
-            if ($('#bootstrapCssTest').is(':visible')) {
-                $("head").prepend('<link rel="stylesheet" href="bootstrap.min.css">');
-            }
-        });
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="javascript/parallax.min.js"></script>
