@@ -1,4 +1,6 @@
 var col_template, gallery_row, cur_class;
+var gallery_div, gallery_cell_template, gallery_cell_height, cur_class="all";
+
 function filterClass(category_class) {
   cur_class = category_class
   if (cur_class == "all"){
@@ -38,12 +40,37 @@ $(document).ready(function (e) {
   // Get elements after document ready.
   col_template = $("#video-template > div").clone();
   gallery_row = $("#gallery_row");
-  galleryInitial();
+
+  gallery_div = $("#gallery-div2");
+  gallery_cell_template = $("#gallery-cell-template").clone();
+  gallery_cell_height = gallery_cell_template.height();
+  console.log($("#gallery-cell-template").height())
+  //galleryInitial();
+  galleryInitial2();
 });//------------------------------------------------------------------------
 
 function category(category) {
   cur_category = category;
   filterCategory()
+}
+function galleryInitial2() {
+  gallery_div.children().remove()
+  let gallery_videos_len = gallery_videos.length
+  for (let i = 0; i < gallery_videos_len; i++) {         
+    let cur_gallery_cell = gallery_cell_template.clone();
+    console.log(cur_gallery_cell)
+    cur_gallery_cell.css({
+        "left": (20 + 4) * (i % 4) + 4 + "%",
+        "top": (gallery_cell_height + 18) * Math.floor(i / 4)
+    });
+    // Whole Block Attribute
+    cur_gallery_cell.attr("id", "gallery_cell_" + i);
+
+    cur_gallery_cell.appendTo(gallery_div);
+  }
+  gallery_div.children().each(function(index) {
+    console.log($(this))
+  });
 }
 function galleryInitial(){
   gallery_row.children().remove();

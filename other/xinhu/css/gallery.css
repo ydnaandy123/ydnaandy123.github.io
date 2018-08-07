@@ -87,8 +87,30 @@ p.video-date, p.video-category {
 .video-title {
   overflow: hidden;
 }
-
-
+/* Gallery Division2 */
+#gallery-div2{
+  position: relative;
+  background-color: #708a98;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+#gallery-div2 .gallery-cell {
+  background-color: #795548;
+  width: 22%;
+  position: absolute;
+  transition: all .8s ease;
+}
+#gallery-div2 .gallery-cell .cell-image {
+  max-width: 100%;
+  height: auto;
+}
+#gallery-div2 .gallery-cell .cell-title {
+  font-weight: 600;
+  font-size: 1.7em;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) { 
   /* Default CSS */

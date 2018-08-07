@@ -30,21 +30,22 @@
         <button class="camp" onclick="filterClass('camp')">營隊</button>
     </div>
     <!-- Gallery Division -->
+    <!--
     <div id="gallery-div">   
         <div class="container">
             <div id="gallery_row" class="row align-items-center my-3 py-3">
-                <!-- Col Template -->
+                <!- - Col Template - ->
                 <div id="video-template">
                     <div class=" my-video-frame col-12 col-lg-3" title="20180310新湖國小全國音樂賽">
-                    <!-- Nesting Layout -->
+                    <!- - Nesting Layout - ->
                         <div class="row align-items-center pb-2 pb-lg-5">
-                            <!-- Thumbail-->
+                            <!- - Thumbail- ->
                             <div class="col-6 col-lg-12 mb-3">
                                 <a href="http://www.youtube.com/watch?v=kQPnbimrj_c" target="_blank">
                                     <img class="img-fluid" src="https://img.youtube.com/vi/kQPnbimrj_c/mqdefault.jpg"/>
                                 </a>            
                             </div>
-                            <!-- Description-->
+                            <!- - Description- ->
                             <div class="col-6 col-lg-12 video-description">
                                 <p class="video-title mb-4"></p>
                                 <div class="row align-items-center justify-content-between no-gutters">
@@ -58,9 +59,24 @@
             </div>            
         </div>
     </div>
+    -->
     <!-- Gallery Division2 -->
     <div id="gallery-div2">
-        
+        <div id="gallery-cell-template" class="gallery-cell" title="20180310新湖國小全國音樂賽">            
+            <!-- Thumbnail-->
+            <div>
+                <a href="http://www.youtube.com/watch?v=kQPnbimrj_c" target="_blank"></a>
+                    <img class="cell-image" src="https://img.youtube.com/vi/kQPnbimrj_c/mqdefault.jpg">
+                </a>
+            </div>
+            <!-- Description-->
+            <div>
+                <h6 class="cell-title" style="height: 20px; font-size: 16px">20180310新湖國小全國音樂賽</h6>            
+                <span class="cell-time">2018-3-12</span>
+                <button class="category general">音樂</button>
+            </div>            
+        </div>
+
     </div>
 
     <!-- jQuery CDN -->
