@@ -20,6 +20,45 @@ body{
 #top-div{
   padding: 40px;
 }
+/* Filter Button Group */
+#filterButton button {
+  color: white;
+  width: 12.25%;
+  padding: 4% 0px;
+  border: none;
+}
+#gallery_row {
+  background-color: #708a98;
+  transition: all .8s ease;
+}
+button.all, #gallery_row.all {
+  background-color: #708a98
+}
+
+button.general, #gallery_row.general {
+  background-color: #FF5722
+}
+
+button.phy, #gallery_row.phy {
+  background-color: #8BC34A
+}
+
+button.music, #gallery_row.music {
+  background-color: #2196F3
+}
+
+button.art, #gallery_row.art {
+  background-color: #FF9800
+}
+
+button.edu, #gallery_row.edu {
+  background-color: #9C27B0
+}
+
+button.camp, #gallery_row.camp {
+  background-color: #795548
+}
+
 /* Gallery */
 #gallery-div{
   cursor: default;
@@ -28,9 +67,6 @@ body{
 .my-video-frame{
   margin: 0 0 5px 0;
   transition: all .8s ease;
-}
-.my-video-frame > div.row{
-  background-color: rgba(0, 0, 0, 0.4)
 }
 .video-title, .video-date, .video-category {
   margin-bottom: 5px; 

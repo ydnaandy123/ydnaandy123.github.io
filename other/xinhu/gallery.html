@@ -19,15 +19,25 @@
             hi
         </div>
     </div>
+    <!-- Button Group-->
+    <div id="filterButton" class="container text-center">
+        <button class="all" onclick="filterClass('all')">全部</button>
+        <button class="general" onclick="filterClass('general')">綜合</button>
+        <button class="phy" onclick="filterClass('phy')">體育</button>
+        <button class="music" onclick="filterClass('music')">音樂</button>
+        <button class="art" onclick="filterClass('art')">美術</button>
+        <button class="edu" onclick="filterClass('edu')">教育</button>
+        <button class="camp" onclick="filterClass('camp')">營隊</button>
+    </div>
     <!-- Gallery Division -->
     <div id="gallery-div">   
         <div class="container">
-            <div class="row align-items-center">
+            <div id="gallery_row" class="row align-items-center my-3 py-3">
                 <!-- Col Template -->
                 <div id="video-template">
                     <div class=" my-video-frame col-12 col-lg-3" title="20180310新湖國小全國音樂賽">
                     <!-- Nesting Layout -->
-                        <div class="row align-items-center pb-5">
+                        <div class="row align-items-center pb-2 pb-lg-5">
                             <!-- Thumbail-->
                             <div class="col-6 col-lg-12 mb-3">
                                 <a href="http://www.youtube.com/watch?v=kQPnbimrj_c" target="_blank">
@@ -47,6 +57,10 @@
                 </div>
             </div>            
         </div>
+    </div>
+    <!-- Gallery Division2 -->
+    <div id="gallery-div2">
+        
     </div>
 
     <!-- jQuery CDN -->
