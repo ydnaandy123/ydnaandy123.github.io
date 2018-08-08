@@ -31,16 +31,7 @@ function filterClass(category_class) {
   gallery_div.attr("cur_class", cur_class)
   gallery_div.addClass(cur_class)
 }
-$(document).ready(function (e) {
-  // Debug
-  checkDuplicateID();
-  // Get elements after document ready.
-  gallery_div = $("#gallery-div2");
-  gallery_cell_template = $("#gallery-cell-template").clone();
-  gallery_cell_height = $("#gallery-cell-template").height();
-  galleryInitial();
-});//------------------------------------------------------------------------
-
+//------------------------------------------------------------------------
 function category(category) {
   cur_category = category;
   filterCategory()
@@ -106,10 +97,6 @@ function checkDuplicateID() {
           console.warn('Multiple IDs #' + this.id);
   });
 }
-// Animation after web loaded
-$(window).on('load', function (e) {
-  animatedObjectCheck();
-})
 function animatedObjectCheck(){  
   let winTop = $(window).scrollTop();
   // Check all ready-to-appear elements
@@ -126,3 +113,15 @@ function animatedObjectCheck(){
     }
   });
 }
+$(document).ready(function (e) {
+  // Debug
+  checkDuplicateID();
+});
+$(window).on('load', function (e) {
+  // Get elements after document ready.
+  gallery_div = $("#gallery-div2");
+  gallery_cell_template = $("#gallery-cell-template").clone();
+  gallery_cell_height = $("#gallery-cell-template").height();
+  galleryInitial();
+  animatedObjectCheck();
+})
