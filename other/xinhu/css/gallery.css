@@ -1,11 +1,15 @@
 /* General */
 html{
+  position: relative;
   width: 100%;
   height: 100%;
   font-size: 62.5%;
 }
 body{
+  cursor: default;
+  position: relative;
   width: 100%;
+  height: 100%;
   min-height: 100%;
   overflow-y: scroll;
   font-family: "Microsoft YaHei";
@@ -18,98 +22,108 @@ body{
 }
 /* TOP */
 #top-div{
-  padding: 40px;
+  position: relative;
+  height: 35%;
+}
+#top-div .bg-filter{
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.65);
+}
+#top-div .center-block{
+  font-size: 3em;
+  text-shadow: 0 0 15px white;
 }
 /* Filter Button Group */
+#filterButton {
+  background-color: rgba(0, 0, 0, 0.1)
+}
 #filterButton button {
+  cursor: pointer;
   color: white;
   width: 12.25%;
   padding: 4% 0px;
   border: none;
 }
-#gallery_row {
+#gallery-div {
   background-color: #708a98;
   transition: all .8s ease;
 }
-button.all, #gallery_row.all {
+button.all, #gallery-div.all {
   background-color: #708a98
 }
 
-button.general, #gallery_row.general {
+button.general, #gallery-div.general {
   background-color: #FF5722
 }
 
-button.phy, #gallery_row.phy {
+button.phy, #gallery-div.phy {
   background-color: #8BC34A
 }
 
-button.music, #gallery_row.music {
+button.music, #gallery-div.music {
   background-color: #2196F3
 }
 
-button.art, #gallery_row.art {
+button.art, #gallery-div.art {
   background-color: #FF9800
 }
 
-button.edu, #gallery_row.edu {
+button.edu, #gallery-div.edu {
   background-color: #9C27B0
 }
 
-button.camp, #gallery_row.camp {
+button.camp, #gallery-div.camp {
   background-color: #795548
 }
-
-/* Gallery */
+/* Gallery Division */
 #gallery-div{
-  cursor: default;
-  background-color: rgba(0, 0, 0, 0.)
-}
-.my-video-frame{
-  margin: 0 0 5px 0;
-  transition: all .8s ease;
-}
-.video-title, .video-date, .video-category {
-  margin-bottom: 5px; 
-}
-p.video-title {
-  font-weight: 600;
-  font-size: 1.7em;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-p.video-date, p.video-category {
-  font-size: 1.5em;
-}
-.video-date{
-  font-size: 80%;
-}
-.video-title {
-  overflow: hidden;
-}
-/* Gallery Division2 */
-#gallery-div2{
   position: relative;
   background-color: #708a98;
   max-width: 1400px;
   margin: 0 auto;
 }
-#gallery-div2 .gallery-cell {
-  background-color: #795548;
-  width: 22%;
+#gallery-div .gallery-cell {
+  border-radius: 10px;
+  width: 100%;
   position: absolute;
   transition: all .8s ease;
 }
-#gallery-div2 .gallery-cell .cell-image {
+#gallery-div .gallery-cell:hover {
+  box-shadow: 0 0 10px black;
+  background-color: rgba(255, 255, 255, 0.4)
+}
+#gallery-div .gallery-cell .cell-image {
   max-width: 100%;
   height: auto;
 }
-#gallery-div2 .gallery-cell .cell-title {
+#gallery-div .gallery-cell .cell-title {
   font-weight: 600;
   font-size: 1.7em;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+#gallery-div .gallery-cell .cell-date {
+  font-size: 1.5em;
+}
+#gallery-div .gallery-cell button{
+  
+}
+
+/* Footer */
+#footer-div i{
+  color: white;
+  margin: 0px 5px;
+  transition: .2s;
+}
+#footer-div i:hover{
+  transform: scale(1.5);
+}
+#copyright a:link, #copyright a:visited, #copyright a:hover, #copyright a:active {
+  color: white;
+}
+#footer-div #copyright{
+  font-size: 1.3em;
 }
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) { 
@@ -118,7 +132,16 @@ p.video-date, p.video-category {
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) { 
-
+  #top-div {
+    height: 60%;
+  }
+  #top-div .center-block{
+    font-size: 5em;
+    letter-spacing: 3px;
+  }
+  #gallery-div .gallery-cell {
+    width: 24%;
+  }
  }
 
 /* Extra large devices (large desktops, 1200px and up) */

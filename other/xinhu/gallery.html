@@ -14,13 +14,16 @@
 
 <body>
     <!-- TOP Division -->
-    <div id="top-div" class="position-relative">
-        <div class="center-block">
-            hi
+    <div id="top-div" data-speed="0.2" data-parallax="scroll" data-image-src="src/kid7.jpg" 
+    data-nature-width="934" data-nature-height="702">
+        <div class="bg-filter">
+            <div class="center-block">
+                活動影片專區
+            </div>            
         </div>
     </div>
     <!-- Button Group-->
-    <div id="filterButton" class="container text-center">
+    <div id="filterButton" class="text-center py-3">
         <button class="all" onclick="filterClass('all')">全部</button>
         <button class="general" onclick="filterClass('general')">綜合</button>
         <button class="phy" onclick="filterClass('phy')">體育</button>
@@ -30,55 +33,54 @@
         <button class="camp" onclick="filterClass('camp')">營隊</button>
     </div>
     <!-- Gallery Division -->
-    <!--
-    <div id="gallery-div">   
-        <div class="container">
-            <div id="gallery_row" class="row align-items-center my-3 py-3">
-                <!- - Col Template - ->
-                <div id="video-template">
-                    <div class=" my-video-frame col-12 col-lg-3" title="20180310新湖國小全國音樂賽">
-                    <!- - Nesting Layout - ->
-                        <div class="row align-items-center pb-2 pb-lg-5">
-                            <!- - Thumbail- ->
-                            <div class="col-6 col-lg-12 mb-3">
-                                <a href="http://www.youtube.com/watch?v=kQPnbimrj_c" target="_blank">
-                                    <img class="img-fluid" src="https://img.youtube.com/vi/kQPnbimrj_c/mqdefault.jpg"/>
-                                </a>            
-                            </div>
-                            <!- - Description- ->
-                            <div class="col-6 col-lg-12 video-description">
-                                <p class="video-title mb-4"></p>
-                                <div class="row align-items-center justify-content-between no-gutters">
-                                    <p class="video-date col-12 col-lg-auto"></p>
-                                    <p class="video-category col-12 col-lg-auto">音樂</p>
-                                </div>
-                            </div>
-                        </div>        
-                    </div>
+    <div id="gallery-div">
+        <div id="gallery-cell-template" class="gallery-cell py-2" title="20180310新湖國小全國音樂賽">                        
+            <div class="row no-gutters align-items-center">
+                <!-- Thumbnail-->
+                <div class="col-6 col-lg-12">
+                    <a href="http://www.youtube.com/watch?v=kQPnbimrj_c" target="_blank">
+                        <img class="cell-image" src="https://img.youtube.com/vi/kQPnbimrj_c/mqdefault.jpg">
+                    </a>
                 </div>
-            </div>            
+                <!-- Description-->
+                <div class="col-6 col-lg-12 video-description pt-2 pl-2">
+                    <h6 class="cell-title">20180310新湖國小全國音樂賽</h6>                            
+                    <div class="row align-items-center justify-content-between no-gutters">
+                        <p class="cell-date col-12 col-lg-auto">2018-3-12</p>
+                        <p class="cell-category col-12 col-lg-auto pr-2">
+                            <button>音樂</button>
+                        </p>
+                    </div>
+                </div>            
+            </div>
         </div>
     </div>
-    -->
-    <!-- Gallery Division2 -->
-    <div id="gallery-div2">
-        <div id="gallery-cell-template" class="gallery-cell" title="20180310新湖國小全國音樂賽">            
-            <!-- Thumbnail-->
-            <div>
-                <a href="http://www.youtube.com/watch?v=kQPnbimrj_c" target="_blank"></a>
-                    <img class="cell-image" src="https://img.youtube.com/vi/kQPnbimrj_c/mqdefault.jpg">
+
+    <!-- Footer -->
+    <footer id="footer-div" class="py-3 text-white bg-dark">
+        <div class="row justify-content-center align-items-center no-gutters">
+            <div class="col-auto">
+                <a href="#top-div" title="To Top">
+                    <i class="fas fa-angle-up fa-2x"></i>
                 </a>
             </div>
-            <!-- Description-->
-            <div>
-                <h6 class="cell-title" style="height: 20px; font-size: 16px">20180310新湖國小全國音樂賽</h6>            
-                <span class="cell-time">2018-3-12</span>
-                <button class="category general">音樂</button>
-            </div>            
+            <!--
+            <div class="w-100 py-1"></div>
+            <div class="col-auto">
+                <a href="#" target="_blank">
+                    <i class="fab fa-youtube fa-2x"></i>
+                </a>
+                <a href="#" target="_blank">
+                    <i class="fab fa-twitter fa-2x"></i>
+                </a>
+            </div>
+            -->
+            <div class="w-100 py-2"></div>
+            <div id="copyright" class="text-center col-8 col-md-auto">
+                Copyright ©2018 <a href="http://www.shes.tp.edu.tw/" target="_blank">新湖國小</a> 版權所有 All rights reserved.
+            </div>
         </div>
-
-    </div>
-
+    </footer>
     <!-- jQuery CDN -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- jQuery local fallback -->
