@@ -31,7 +31,8 @@ body{
 }
 #top-div .center-block{
   font-size: 3em;
-  text-shadow: 0 0 15px white;
+  color: black;
+  text-shadow: 0 0 25px white;
 }
 /* Filter Button Group */
 #filterButton {
@@ -42,7 +43,16 @@ body{
   color: white;
   width: 12.25%;
   padding: 4% 0px;
+  border-radius: 15px;
   border: none;
+  text-shadow: 0 0 6px black;
+}
+#filterButton button:focus {
+  outline: none;
+}
+#filterButton button:hover {
+  box-shadow: 0 0 20px black;
+  text-shadow: none;
 }
 #gallery-div {
   background-color: #708a98;
@@ -90,7 +100,7 @@ button.camp, #gallery-div.camp {
 }
 #gallery-div .gallery-cell:hover {
   box-shadow: 0 0 10px black;
-  background-color: rgba(255, 255, 255, 0.4)
+  background-color: rgba(255, 255, 255, 0.9)
 }
 #gallery-div .gallery-cell .cell-image {
   max-width: 100%;
@@ -106,10 +116,18 @@ button.camp, #gallery-div.camp {
 #gallery-div .gallery-cell .cell-date {
   font-size: 1.5em;
 }
-#gallery-div .gallery-cell button{
-  
+#gallery-div .gallery-cell button{  
+  border-style: solid;
+  border-color: white;
+  font-size: 1.2em;
+  cursor: pointer;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 5px;
 }
-
+#gallery-div .gallery-cell button:focus{
+  outline: none;
+}
 /* Footer */
 #footer-div i{
   color: white;
@@ -138,6 +156,9 @@ button.camp, #gallery-div.camp {
   #top-div .center-block{
     font-size: 5em;
     letter-spacing: 3px;
+  }
+  #filterButton button {
+    font-size: 1.8rem;
   }
   #gallery-div .gallery-cell {
     width: 24%;
