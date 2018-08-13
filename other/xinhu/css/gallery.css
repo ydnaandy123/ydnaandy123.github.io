@@ -23,27 +23,48 @@ body{
 /* TOP */
 #top-div{
   position: relative;
-  height: 35%;
+  height: 25%;
 }
 #top-div .bg-filter{
   height: 100%;
   background-color: rgba(255, 255, 255, 0.65);
 }
 #top-div .center-block{
-  font-size: 3em;
+  font-size: 2.5em;
   color: black;
   text-shadow: 0 0 25px white;
 }
+/* Color Class */
+.all {
+  background-color: #626f75;
+}
+.general {
+  background-color: #ef6236;
+}
+.phy {
+  background-color: #789e4c;
+}
+.music {
+  background-color: #578ab3;
+}
+.art {
+  background-color: #dc8f1d;
+}
+.edu {
+  background-color: #713e79;
+}
+.camp {
+  background-color: #96553d;
+}
 /* Filter Button Group */
 #filterButton {
-  background-color: rgba(0, 0, 0, 0.1)
 }
 #filterButton button {
   cursor: pointer;
   color: white;
-  width: 12.25%;
-  padding: 4% 0px;
-  border-radius: 15px;
+  width: 100%;
+  padding: 20px 0px;
+  margin: 0;
   border: none;
   text-shadow: 0 0 6px black;
 }
@@ -51,45 +72,40 @@ body{
   outline: none;
 }
 #filterButton button:hover {
-  box-shadow: 0 0 20px black;
   text-shadow: none;
 }
-#gallery-div {
-  background-color: #708a98;
-  transition: all .8s ease;
+/* Sorting Division */
+#sorting-div{
+  margin: 0 auto;
+  padding: 0px 10px 3px 0;
 }
-button.all, #gallery-div.all {
-  background-color: #708a98
+#sorting-btn{
+  color: #e6e6e6;
+  border: none;
+  font-size: 1.4rem;
+  font-weight: 500;
+  letter-spacing: .007px;
+  font-family: Roboto, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  transition: all 0s ease;
 }
-
-button.general, #gallery-div.general {
-  background-color: #FF5722
+#sorting-btn:hover{
+  color: #ffffff;
+  text-shadow: 0 0 1.2px white;
 }
-
-button.phy, #gallery-div.phy {
-  background-color: #8BC34A
+#sorting-btn:focus{
+  outline: none;
+  box-shadow: none;
 }
-
-button.music, #gallery-div.music {
-  background-color: #2196F3
+#sorting-div .dropdown-menu .dropdown-item:hover{
+  background-color: #e0dfdf;
 }
-
-button.art, #gallery-div.art {
-  background-color: #FF9800
-}
-
-button.edu, #gallery-div.edu {
-  background-color: #9C27B0
-}
-
-button.camp, #gallery-div.camp {
-  background-color: #795548
+#sorting-div .dropdown-menu .dropdown-item:focus{
+  outline: none;
 }
 /* Gallery Division */
 #gallery-div{
   position: relative;
-  background-color: #708a98;
-  max-width: 1400px;
   margin: 0 auto;
 }
 #gallery-div .gallery-cell {
@@ -106,12 +122,16 @@ button.camp, #gallery-div.camp {
   max-width: 100%;
   height: auto;
 }
-#gallery-div .gallery-cell .cell-title {
+#gallery-div .gallery-cell .cell-title h6 {
   font-weight: 600;
   font-size: 1.7em;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  color: black;
+}
+#gallery-div .gallery-cell .cell-title:hover {
+  text-decoration: none;
 }
 #gallery-div .gallery-cell .cell-date {
   font-size: 1.5em;
@@ -124,6 +144,9 @@ button.camp, #gallery-div.camp {
   color: white;
   padding: 5px 15px;
   border-radius: 5px;
+}
+#gallery-div .gallery-cell button:hover{    
+  box-shadow: 0 0 10px black;
 }
 #gallery-div .gallery-cell button:focus{
   outline: none;
@@ -157,13 +180,17 @@ button.camp, #gallery-div.camp {
     font-size: 5em;
     letter-spacing: 3px;
   }
-  #filterButton button {
+  #filterButton button{
     font-size: 1.8rem;
   }
   #gallery-div .gallery-cell {
     width: 24%;
+    max-width:  320px;
   }
- }
+  #filterButton button {    
+    padding: 25px 25px;
+  }
+}
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) { 

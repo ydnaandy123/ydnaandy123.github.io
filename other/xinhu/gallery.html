@@ -15,25 +15,51 @@
 <body>    
     <!-- TOP Division -->
     <div id="top-div" data-speed="0.2" data-parallax="scroll" data-image-src="src/kid7.jpg" 
-    data-nature-width="934" data-nature-height="702">
+    data-nature-width="934" data-nature-height="702">        
         <div class="bg-filter">
             <div class="center-block">
                 活動影片專區
             </div>            
         </div>
-    </div>
-    <!-- Button Group-->
-    <div id="filterButton" class="text-center py-3">
-        <button class="all" onclick="filterClass('all')">全部</button>
-        <button class="general" onclick="filterClass('general')">綜合</button>
-        <button class="phy" onclick="filterClass('phy')">體育</button>
-        <button class="music" onclick="filterClass('music')">音樂</button>
-        <button class="art" onclick="filterClass('art')">美術</button>
-        <button class="edu" onclick="filterClass('edu')">教育</button>
-        <button class="camp" onclick="filterClass('camp')">營隊</button>
+    </div>     
+    <!-- Button Group -->
+    <div id="filterButton" class="row no-gutters bg-dark">
+        <div class="col col-md-auto">
+            <button class="all" onclick="filterClass('all')">全部</button>
+        </div>
+        <div class="col col-md-auto">
+            <button class="general" onclick="filterClass('general')">綜合</button>
+        </div>
+        <div class="col col-md-auto">
+            <button class="phy" onclick="filterClass('phy')">體育</button>
+        </div>
+        <div class="col col-md-auto">
+            <button class="music" onclick="filterClass('music')">音樂</button>
+        </div>
+        <div class="col col-md-auto">
+            <button class="art" onclick="filterClass('art')">美術</button>
+        </div>
+        <div class="col col-md-auto">
+            <button class="edu" onclick="filterClass('edu')">教育</button>
+        </div>
+        <div class="col col-md-auto">
+            <button class="camp" onclick="filterClass('camp')">營隊</button>
+        </div>
+    </div>     
+    <!-- Sorting Division -->
+    <div id="sorting-div" class="all">
+        <div class="dropdown text-right">
+            <button id="sorting-btn" class="btn all" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                SORT BY<i class="fas fa-2x fa-sort-amount-down ml-2"></i>
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">                
+                <button class="dropdown-item" onclick="sortGallery('old')">Date added (oldest)</button>
+                <button class="dropdown-item" onclick="sortGallery('new')">Date added (newest)</button>
+            </div>
+        </div>
     </div>
     <!-- Gallery Division -->
-    <div id="gallery-div">
+    <div id="gallery-div" class="all" data-cur-class="all">
         <div id="gallery-cell-template" class="gallery-cell py-2" title="20180310新湖國小全國音樂賽">                        
             <div class="row no-gutters align-items-center">
                 <!-- Thumbnail-->
@@ -44,11 +70,13 @@
                 </div>
                 <!-- Description-->
                 <div class="col-6 col-lg-12 video-description pt-2 pl-2">
-                    <h6 class="cell-title">20180310新湖國小全國音樂賽</h6>                            
+                    <a class="cell-title" href="http://www.youtube.com/watch?v=kQPnbimrj_c" target="_blank">
+                        <h6>20180310新湖國小全國音樂賽</h6>
+                    </a>
                     <div class="row align-items-center justify-content-between no-gutters">
                         <p class="cell-date col-12 col-lg-auto">2018-3-12</p>
-                        <p class="cell-category col-12 col-lg-auto pr-2">
-                            <button>音樂</button>
+                        <p class="cell-category col-12 col-lg-auto pr-2" title="音樂">
+                            <button onclick="filterClass('music')">音樂</button>
                         </p>
                     </div>
                 </div>            
@@ -87,6 +115,7 @@
     <script>
         window.jQuery || document.write('<script src="javascript/jquery-3.3.1.min.js"><\/script>')
     </script>
+    <script src="javascript/popper.min.js"></script>
     <!-- Bootstrap JS CDN -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <!-- Bootstrap JS local fallback -->

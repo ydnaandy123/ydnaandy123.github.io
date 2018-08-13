@@ -1,7 +1,6 @@
-var gallery_div, gallery_cell_template, gallery_cell_height, cur_class="all";
+var sorting_div, sorting_btn, gallery_div, gallery_cell_template, gallery_cell_height, cur_class="all";
 
-function filterClass(category_class) {
-  cur_class = category_class
+function filterClassSort() {
   let existed_index = 0;
     gallery_div.children().each(function(index) {
       if ($(this).attr("category_class") != cur_class  && cur_class != "all") {
@@ -29,9 +28,13 @@ function filterClass(category_class) {
         existed_index++;
       }
     });
-  gallery_div.removeClass(gallery_div.attr("cur_class"))
-  gallery_div.attr("cur_class", cur_class)
+  gallery_div.removeClass(gallery_div.attr("data-cur-class"))
   gallery_div.addClass(cur_class)
+  sorting_div.removeClass(gallery_div.attr("data-cur-class"))
+  sorting_div.addClass(cur_class)
+  sorting_btn.removeClass(gallery_div.attr("data-cur-class"))
+  sorting_btn.addClass(cur_class)
+  gallery_div.attr("data-cur-class", cur_class)
   if (window.matchMedia("(min-width: 992px)").matches){
     gallery_div.css({
         "height": (gallery_cell_height + 18) * Math.ceil(existed_index / 4)
@@ -44,9 +47,22 @@ function filterClass(category_class) {
   }
 }
 //------------------------------------------------------------------------
-function category(category) {
-  cur_category = category;
-  filterCategory()
+function sortGallery(sortOrder) {
+  if (sortOrder == "new") {
+      gallery_videos.sort(function(b, a) {
+      return (a.year != b.year) ? (a.year - b.year) : (a.month != b.month) ? (a.month - b.month) : (a.day != b.day) ? (a.day - b.day) : 0
+    })
+  } else if (sortOrder == "old") {
+      gallery_videos.sort(function(a, b) {
+      return (a.year != b.year) ? (a.year - b.year) : (a.month != b.month) ? (a.month - b.month) : (a.day != b.day) ? (a.day - b.day) : 0
+    })
+  }
+  galleryInitial();
+  filterClassSort();
+}
+function filterClass(category_class) {
+  cur_class = category_class
+  filterClassSort();
 }
 function galleryInitial() {
   gallery_div.children().remove()
@@ -67,6 +83,7 @@ function galleryInitial() {
     }
     // Get Metadata
     let cell_video_id = gallery_videos[i]["ID"];
+    let cell_video_url = "http://www.youtube.com/watch?v=" + cell_video_id
     let cell_category = gallery_videos[i]["category"];
     let cell_category_class = category2class(cell_category)
     // Whole Block Attribute
@@ -74,12 +91,12 @@ function galleryInitial() {
     cur_gallery_cell.attr("title", gallery_videos[i]["title"]);
     cur_gallery_cell.attr("category_class", cell_category_class)
     // Image
-    cur_gallery_cell.find("a").attr("href", "http://www.youtube.com/watch?v=" + cell_video_id);
+    cur_gallery_cell.find("a").attr("href", cell_video_url);
     cur_gallery_cell.find("img").attr("src", "https://img.youtube.com/vi/" + cell_video_id + "/mqdefault.jpg");
     // Description
-    cur_gallery_cell.find(".cell-title").text(gallery_videos[i]["title"]);
+    cur_gallery_cell.find(".cell-title").attr("href", cell_video_url).find("h6").text(gallery_videos[i]["title"]);
     cur_gallery_cell.find(".cell-date").text(gallery_videos[i]["year"] + "-" + gallery_videos[i]["month"] + "-" + gallery_videos[i]["day"]);
-    cur_gallery_cell.find(".cell-category > button").text(cell_category).addClass(cell_category_class);    
+    cur_gallery_cell.find(".cell-category > button").text(cell_category).addClass(cell_category_class).attr("title", cell_category).attr('onClick',"filterClass('"+ cell_category_class +"')");        
 
     cur_gallery_cell.appendTo(gallery_div);
   }
@@ -94,29 +111,6 @@ function galleryInitial() {
     })
   }
 }
-/*
-function galleryInitial(){
-  gallery_row.children().remove();
-  let gallery_videos_len = gallery_videos.length
-  for (let i = 0; i < gallery_videos_len; i++) {    
-    let col_cur = col_template.clone()
-    let video_id = gallery_videos[i]["ID"];
-    let video_category = gallery_videos[i]["category"];
-    let video_category_class = category2class(video_category)
-    // Whole Block
-    col_cur.attr("title", gallery_videos[i]["title"]);
-    col_cur.attr("category_class", video_category_class)
-    // Image
-    col_cur.find("a").attr("href", "http://www.youtube.com/watch?v=" + video_id);
-    col_cur.find("img").attr("src", "https://img.youtube.com/vi/" + video_id + "/mqdefault.jpg");
-    // Description
-    col_cur.find(".video-title").text(gallery_videos[i]["title"]);
-    col_cur.find(".video-date").text(gallery_videos[i]["year"] + "-" + gallery_videos[i]["month"] + "-" + gallery_videos[i]["day"]);
-    col_cur.find(".video-category").text(video_category);
-    col_cur.appendTo(gallery_row);    
-  }
-}
-*/
 function checkDuplicateID() {
   // Warning Duplicate IDs
   $('[id]').each(function() {
@@ -159,6 +153,8 @@ $(document).ready(function (e) {
 });
 $(window).on('load', function (e) {
   // Get elements after document ready.
+  sorting_div = $("#sorting-div");
+  sorting_btn = $("#sorting-btn");
   gallery_div = $("#gallery-div");
   gallery_cell_template = $("#gallery-cell-template").clone();
   gallery_cell_height = $("#gallery-cell-template").height();
