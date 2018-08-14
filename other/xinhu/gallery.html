@@ -25,41 +25,41 @@
     <!-- Button Group -->
     <div id="filterButton" class="row no-gutters bg-dark">
         <div class="col col-md-auto">
-            <button class="all" onclick="filterClass('all')">全部</button>
+            <button class="classColorAll" onclick="filterClass('classColorAll')">全部</button>
         </div>
         <div class="col col-md-auto">
-            <button class="general" onclick="filterClass('general')">綜合</button>
+            <button class="classColor1" onclick="filterClass('classColor1')">活動</button>
         </div>
         <div class="col col-md-auto">
-            <button class="phy" onclick="filterClass('phy')">體育</button>
+            <button class="classColor2" onclick="filterClass('classColor2')">體育</button>
         </div>
         <div class="col col-md-auto">
-            <button class="music" onclick="filterClass('music')">音樂</button>
+            <button class="classColor3" onclick="filterClass('classColor3')">音樂</button>
         </div>
         <div class="col col-md-auto">
-            <button class="art" onclick="filterClass('art')">美術</button>
+            <button class="classColor4" onclick="filterClass('classColor4')">美術</button>
         </div>
         <div class="col col-md-auto">
-            <button class="edu" onclick="filterClass('edu')">教育</button>
+            <button class="classColor5" onclick="filterClass('classColor5')">教育</button>
         </div>
         <div class="col col-md-auto">
-            <button class="camp" onclick="filterClass('camp')">營隊</button>
+            <button class="classColor6" onclick="filterClass('classColor6')">其他</button>
         </div>
     </div>     
     <!-- Sorting Division -->
-    <div id="sorting-div" class="all">
+    <div id="sorting-div" class="classColorAll">
         <div class="dropdown text-right">
-            <button id="sorting-btn" class="btn all" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button id="sorting-btn" class="btn classColorAll" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 SORT BY<i class="fas fa-2x fa-sort-amount-down ml-2"></i>
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">                
-                <button class="dropdown-item" onclick="sortGallery('old')">Date added (oldest)</button>
-                <button class="dropdown-item" onclick="sortGallery('new')">Date added (newest)</button>
+                <button class="dropdown-item" onclick="sortGallery('oldest')">Date added (oldest)</button>
+                <button class="dropdown-item" onclick="sortGallery('newest')">Date added (newest)</button>
             </div>
         </div>
     </div>
     <!-- Gallery Division -->
-    <div id="gallery-div" class="all" data-cur-class="all">
+    <div id="gallery-div" class="classColorAll" data-cur-class="classColorAll">
         <div id="gallery-cell-template" class="gallery-cell py-2" title="20180310新湖國小全國音樂賽">                        
             <div class="row no-gutters align-items-center">
                 <!-- Thumbnail-->

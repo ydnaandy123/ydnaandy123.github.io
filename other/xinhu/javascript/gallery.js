@@ -1,9 +1,9 @@
-var sorting_div, sorting_btn, gallery_div, gallery_cell_template, gallery_cell_height, cur_class="all";
+var sorting_div, sorting_btn, gallery_div, gallery_cell_template, gallery_cell_height, cur_class="classColorAll";
 
 function filterClassSort() {
   let existed_index = 0;
     gallery_div.children().each(function(index) {
-      if ($(this).attr("category_class") != cur_class  && cur_class != "all") {
+      if ($(this).attr("category_class") != cur_class  && cur_class != "classColorAll") {
         $(this).css({
             "opacity": "0.0"
         });
@@ -48,11 +48,11 @@ function filterClassSort() {
 }
 //------------------------------------------------------------------------
 function sortGallery(sortOrder) {
-  if (sortOrder == "new") {
+  if (sortOrder == "newest") {
       gallery_videos.sort(function(b, a) {
       return (a.year != b.year) ? (a.year - b.year) : (a.month != b.month) ? (a.month - b.month) : (a.day != b.day) ? (a.day - b.day) : 0
     })
-  } else if (sortOrder == "old") {
+  } else if (sortOrder == "oldest") {
       gallery_videos.sort(function(a, b) {
       return (a.year != b.year) ? (a.year - b.year) : (a.month != b.month) ? (a.month - b.month) : (a.day != b.day) ? (a.day - b.day) : 0
     })
@@ -152,6 +152,10 @@ $(document).ready(function (e) {
   });
 });
 $(window).on('load', function (e) {
+  // Pre sort videos newset
+  gallery_videos.sort(function(b, a) {
+    return (a.year != b.year) ? (a.year - b.year) : (a.month != b.month) ? (a.month - b.month) : (a.day != b.day) ? (a.day - b.day) : 0
+  })
   // Get elements after document ready.
   sorting_div = $("#sorting-div");
   sorting_btn = $("#sorting-btn");

@@ -35,25 +35,25 @@ body{
   text-shadow: 0 0 25px white;
 }
 /* Color Class */
-.all {
+.classColorAll {
   background-color: #626f75;
 }
-.general {
+.classColor1 {
   background-color: #ef6236;
 }
-.phy {
+.classColor2 {
   background-color: #789e4c;
 }
-.music {
+.classColor3 {
   background-color: #578ab3;
 }
-.art {
+.classColor4 {
   background-color: #dc8f1d;
 }
-.edu {
+.classColor5 {
   background-color: #713e79;
 }
-.camp {
+.classColor6 {
   background-color: #96553d;
 }
 /* Filter Button Group */
