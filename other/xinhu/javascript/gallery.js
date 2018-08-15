@@ -60,6 +60,21 @@ function sortGallery(sortOrder) {
   galleryInitial();
   filterClassSort();
 }
+function category2class(category) {
+  if (category == "活動") {
+      return "classColor1"
+  } else if (category == "體育") {
+      return "classColor2"
+  } else if (category == "音樂") {
+      return "classColor3"
+  } else if (category == "美術") {
+      return "classColor4"
+  } else if (category == "教育") {
+      return "classColor5"
+  } else if (category == "其他") {
+      return "classColor6"
+  }
+}
 function filterClass(category_class) {
   cur_class = category_class
   filterClassSort();

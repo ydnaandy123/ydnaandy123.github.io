@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>新湖國小獎盃專區</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Xinhu Elementary School, 新湖國小">    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/medal.css">
+    <link rel="stylesheet" href="css/animation.css">
+</head>
+
+<body>    
+    <!-- TOP Division -->
+    <div id="top-div">        
+        <div class="bg-filter">
+            <div class="center-block">
+                獎盃專區
+            </div>            
+        </div>
+    </div>     
+    <!-- Button Group -->
+    <div id="filterButton" class="row no-gutters bg-dark">
+        <div class="col col-md-auto">
+            <button class="classColorAll" onclick="filterClass('classColorAll')">全部</button>
+        </div>
+        <div class="col col-md-auto">
+            <button class="classColor1" onclick="filterClass('classColor1')">健康促進類</button>
+        </div>
+        <div class="col col-md-auto">
+            <button class="classColor2" onclick="filterClass('classColor2')">數學類</button>
+        </div>
+        <div class="col col-md-auto">
+            <button class="classColor3" onclick="filterClass('classColor3')">民俗體育類</button>
+        </div>
+        <div class="col col-md-auto">
+            <button class="classColor4" onclick="filterClass('classColor4')">體育類</button>
+        </div>
+    </div>     
+    <!-- Sorting Division -->
+    <div id="sorting-div" class="classColorAll">
+        <div class="dropdown text-right">
+            <button id="sorting-btn" class="btn classColorAll" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                SORT BY<i class="fas fa-2x fa-sort-amount-down ml-2"></i>
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">                
+                <button class="dropdown-item" onclick="sortGallery('oldest')">Date added (oldest)</button>
+                <button class="dropdown-item" onclick="sortGallery('newest')">Date added (newest)</button>
+            </div>
+        </div>
+    </div>
+    <!-- Gallery Division -->
+    <div id="gallery-div" class="classColorAll" data-cur-class="classColorAll">
+        <div id="gallery-cell-template" class="gallery-cell pb-2" title="台北市內湖區第三屆區長盃 跆拳道錦標賽 國小組">                        
+            <div class="row no-gutters align-items-center">
+                <!-- Thumbnail-->
+                <div class="col-6 col-lg-12">
+                    <a class="modal-link" data-toggle="modal" data-target="#exampleModal">
+                        <img class="cell-image" src="src/medal.jpg">
+                    </a>
+                </div>
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <img class="cell-image" src="src/medal.jpg">
+                            </div>                                
+                            <div class="cell-title">台北市內湖區第三屆區長盃 跆拳道錦標賽 國小組</div>
+                            <div class="cell-rank">
+                                名次:<span class="pl-2">冠軍</span>
+                            </div>
+                            <div class="cell-unit">
+                                頒獎單位:<span class="pl-2">中華民國跆拳道協會</span>
+                            </div> 
+                        </div>
+                    </div>
+                </div>                
+                <!-- Description-->
+                <div class="col-6 col-lg-12 video-description pt-2 pl-3 pl-md-2 pr-4 pr-md-0">
+                    <a class="modal-link" data-toggle="modal" data-target="#exampleModal">
+                        <div class="cell-title">台北市內湖區第三屆區長盃 跆拳道錦標賽 國小組</div>
+                    </a>
+                    <div class="cell-rank pt-3 pt-md-2" title="冠軍">
+                        名次:<span class="pl-2">冠軍</span>
+                    </div>
+                    <div class="cell-unit" titile="中華民國跆拳道協會">
+                        頒獎單位:<span class="pl-2">中華民國跆拳道協會</span>
+                    </div>                    
+                    <div class="row align-items-center justify-content-between no-gutters pt-2 pb-1">
+                        <p class="cell-date col-12 col-lg-auto" title="2018-3-12">2018-3-12</p>
+                        <p class="cell-category col-12 col-lg-auto pr-2" title="音樂">
+                            <button onclick="filterClass('music')">音樂</button>
+                        </p>
+                    </div>
+                </div>            
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer-div" class="py-3 text-white bg-dark">
+        <div class="row justify-content-center align-items-center no-gutters">
+            <div class="col-auto">
+                <a href="#top-div" title="To Top">
+                    <i class="fas fa-angle-up fa-2x"></i>
+                </a>
+            </div>
+            <!--
+            <div class="w-100 py-1"></div>
+            <div class="col-auto">
+                <a href="#" target="_blank">
+                    <i class="fab fa-youtube fa-2x"></i>
+                </a>
+                <a href="#" target="_blank">
+                    <i class="fab fa-twitter fa-2x"></i>
+                </a>
+            </div>
+            -->
+            <div class="w-100 py-2"></div>
+            <div id="copyright" class="text-center col-8 col-md-auto">
+                Copyright ©2018 <a href="http://www.shes.tp.edu.tw/" target="_blank">新湖國小</a> 版權所有 All rights reserved.
+            </div>
+        </div>
+    </footer>
+    <!-- jQuery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- jQuery local fallback -->
+    <script>
+        window.jQuery || document.write('<script src="javascript/jquery-3.3.1.min.js"><\/script>')
+    </script>
+    <script src="javascript/popper.min.js"></script>
+    <!-- Bootstrap JS CDN -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <!-- Bootstrap JS local fallback -->
+    <script>
+        if (typeof ($.fn.modal) === 'undefined') {
+            document.write('<script src="javascript/bootstrap.min.js"><\/script>')
+        }
+    </script>
+    <script src="javascript/parallax.min.js"></script>
+    <script src="javascript/medal_data.js"></script>
+    <script src="javascript/medal.js"></script>
+</body>
+
+</html>

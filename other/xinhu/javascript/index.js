@@ -14,13 +14,15 @@ $(document).ready(function (e) {
   $(window).scroll(function () {
     animatedObjectCheck();
   });  
+  /*
   $("#grid-2_2-wrap").hover(function(){  
     $("#grid-2_2").css("background-color", "rgba(0, 0, 0, 0.0)"); 
     $("#intro-text4").css("opacity", "0"); 
     }, function(){  
     $("#grid-2_2").css("background-color", "rgba(0, 0, 0, 0.8)");  
     $("#intro-text4").css("opacity", "1"); 
-  });   
+  });
+  */   
   $('.carousel').bcSwipe({ threshold: 50 });
 });
 
