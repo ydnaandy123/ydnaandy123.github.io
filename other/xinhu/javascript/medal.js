@@ -90,7 +90,7 @@ function changeTopBackground(){
 }
 function filterClass(category_class) {
   cur_class = category_class
-  changeTopBackground();
+  //changeTopBackground();
   filterClassSort();
 }
 function galleryInitial() {
