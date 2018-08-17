@@ -119,7 +119,7 @@ function galleryInitial() {
     cur_gallery_cell.attr("title", gallery_videos[i]["獎項名稱"]);
     cur_gallery_cell.attr("category_class", cell_category_class)
     // Image
-    cur_gallery_cell.find("img").attr("src", "src/medal.jpg");
+    cur_gallery_cell.find("img").attr("src", "src/medal_HQ.jpg");
     cur_gallery_cell.find(".modal-link").attr("data-target", "#exampleModal" + i);
     cur_gallery_cell.find(".modal").attr("id", "exampleModal" + i)
     // Description
@@ -186,9 +186,9 @@ $(document).ready(function (e) {
 });
 $(window).on('load', function (e) {
   // Pre sort videos newset
-  gallery_videos.sort(function(b, a) {
-    return (a.year != b.year) ? (a.year - b.year) : (a.month != b.month) ? (a.month - b.month) : (a.day != b.day) ? (a.day - b.day) : 0
-  })
+  //gallery_videos.sort(function(b, a) {
+  //  return (a.year != b.year) ? (a.year - b.year) : (a.month != b.month) ? (a.month - b.month) : (a.day != b.day) ? (a.day - b.day) : 0
+  //})
   // Get elements after document ready.
   sorting_div = $("#sorting-div");
   sorting_btn = $("#sorting-btn");
