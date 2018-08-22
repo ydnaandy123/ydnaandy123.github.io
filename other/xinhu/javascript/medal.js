@@ -119,7 +119,9 @@ function galleryInitial() {
     cur_gallery_cell.attr("title", gallery_videos[i]["獎項名稱"]);
     cur_gallery_cell.attr("category_class", cell_category_class)
     // Image
-    cur_gallery_cell.find("img").attr("src", "src/medal_HQ.jpg");
+    cur_gallery_cell.find(".modal-link img").attr("src", "src/medalPhotos/"+ (i+1) + ".jpg");
+    cur_gallery_cell.find(".modal-body img").attr("src", "src/medalPhotos/"+ (i+1) + ".jpg");
+    cur_gallery_cell.find(".modal-body a").attr("href", "src/medalPhotos/"+ (i+1) + ".jpg");
     cur_gallery_cell.find(".modal-link").attr("data-target", "#exampleModal" + i);
     cur_gallery_cell.find(".modal").attr("id", "exampleModal" + i)
     // Description

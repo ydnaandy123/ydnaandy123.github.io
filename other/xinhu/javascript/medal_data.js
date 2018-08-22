@@ -2330,27 +2330,5 @@ var gallery_videos = [
     "year": 2001,
     "month": 6,
     "day": 3
-  },
-  {
-    "序號": null,
-    "類別": "",
-    "得獎時間": null,
-    "獎項名稱": "",
-    "名次": "",
-    "頒獎單位": "",
-    "year": null,
-    "month": null,
-    "day": null
-  },
-  {
-    "序號": null,
-    "類別": "",
-    "得獎時間": null,
-    "獎項名稱": "",
-    "名次": "",
-    "頒獎單位": "",
-    "year": null,
-    "month": null,
-    "day": null
   }
  ];
