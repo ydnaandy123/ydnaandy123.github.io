@@ -111,6 +111,7 @@ function galleryInitial() {
       });
     }
     // Get Metadata
+    let cell_category_id = gallery_videos[i]["序號"];
     let cell_category = gallery_videos[i]["類別"];
     let cell_category_class = category2class(cell_category);
     let cell_date = gallery_videos[i]["year"] + "-" + gallery_videos[i]["month"] + "-" + gallery_videos[i]["day"];
@@ -118,10 +119,11 @@ function galleryInitial() {
     cur_gallery_cell.attr("id", "gallery_cell_" + i);
     cur_gallery_cell.attr("title", gallery_videos[i]["獎項名稱"]);
     cur_gallery_cell.attr("category_class", cell_category_class)
-    // Image
-    cur_gallery_cell.find(".modal-link img").attr("src", "src/medalPhotos/"+ (i+1) + ".jpg");
-    cur_gallery_cell.find(".modal-body img").attr("src", "src/medalPhotos/"+ (i+1) + ".jpg");
-    cur_gallery_cell.find(".modal-body a").attr("href", "src/medalPhotos/"+ (i+1) + ".jpg");
+    // Image    
+    cur_gallery_cell.find(".modalThumbnail img").attr("src", "src/medalPhotosDownsize/"+ cell_category_id + "_downsize.jpg");
+    cur_gallery_cell.find(".modalThumbnail a").attr("href", "src/medalPhotos/"+ cell_category_id + ".jpg");
+    cur_gallery_cell.find(".modal-body img").attr("src", "src/medalPhotosDownsize/"+ cell_category_id + "_downsize.jpg");
+    cur_gallery_cell.find(".modal-body a").attr("href", "src/medalPhotos/"+ cell_category_id + ".jpg");    
     cur_gallery_cell.find(".modal-link").attr("data-target", "#exampleModal" + i);
     cur_gallery_cell.find(".modal").attr("id", "exampleModal" + i)
     // Description
@@ -188,9 +190,9 @@ $(document).ready(function (e) {
 });
 $(window).on('load', function (e) {
   // Pre sort videos newset
-  //gallery_videos.sort(function(b, a) {
-  //  return (a.year != b.year) ? (a.year - b.year) : (a.month != b.month) ? (a.month - b.month) : (a.day != b.day) ? (a.day - b.day) : 0
-  //})
+  gallery_videos.sort(function(b, a) {
+    return (a.year != b.year) ? (a.year - b.year) : (a.month != b.month) ? (a.month - b.month) : (a.day != b.day) ? (a.day - b.day) : 0
+  })
   // Get elements after document ready.
   sorting_div = $("#sorting-div");
   sorting_btn = $("#sorting-btn");

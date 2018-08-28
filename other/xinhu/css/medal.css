@@ -23,11 +23,6 @@ body{
 /* TOP */
 #top-div{
   position: relative;
-  background-image: url(../src/aa10.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  transition-duration: .8s;
   height: 25%;
 }
 #top-div .bg-filter{
@@ -110,8 +105,12 @@ body{
 }
 /* Gallery Division */
 #gallery-div{
+  height: 100%;
   position: relative;
   margin: 0 auto;
+}
+#gallery-cell-template{
+  display: none;
 }
 #gallery-div .gallery-cell {
   width: 100%;
