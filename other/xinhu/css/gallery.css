@@ -113,10 +113,11 @@ body{
   width: 100%;
   position: absolute;
   transition: all .8s ease;
+  background-color: rgba(255, 255, 255, 0.6)
 }
 #gallery-div .gallery-cell:hover {
   box-shadow: 0 0 10px black;
-  background-color: rgba(255, 255, 255, 0.9)
+  background-color: rgba(255, 255, 255, 1.0)
 }
 #gallery-div .gallery-cell .cell-image {
   max-width: 100%;
