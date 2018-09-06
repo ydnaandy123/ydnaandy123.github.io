@@ -161,7 +161,14 @@ span.text-zh{
   background-color: rgba(0, 0, 0, 0);
 }
 #about-cores .card .card-title{
-  font-size: 25px;
+  font-size: 26px;
+}
+#about-cores .card .card-text{
+  font-size: 18px;
+}
+#about-cores .core-item div{
+  letter-spacing: 3px;
+  margin: 5px 0px;
 }
 #about-div .blockquote-footer {
   color: white;
@@ -224,6 +231,13 @@ span.text-zh{
 }
 #history-div .foreground-div .container{
   background-color: rgba(255, 255, 255, 0.6);
+}
+#history-div .foreground-div .container div{
+  max-width: 700px; 
+  margin: auto;
+}
+#history-div .foreground-div .container h4{  
+  margin-bottom: 15px;
 }
 #history-div hr.div-hr{
   color:black;
