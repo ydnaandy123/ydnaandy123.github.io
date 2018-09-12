@@ -105,15 +105,17 @@ body{
 }
 /* Gallery Division */
 #gallery-div{
+  height: 100%;
   position: relative;
   margin: 0 auto;
 }
+#gallery-cell-template{
+  display: none;
+}
 #gallery-div .gallery-cell {
-  border-radius: 10px;
   width: 100%;
   position: absolute;
   transition: all .8s ease;
-  background-color: rgba(255, 255, 255, 0.6)
 }
 #gallery-div .gallery-cell:hover {
   box-shadow: 0 0 10px black;
@@ -124,8 +126,8 @@ body{
   height: auto;
 }
 #gallery-div .gallery-cell .cell-title h6 {
-  font-weight: 600;
-  font-size: 1.7em;
+  font-weight: 560;
+  font-size: 1.7rem;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;

@@ -132,6 +132,8 @@ body{
 #gallery-div .gallery-cell .cell-title {
   font-size: 1.5rem;
   overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   color: black;
 }
 #gallery-div .gallery-cell .cell-title:hover {
@@ -197,6 +199,9 @@ body{
   #gallery-div .gallery-cell {
     width: 19%;
     max-width:  320px;
+  }  
+  #gallery-div .gallery-cell .cell-title {
+    white-space: normal;
   }
   #filterButton button {    
     padding: 25px 25px;
