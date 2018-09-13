@@ -7,6 +7,9 @@ body {
   overflow-y: scroll;
   position: relative;
 }
+.img_highres{
+  display: none;
+}
 /* NavBar */
 #top-nav{
   background-color: rgba(0, 0, 0, 0.0);
@@ -112,7 +115,7 @@ i.fab:hover{
 }
 /* Hero Image GRADUATION */
 #graduation-wrapper {
-  height: 70%;
+  height: 420px;
   position: relative;  
 }
 .center-block {
@@ -130,7 +133,7 @@ i.fab:hover{
 }
 /* Publications Division */
 #publications-bg{
-  background-image: url('src/conference.jpg');
+  background-image: url('src/background_conference.jpg');
   opacity: 0.15;
 }
 .pub-meta{
@@ -144,7 +147,7 @@ i.fab:hover{
 }
 /* Hero Image MILITARY */
 #military-wrapper {
-  height: 70%;
+  height: 400px;
   position: relative;
 }
 /* Work Division */
