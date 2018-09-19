@@ -21,25 +21,9 @@ body{
   transform: translate(-50%, -50%);
 }
 /* TOP */
-#top-div img{
+#top-div{
   position: relative;
-  overflow: hidden;
-}
-#top-div img{
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  width: 100%;
-  transition-duration: .7s;
-  opacity: 0.0;
-}
-#top-div #top-img0{
-  opacity: 1.0;
-}
-#top-div #top-img-blank{
-  position: relative;
-  width: 100%;
-  visibility: hidden;
+  height: 25%;
 }
 #top-div .bg-filter{
   height: 100%;
@@ -121,6 +105,7 @@ body{
 }
 /* Gallery Division */
 #gallery-div{
+  height: 100%;
   position: relative;
   margin: 0 auto;
 }
@@ -128,10 +113,13 @@ body{
   display: none;
 }
 #gallery-div .gallery-cell {
-  position: relative;
-  transition: all .6s ease;
+  width: 100%;
+  position: absolute;
+  transition: all .8s ease;
 }
 #gallery-div .gallery-cell:hover {
+  box-shadow: 0 0 10px black;
+  background-color: rgba(255, 255, 255, 1.0)
 }
 #gallery-div .gallery-cell .cell-image {
   max-width: 100%;
@@ -140,6 +128,9 @@ body{
 #gallery-div .gallery-cell .cell-title h6 {
   font-weight: 560;
   font-size: 1.7rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   color: black;
 }
 #gallery-div .gallery-cell .cell-title:hover {
@@ -185,8 +176,19 @@ body{
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) { 
+  #top-div {
+    height: 60%;
+  }
+  #top-div .center-block{
+    font-size: 5em;
+    letter-spacing: 3px;
+  }
   #filterButton button{
     font-size: 1.8rem;
+  }
+  #gallery-div .gallery-cell {
+    width: 24%;
+    max-width:  320px;
   }
   #filterButton button {    
     padding: 25px 25px;

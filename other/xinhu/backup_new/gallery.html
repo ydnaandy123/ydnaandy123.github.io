@@ -7,22 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords" content="Xinhu Elementary School, 新湖國小">    
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">    
-    <link rel="stylesheet" href="css/animation.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/gallery.css">
+    <link rel="stylesheet" href="css/animation.css">
 </head>
 
 <body>    
     <!-- TOP Division -->
-    <div id="top-div">   
-        <img id="top-img-blank" src="src/gallery_cover_blank.jpg">
-        <img id="top-img0" src="src/gallery_cover0.jpg">
-        <img id="top-img1" src="src/gallery_cover1.jpg">
-        <img id="top-img2" src="src/gallery_cover2.jpg">
-        <img id="top-img3" src="src/gallery_cover3.jpg">
-        <img id="top-img4" src="src/gallery_cover4.jpg">
-        <img id="top-img5" src="src/gallery_cover5.jpg">
-        <img id="top-img6" src="src/gallery_cover6.jpg">
+    <div id="top-div" data-speed="0.2" data-parallax="scroll" data-image-src="src/kid7.jpg" 
+    data-nature-width="934" data-nature-height="702">        
+        <div class="bg-filter">
+            <div class="center-block">
+                活動影片專區
+            </div>            
+        </div>
     </div>     
     <!-- Button Group -->
     <div id="filterButton" class="row no-gutters bg-dark">
@@ -60,45 +58,17 @@
             </div>
         </div>
     </div>
-    <div id="gallery-div" class="classColorAll">
-        <div class="container">                
-            <div class="row pt-2" class="classColorAll" data-cur-class="classColorAll">
-                <div id="gallery-cell-template" class="gallery-cell col-12 col-md-6 col-lg-3 my-2 pt-2" title="20180310新湖國小全國音樂賽">                        
-                    <div class="row no-gutters align-items-center">
-                        <!-- Thumbnail-->
-                        <div class="col-6 col-lg-12">
-                            <a href="http://www.youtube.com/watch?v=kQPnbimrj_c" target="_blank">
-                                <img class="cell-image" src="https://img.youtube.com/vi/kQPnbimrj_c/mqdefault.jpg">
-                            </a>
-                        </div>
-                        <!-- Description-->
-                        <div class="col-6 col-lg-12 video-description pt-2 pl-2">
-                            <a class="cell-title" href="http://www.youtube.com/watch?v=kQPnbimrj_c" target="_blank">
-                                <h6>20180310新湖國小全國音樂賽</h6>
-                            </a>
-                            <div class="row align-items-center justify-content-between no-gutters">
-                                <p class="cell-date col-12 ">2018-3-12</p>
-                                <p class="cell-category col-12" title="音樂">
-                                    <button onclick="filterClass('music')">音樂</button>
-                                </p>
-                            </div>
-                        </div>            
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Gallery Division 
+    <!-- Gallery Division -->
     <div id="gallery-div" class="classColorAll" data-cur-class="classColorAll">
         <div id="gallery-cell-template" class="gallery-cell" title="20180310新湖國小全國音樂賽">                        
             <div class="row no-gutters align-items-center">
-                <!- - Thumbnail- ->
+                <!-- Thumbnail-->
                 <div class="col-6 col-lg-12">
                     <a href="http://www.youtube.com/watch?v=kQPnbimrj_c" target="_blank">
                         <img class="cell-image" src="https://img.youtube.com/vi/kQPnbimrj_c/mqdefault.jpg">
                     </a>
                 </div>
-                <!- - Description- ->
+                <!-- Description-->
                 <div class="col-6 col-lg-12 video-description pt-2 pl-2">
                     <a class="cell-title" href="http://www.youtube.com/watch?v=kQPnbimrj_c" target="_blank">
                         <h6>20180310新湖國小全國音樂賽</h6>
@@ -113,7 +83,7 @@
             </div>
         </div>
     </div>
-    -->
+
     <!-- Footer -->
     <footer id="footer-div" class="py-3 text-white bg-dark">
         <div class="row justify-content-center align-items-center no-gutters">
