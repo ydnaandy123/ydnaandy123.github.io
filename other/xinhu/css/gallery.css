@@ -73,8 +73,6 @@ body{
   background-color: #96553d;
 }
 /* Filter Button Group */
-#filterButton {
-}
 #filterButton button {
   cursor: pointer;
   color: white;
@@ -131,8 +129,6 @@ body{
   position: relative;
   transition: all .6s ease;
 }
-#gallery-div .gallery-cell:hover {
-}
 #gallery-div .gallery-cell .cell-image {
   max-width: 100%;
   height: auto;
@@ -145,7 +141,7 @@ body{
 #gallery-div .gallery-cell .cell-title:hover {
   text-decoration: none;
 }
-#gallery-div .gallery-cell .cell-date {
+#gallery-div .gallery-cell .cell-date {  
   font-size: 1.5em;
 }
 #gallery-div .gallery-cell button{  

@@ -55,8 +55,8 @@
                 SORT BY<i class="fas fa-2x fa-sort-amount-down ml-2"></i>
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">                
-                <button class="dropdown-item" onclick="sortGallery('oldest')">Date added (oldest)</button>
-                <button class="dropdown-item" onclick="sortGallery('newest')">Date added (newest)</button>
+                <button class="dropdown-item" onclick="sortGallery('oldest')">Date (oldest)</button>
+                <button class="dropdown-item" onclick="sortGallery('newest')">Date (newest)</button>
             </div>
         </div>
     </div>
@@ -64,7 +64,7 @@
         <div class="container">                
             <div class="row pt-2" class="classColorAll" data-cur-class="classColorAll">
                 <div id="gallery-cell-template" class="gallery-cell col-12 col-md-6 col-lg-3 my-2 pt-2" title="20180310新湖國小全國音樂賽">                        
-                    <div class="row no-gutters align-items-center">
+                    <div class="row no-gutters">
                         <!-- Thumbnail-->
                         <div class="col-6 col-lg-12">
                             <a href="http://www.youtube.com/watch?v=kQPnbimrj_c" target="_blank">
@@ -76,9 +76,9 @@
                             <a class="cell-title" href="http://www.youtube.com/watch?v=kQPnbimrj_c" target="_blank">
                                 <h6>20180310新湖國小全國音樂賽</h6>
                             </a>
-                            <div class="row align-items-center justify-content-between no-gutters">
-                                <p class="cell-date col-12 ">2018-3-12</p>
-                                <p class="cell-category col-12" title="音樂">
+                            <div class="row align-items-center no-gutters">
+                                <p class="cell-date col-6 col-md-12">2018-3-12</p>
+                                <p class="cell-category text-right text-md-left col-6 col-md-12" title="音樂">
                                     <button onclick="filterClass('music')">音樂</button>
                                 </p>
                             </div>

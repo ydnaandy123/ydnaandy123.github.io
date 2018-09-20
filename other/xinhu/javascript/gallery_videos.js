@@ -42,4 +42,4 @@
 {"title":"20160620貓熊快閃在新湖","ID":"GSJHd_5QaNQ","month":6.00,"day":20.00,"year":2016.00,"category":"美術"},
 {"title":"20160414幸福雪花祭","ID":"9eajoShw9k0","month":4.00,"day":14.00,"year":2016.00,"category":"美術"},
 {"title":"20160618回收再利用 快閃黑白紙熊貓變彩色 中視新聞","ID":"UHeLJyqj0iU","month":6.00,"day":18.00,"year":2016.00,"category":"美術"},
-{"title":"新湖李弘仁老師專題報導杏壇芬芳奬得主～身心奉獻為教育","ID":"AtKE8IycOzo","month":9.00,"day":12.00,"year":2018.00,"category":"教育"}];
+{"title":"新湖李弘仁老師專題報導杏壇芬芳奬得主","ID":"AtKE8IycOzo","month":9.00,"day":12.00,"year":2018.00,"category":"教育"}];
