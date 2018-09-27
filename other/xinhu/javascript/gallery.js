@@ -134,6 +134,18 @@ function animatedObjectCheck(){
 $(document).ready(function (e) {
   // Debug
   checkDuplicateID();
+  // Pre sort videos newset
+  gallery_videos.sort(function(b, a) {
+    return (a.year != b.year) ? (a.year - b.year) : (a.month != b.month) ? (a.month - b.month) : (a.day != b.day) ? (a.day - b.day) : 0
+  })
+  // Get elements after document ready.
+  sorting_div = $("#sorting-div");
+  sorting_btn = $("#sorting-btn");
+  gallery_div_row = $("#gallery-div .container .row");
+  gallery_div = $("#gallery-div");
+  gallery_cell_template = $("#gallery-cell-template").clone();
+  galleryInitial();
+  animatedObjectCheck();
   // Smooth Scroll
   $("footer a[href='#top-div']").on('click', function (event) {
     console.log(this.hash)
@@ -148,18 +160,6 @@ $(document).ready(function (e) {
   });
 });
 $(window).on('load', function (e) {
-  // Pre sort videos newset
-  gallery_videos.sort(function(b, a) {
-    return (a.year != b.year) ? (a.year - b.year) : (a.month != b.month) ? (a.month - b.month) : (a.day != b.day) ? (a.day - b.day) : 0
-  })
-  // Get elements after document ready.
-  sorting_div = $("#sorting-div");
-  sorting_btn = $("#sorting-btn");
-  gallery_div_row = $("#gallery-div .container .row");
-  gallery_div = $("#gallery-div");
-  gallery_cell_template = $("#gallery-cell-template").clone();
-  galleryInitial();
-  animatedObjectCheck();
 })
 function category2class(category) {
   if (category == "活動") {
