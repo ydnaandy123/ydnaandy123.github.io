@@ -43,5 +43,6 @@
 {"title":"20160414幸福雪花祭","ID":"9eajoShw9k0","month":4.00,"day":14.00,"year":2016.00,"category":"美術"},
 {"title":"20160618回收再利用 快閃黑白紙熊貓變彩色 中視新聞","ID":"UHeLJyqj0iU","month":6.00,"day":18.00,"year":2016.00,"category":"美術"},
 {"title":"新湖李弘仁老師專題報導杏壇芬芳奬得主","ID":"AtKE8IycOzo","month":9.00,"day":12.00,"year":2018.00,"category":"教育"},
-{"title":"20180926教師節活動","ID":"hz_HeE5ewaM","month":9.00,"day":26.00,"year":2018.00,"category":"活動"},
-{"title":"1070928新湖國小教師節敬師活動","ID":"kgmGFwRyzXI","month":9.00,"day":26.00,"year":2018.00,"category":"活動"}];
+{"title":"20180925教師節活動","ID":"hz_HeE5ewaM","month":9.00,"day":26.00,"year":2018.00,"category":"活動"},
+{"title":"1070928新湖國小教師節敬師活動","ID":"kgmGFwRyzXI","month":9.00,"day":25.00,"year":2018.00,"category":"活動"},
+{"title":"20180925節水體驗活動","ID":"WPiC8RhE1PA","month":9.00,"day":25.00,"year":2018.00,"category":"活動"}];
