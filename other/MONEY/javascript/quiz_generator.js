@@ -124,9 +124,15 @@ function checkDuplicateID() {
           console.warn('Multiple IDs #' + this.id);
   });
 }
+$("input[type='number']").on("click", function () {
+  $(this).select();
+});
 $(document).ready(function (e) {
   // Debug
   checkDuplicateID();
+  
+  $('#input_quizzes1').focus()
+  $('#input_quizzes1').select()
 });
 $(window).on('load', function (e) {
 })

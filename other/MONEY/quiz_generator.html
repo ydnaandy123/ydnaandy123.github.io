@@ -12,39 +12,41 @@
         <div class="container">
           <div class="row">
             <div class="col-6 col-md-3">
-              <input type="text" id="input_quizzes1" onchange="Yo()" value="0" autofocus>
-              <div>
-                  <button class="btn btn-primary" onclick="add('input_quizzes1')">+</button>
-                  <button class="btn btn-outline-primary" onclick="sub('input_quizzes1')">-</button>
-              </div>
+              上衣: <input type="number" id="input_quizzes1" style="width: 7em" onchange="Yo()" value="0" autofocus>
             </div>
             <div class="col-6 col-md-3">
-              <input type="text" cols="50" id="input_quizzes2" onchange="Yo()" value="0">
-              <div>
+              褲子: <input type="number" cols="50" id="input_quizzes2" style="width: 7em" onchange="Yo()" value="0">
+            </div>
+            <div class="col-6 col-md-3">
+              外套: <input type="number" id="input_quizzes3" style="width: 7em" onchange="Yo()" value="0" >
+            </div>
+            <div class="col-6 col-md-3">
+              收錢: <input type="number" id="input_quizzes4" style="width: 7em" onchange="Yoo()" value="0" >
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6 col-md-3">
+              <button class="btn btn-primary" onclick="add('input_quizzes1')">+</button>
+              <button class="btn btn-outline-primary" onclick="sub('input_quizzes1')">-</button>
+            </div>
+            <div class="col-6 col-md-3">
               <button class="btn btn-primary" onclick="add('input_quizzes2')">+</button>
               <button class="btn btn-outline-primary" onclick="sub('input_quizzes2')">-</button>
-
-              </div>
             </div>
             <div class="col-6 col-md-3">
-              <input type="text" id="input_quizzes3" onchange="Yo()" value="0" >
-              <div>
               <button class="btn btn-primary" onclick="add('input_quizzes3')">+</button>
               <button class="btn btn-outline-primary" onclick="sub('input_quizzes3')">-</button>
-
-              </div>
             </div>
             <div class="col-6 col-md-3">
-              <input type="text" id="input_quizzes4" onchange="Yoo()" value="0" >
-              <div>
-              </div>
             </div>
           </div>
         </div>
         
-        <p id="sampled_quizzes_property"></p>
-        <a id="downloadAnchorElem" style="display:none">download</a>
-        <p id="sampled_quizzes"></p>
+        <div class="container">
+          <p id="sampled_quizzes_property"></p>
+          <a id="downloadAnchorElem" style="display:none">download</a>
+          <p id="sampled_quizzes"></p>
+        </div>
 
 
         <!-- jQuery CDN -->
