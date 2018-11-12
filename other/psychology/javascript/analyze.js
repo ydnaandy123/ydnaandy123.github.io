@@ -181,31 +181,6 @@ function analyzeInitial(){
 }
 function quizAnalyze(quizzes){
   for(let i=0; i<quizzes.length; i++){
-    quizzes[i]["題目"] = String(i+1) + "." + quizzes[i]["題目"];
-    let quiz_element = $("<span></span>").text(quizzes[i]["題目"]).addClass("px-2"); 
-    if(quizzes[i]["正面負面"] == "negative"){
-      quiz_element.addClass("review_red")
-    }
-    if(quizzes[i]["向度"] == "A"){
-      $("#quiz_type1").append(quiz_element)
-    }
-    else if(quizzes[i]["向度"] == "B"){
-      $("#quiz_type2").append(quiz_element)
-    }
-    else if(quizzes[i]["向度"] == "C"){
-      $("#quiz_type3").append(quiz_element)
-    }
-    else if(quizzes[i]["向度"] == "D"){
-      $("#quiz_type4").append(quiz_element)
-    }
-    else if(quizzes[i]["向度"] == "E"){
-      $("#quiz_type5").append(quiz_element)
-    }     
-  }
-  return quizzes;
-}
-function quizAnalyzeTeacher(quizzes){
-  for(let i=0; i<quizzes.length; i++){
     let quiz_element = $("<span></span>").text(quizzes[i]["題目"]).addClass("px-2"); 
     if(quizzes[i]["正面負面"] == "negative"){
       quiz_element.addClass("review_red")
@@ -227,41 +202,14 @@ function quizAnalyzeTeacher(quizzes){
     }     
   }
 }
-function calculateWeek3(){  
+function calculateWeek(week_number){  
   analyzeInitial();
-  let quizzes_text = document.getElementById("week3_quiz").value;
+  let quizzes_text = document.getElementById("week"+String(week_number)+"_quiz").value;
   let quizzes = JSON.parse(quizzes_text);
-  let score_text = document.getElementById("week3_score").value;
+  let score_text = document.getElementById("week"+String(week_number)+"_score").value;
   let score = JSON.parse(score_text);
-  quizzes = quizAnalyze(quizzes);
-  analyze(quizzes, score, 2)
-}
-function calculateWeek2(){  
-  analyzeInitial();
-  let quizzes_text = document.getElementById("week2_quiz").value;
-  let quizzes = JSON.parse(quizzes_text);
-  let score_text = document.getElementById("week2_score").value;
-  let score = JSON.parse(score_text);
-  quizzes = quizAnalyze(quizzes);
-  analyze(quizzes, score, 1)
-}
-function calculateWeek1(){  
-  analyzeInitial();
-  let quizzes_text = document.getElementById("week1_quiz").value;
-  let quizzes = JSON.parse(quizzes_text);
-  let score_text = document.getElementById("week1_score").value;
-  let score = JSON.parse(score_text);
-  quizzes = quizAnalyze(quizzes);
-  analyze(quizzes, score, 0)
-}
-function calculateTeacher(){  
-  analyzeInitial();
-  let quizzes_text = document.getElementById("teachear_quiz").value;
-  let quizzes = JSON.parse(quizzes_text);
-  let score_text = document.getElementById("teachear_score").value;
-  let score = JSON.parse(score_text);
-  quizAnalyzeTeacher(quizzes);
-  analyze(quizzes, score, 3)
+  quizAnalyze(quizzes);
+  analyze(quizzes, score, week_number);
 }
 function checkDuplicateID() {
   // Warning Duplicate IDs

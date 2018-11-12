@@ -72,19 +72,26 @@ function quizSample(){
   let sampled_quizzes_obj = [];
   for(let i = 0; i < 10; i++){
     sampled_quizzes_obj.push(quizzes[sampled_quiz_index[i]]);
+  } 
+  let sampled_quiz_text = "";                 
+  for(let i = 0; i < 10; i++){
+    sampled_quizzes_obj[i]["題目"]  = String(i+1) + '.' + sampled_quizzes_obj[i]["題目"] ;
+    sampled_quiz_text += ("<textarea cols='50' rows='1'>" + sampled_quizzes_obj[i]["題目"] + "</textarea><br/>")
   }                      
-  console.log(shuffle(sampled_quizzes_obj));    
+  document.getElementById("sampled_quizzes").innerHTML = sampled_quiz_text;
   var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(sampled_quizzes_obj));
   var dlAnchorElem = document.getElementById('downloadAnchorElem');
   dlAnchorElem.setAttribute("href",     dataStr     );
   dlAnchorElem.setAttribute("download", "quiz_meta.json");
   //dlAnchorElem.click(); 
   dlAnchorElem.setAttribute("style", "display:block");
-  let sampled_quiz_text = "";
-  for(let i = 0; i < 10; i++){
-    sampled_quiz_text += (String(i+1) + "." + sampled_quizzes_obj[i]["題目"] + "<br/>")
-  }
-  document.getElementById("sampled_quizzes").innerHTML = sampled_quiz_text;
+  
+  $("textarea").on("click", function () {
+    $(this).select();
+  });
+  $("textarea").on("focus", function () {
+    $(this).select();
+  });
 }
 function checkDuplicateID() {
   // Warning Duplicate IDs
@@ -94,8 +101,10 @@ function checkDuplicateID() {
           console.warn('Multiple IDs #' + this.id);
   });
 }
+$("textarea").on("focus", function () {
+  $(this).select();
+});
 $(document).ready(function (e) {
-  // Debug
   checkDuplicateID();
 });
 $(window).on('load', function (e) {
