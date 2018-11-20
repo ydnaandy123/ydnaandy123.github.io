@@ -49,4 +49,6 @@
 {"title":"新湖國小107學年度臺北市學生音樂比賽同聲合唱","ID":"C233doNX5Zw","month":10.00,"day":17.00,"year":2018.00,"category":"音樂"},
 {"title":"喜閱森林開幕活動","ID":"INLRKOhMmBA","month":10.00,"day":23.00,"year":2018.00,"category":"活動"},
 {"title":"107新湖國小管樂比賽","ID":"z5OCp5h6i0U","month":10.00,"day":31.00,"year":2018.00,"category":"音樂"},
-{"title":"視力保健闖關活動","ID":"C6vuXjcRyIU","month":11.00,"day":13.00,"year":2018.00,"category":"活動"}];
+{"title":"視力保健闖關活動","ID":"C6vuXjcRyIU","month":11.00,"day":13.00,"year":2018.00,"category":"活動"},
+{"title":"體育表演會預告片","ID":"G8qnj3p6ITw","month":11.00,"day":16.00,"year":2018.00,"category":"體育"},
+{"title":"20181115打家來打流感疫苗","ID":"vFAZN_rM9Mg","month":11.00,"day":15.00,"year":2018.00,"category":"其他"}];
