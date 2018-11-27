@@ -22,8 +22,13 @@ body{
 }
 /* TOP */
 #top-div{
+}
+#top-div img{
   position: relative;
-  height: 25%;
+  overflow: hidden;
+  left: 0px;
+  top: 0px;
+  width: 100%;
 }
 #top-div .bg-filter{
   height: 100%;
@@ -105,22 +110,20 @@ body{
 }
 /* Gallery Division */
 #gallery-div{
-  height: 100%;
   position: relative;
   margin: 0 auto;
 }
 #gallery-cell-template{
   display: none;
 }
-#gallery-div .gallery-cell {
-  width: 100%;
-  position: absolute;
-  transition: all .8s ease;
-  background-color: rgba(255, 255, 255, 0.6)
+#gallery-div .gallery-cell {  
+  position: relative;
+  transition: all .6s ease;
+  background-color: rgba(255, 255, 255, 0.0)
 }
 #gallery-div .gallery-cell:hover {
-  box-shadow: 0 0 10px black;
-  background-color: rgba(255, 255, 255, 1.0)
+  box-shadow: 0 0 0px black;
+  background-color: rgba(255, 255, 255, 0.0)
 }
 #gallery-div .gallery-cell .cell-image {
   max-width: 100%;
@@ -186,9 +189,6 @@ body{
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) { 
-  #top-div {
-    height: 60%;
-  }
   #top-div .center-block{
     font-size: 5em;
     letter-spacing: 3px;
@@ -196,10 +196,6 @@ body{
   #filterButton button{
     font-size: 1.8rem;
   }
-  #gallery-div .gallery-cell {
-    width: 19%;
-    max-width:  320px;
-  }  
   #gallery-div .gallery-cell .cell-title {
     white-space: normal;
   }

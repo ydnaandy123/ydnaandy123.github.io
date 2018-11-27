@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
 
 <head>
     <title>新湖國小獎盃專區</title>
@@ -23,13 +23,8 @@
     </div>
     -->     
     <!-- TOP Division -->
-    <div id="top-div" data-speed="0.2" data-parallax="scroll" data-image-src="src/aa10.jpg" 
-    data-nature-width="1600" data-nature-height="899">        
-        <div class="bg-filter">
-            <div class="center-block">
-                獎盃專區
-            </div>            
-        </div>
+    <div id="top-div">      
+        <img id="top-img6" src="src/medal/medal_cover2.jpg">
     </div>     
     <!-- Button Group -->
     <div id="filterButton" class="row no-gutters bg-dark">
@@ -62,16 +57,71 @@
         </div>
     </div>
     <!-- Gallery Division -->
+    <div id="gallery-div" class="classColorAll" data-cur-class="classColorAll">        
+        <div class="container">                
+            <div class="row pt-2" class="classColorAll" data-cur-class="classColorAll">
+                <div id="gallery-cell-template" class="gallery-cell pb-0 pb-md-1 col-12 col-md-6 col-lg-3" title="台北市內湖區第三屆區長盃 跆拳道錦標賽 國小組">                        
+                    <div class="row no-gutters align-items-center">
+                        <!-- Thumbnail-->
+                        <div class="col-6 col-lg-12 text-center modalThumbnail">
+                            <a target="_blank" href="src/medalPhotos/1.jpg">
+                                <img class="cell-image" src="src/medalPhotosDownsize/1_downsize.jpg">
+                            </a>
+                        </div>
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-body text-center">
+                                        <a target="_blank" href="src/medalPhotos/1.jpg">
+                                            <img class="cell-image" src="src/medalPhotosDownsize/1_downsize.jpg">
+                                        </a>                                
+                                    </div>                                
+                                    <div class="cell-title pl-2">台北市內湖區第三屆區長盃 跆拳道錦標賽 國小組</div>
+                                    <div class="cell-rank pl-2">
+                                        名次:<span class="pl-2">冠軍</span>
+                                    </div>
+                                    <div class="cell-unit pl-2 pb-2">
+                                        頒獎單位:<span class="pl-2">中華民國跆拳道協會</span>
+                                    </div> 
+                                </div>
+                            </div>
+                        </div>                
+                        <!-- Description-->
+                        <div class="col-6 col-lg-12 video-description pt-2 pl-3 pl-md-2 pr-4 pr-md-0">
+                            <a class="modal-link" data-toggle="modal" data-target="#exampleModal">
+                                <div class="cell-title">台北市內湖區第三屆區長盃 跆拳道錦標賽 國小組</div>
+                            
+                                <div class="cell-rank pt-3 pt-md-2" title="冠軍">
+                                    名次:<span class="pl-2">冠軍</span>
+                                </div>
+                                <div class="cell-unit" titile="中華民國跆拳道協會">
+                                    頒獎單位:<span class="pl-2">中華民國跆拳道協會</span>
+                                </div>                    
+                            </a>
+                            <div class="row align-items-center justify-content-between no-gutters pt-2 pb-1">
+                                <p class="cell-date col-12" title="2018-3-12">2018-3-12</p>
+                                <p class="cell-category col-12" title="音樂">
+                                    <button onclick="filterClass('music')">音樂</button>
+                                </p>
+                            </div>
+                        </div>            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+    <!-- Gallery Division
     <div id="gallery-div" class="classColorAll" data-cur-class="classColorAll">
         <div id="gallery-cell-template" class="gallery-cell pb-0 pb-md-1" title="台北市內湖區第三屆區長盃 跆拳道錦標賽 國小組">                        
             <div class="row no-gutters align-items-center">
-                <!-- Thumbnail-->
+                <!- - Thumbnail- ->
                 <div class="col-6 col-lg-12 text-center modalThumbnail">
                     <a target="_blank" href="src/medalPhotos/1.jpg">
                         <img class="cell-image" src="src/medalPhotosDownsize/1_downsize.jpg">
                     </a>
                 </div>
-                <!-- Modal -->
+                <!- - Modal - ->
                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
@@ -90,7 +140,7 @@
                         </div>
                     </div>
                 </div>                
-                <!-- Description-->
+                <!- - Description- ->
                 <div class="col-6 col-lg-12 video-description pt-2 pl-3 pl-md-2 pr-4 pr-md-0">
                     <a class="modal-link" data-toggle="modal" data-target="#exampleModal">
                         <div class="cell-title">台北市內湖區第三屆區長盃 跆拳道錦標賽 國小組</div>
@@ -112,6 +162,7 @@
             </div>
         </div>
     </div>
+    -->
 
     <!-- Footer -->
     <footer id="footer-div" class="py-3 text-white bg-dark">
