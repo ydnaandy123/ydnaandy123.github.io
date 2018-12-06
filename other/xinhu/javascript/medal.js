@@ -56,10 +56,10 @@ function galleryInitial() {
     cur_gallery_cell.attr("title", gallery_videos[i]["獎項名稱"]);
     cur_gallery_cell.attr("category_class", cell_category_class)
     // Image    
-    cur_gallery_cell.find(".modalThumbnail img").attr("src", "src/medalPhotosDownsize/"+ cell_category_id + "_downsize.jpg");
-    cur_gallery_cell.find(".modalThumbnail a").attr("href", "src/medalPhotos/"+ cell_category_id + ".jpg");
-    cur_gallery_cell.find(".modal-body img").attr("src", "src/medalPhotosDownsize/"+ cell_category_id + "_downsize.jpg");
-    cur_gallery_cell.find(".modal-body a").attr("href", "src/medalPhotos/"+ cell_category_id + ".jpg");    
+    cur_gallery_cell.find(".modalThumbnail img").attr("src", "src/medal/medalPhotosDownsize/"+ cell_category_id + "_downsize.jpg");
+    cur_gallery_cell.find(".modalThumbnail a").attr("href", "src/medal/medalPhotos/"+ cell_category_id + ".jpg");
+    cur_gallery_cell.find(".modal-body img").attr("src", "src/medal/medalPhotosDownsize/"+ cell_category_id + "_downsize.jpg");
+    cur_gallery_cell.find(".modal-body a").attr("href", "src/medal/medalPhotos/"+ cell_category_id + ".jpg");    
     cur_gallery_cell.find(".modal-link").attr("data-target", "#exampleModal" + i);
     cur_gallery_cell.find(".modal").attr("id", "exampleModal" + i)
     // Description
@@ -129,16 +129,14 @@ $(window).on('load', function (e) {
   animatedObjectCheck();
 })
 function category2class(category) {
-  if (category == "健康促進類") {
+  if (category == "數學") {
       return "classColor1"
-  } else if (category == "數學類") {
+  } else if (category == "民俗體育") {
       return "classColor2"
-  } else if (category == "民俗體育類") {
+  } else if (category == "體育") {
       return "classColor3"
-  } else if (category == "體育類") {
-      return "classColor4"
   } else if (category == "其他") {
-      return "classColor5"
+      return "classColor4"
   }
 }
 function changeTopBackground(){

@@ -21,8 +21,6 @@ body{
   transform: translate(-50%, -50%);
 }
 /* TOP */
-#top-div{
-}
 #top-div img{
   position: relative;
   overflow: hidden;
@@ -44,26 +42,18 @@ body{
   background-color: rgb(152, 152, 152);
 }
 .classColor1 {
-  background-color: #355679;
-}
-.classColor2 {
   background-color: #944b52;
 }
-.classColor3 {
+.classColor2 {
   background-color: #407b4d;
 }
-.classColor4 {
+.classColor3 {
   background-color: #a9772e;
 }
-.classColor5 {
-  background-color: #713e79;
-}
-.classColor6 {
-  background-color: #96553d;
+.classColor4 {
+  background-color: #355679;
 }
 /* Filter Button Group */
-#filterButton {
-}
 #filterButton button {
   cursor: pointer;
   color: white;
