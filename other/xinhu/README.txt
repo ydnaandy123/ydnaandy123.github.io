@@ -1,4 +1,8 @@
-﻿
+﻿|--Home
+   |--Image
+      |--Location: xinhu\src\home
+      |--Update Method:  Replace images and keep the filenames same.
+      |--Update Notifications: small image size is better.  (jpg is good enough in most case)
 ---------------------------------------------------------------------------
 |--Galley
    |--Banner
@@ -31,6 +35,6 @@
              |--Location: xinhu\src\medalPhotosDownsize
              |--Dimension: 320x426
       |--Web Update:
-       	 |-- xinhu\javascript\medal_data.js (Reference: xinhu\tutorial\medal\Medal_Update.mp4)
+            |-- xinhu\javascript\medal_data.js (Reference: xinhu\tutorial\medal\Medal_Update.mp4)
       |--(Optional) Excel Update:  xinhu/medals.xlsx
       |--(Optional) Excel to Web:  https://www.csvjson.com/csv2json (Refference: xinhu\tutorial\medal\Excel_to_Web.mp4)

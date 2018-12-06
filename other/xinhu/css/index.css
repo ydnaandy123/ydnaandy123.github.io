@@ -142,7 +142,7 @@ span.text-zh{
   color: white;
   text-shadow: 0 0 5px black;
   position: relative;
-  background-image: url("../src/aa9.jpg");
+  background-image: url("../src/home/3_backgound.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -180,6 +180,10 @@ span.text-zh{
 #gallery-div .card-title{
   font-size: 30px;
 }
+#gallery-div #youtubeQR:hover{
+  transition-duration: 0.6s;
+  box-shadow: 0 0 10px black;
+}
 /* Trophy */
 #trophy-div{
   padding: 0;
@@ -216,7 +220,7 @@ span.text-zh{
 /* History */
 #history-div{
   color:black;
-  background-image: url('../src/aa12.jpg');
+  background-image: url('../src/home/6_background.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -295,5 +299,17 @@ span.text-zh{
   #intro-grid{
     font-family: "Microsoft YaHei";  
     font-size: 28px;
+  }
+  #about-div #about-quote{
+    font-size: 16px;
+  }
+  #gallery-div .card-title{
+    font-size: 20px;
+  }
+  #trophy-div .parallax-window > .center-block {
+    font-size: 30px;
+  }
+  #trophy-div #trophy-des {
+    font-size: 14px;
   }
  }
