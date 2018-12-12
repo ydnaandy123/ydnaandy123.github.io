@@ -1,0 +1,58 @@
+/* ROOT NECESSAORY */
+.review_red { 
+  color: red;
+}
+.review_blue { 
+  color: blue;
+}
+.review_green { 
+  color: rgb(63, 216, 63);
+}
+.div-hr {
+  height: 2px;
+  border: none;
+  color: #333;
+  background-color: #333;
+  width: 75%;
+}
+section div{
+  padding: 0px 0px;
+}
+.center-h{
+  margin: auto;
+}
+/* A4 student typeset */
+.a4-title{
+  text-align: center;
+  font-size: 60px;
+}
+.a4-intro{
+  margin: 30px auto;
+  text-indent: 40px;
+  font-size: 20px;
+}
+.a4-student_id{
+  color: rgb(122, 122, 255);
+}
+.a4-student_score{
+  color: rgb(122, 122, 255);
+}
+.a4-chart{
+  margin: auto;
+  width: 40%;
+}
+.a4-review{
+  margin: 30px auto;
+  font-size: 30px;
+}
+.a4-conclusion{
+  margin: 10px auto;
+  text-indent: 40px;
+  font-size: 20px;
+}
+.a4-sign{
+  font-size: 40px;
+  position: absolute;
+  bottom: 50px;
+  right: 60px;
+}
