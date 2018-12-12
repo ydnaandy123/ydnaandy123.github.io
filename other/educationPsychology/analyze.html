@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>台北市內湖區新湖國小</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="keywords" content="">
+        <!-- ref:https://github.com/cognitom/paper-css/blob/master/examples/a4.html -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">    
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/paper-css/0.4.1/paper.css">      
+        <style>@page { size: A4 }</style>
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+        <!-- disabled -->
+        <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"> -->
+        <link rel="stylesheet" href="css/analyze.css">
+    </head>
+    <body id="main-body" class="A4">
+        <!-- Student A4 sheets-->
+        <div id="students_container">
+            <section class="student-container sheet padding-10mm" id="student_container_template">
+                <div class="a4-title">Title</div>
+                <hr class="div-hr">
+                <div class="a4-intro">
+                    親愛的 <span class="a4-student_id student_id"></span> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,  sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. 
+                    本次測驗結果如下:
+                </div>   
+                <div class="a4-chart chart_container">
+                    <canvas></canvas>
+                </div>       
+                <span class="a4-student_score student_score"></span>    
+                <div class="a4-review review" contenteditable="true">
+                    我是可以被編輯的老師評論(點此區塊可編輯):<br/>
+                    主觀幸福<b class="review1"></b>，
+                    生活壓力<b class="review2"></b>，
+                    壓力抒發<b class="review3"></b>，
+                    自我激勵<b class="review4"></b>，
+                    同理他人<b class="review5"></b>,
+                    同儕相處<b class="review6"></b>，
+                    同儕合作<b class="review7"></b>，
+                    衝突處理<b class="review8"></b>
+                </div>
+                <div class="a4-conclusion">我是Conclusion.Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,  sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. </div>
+                <div class="a4-sign">我是Sign</div>
+                
+            </section>
+        </div>
+        <!-- Input A4 sheets-->
+        <section id="input_sheet" class="sheet">
+            <table class="center-h">
+                <!-- Title -->
+                <tr>
+                    <th>Teacher</th>
+                    <th>Student</th> 
+                </tr>
+                <!-- Quizzes -->
+                <tr>
+                    <th><textarea rows="3" cols="20" id="week0_quiz">[{"題目":"1.我喜歡現在的生活","正面負面":"positive","向度":"A"},{"題目":"2.在認識的人面前說話，我會覺得不自在","正面負面":"negative","向度":"B"},{"題目":"3.碰到問題時，我會去請教老師","正面負面":"positive","向度":"C"},{"題目":"4.我會盡力完成分配給我的打掃工作","正面負面":"positive","向度":"D"},{"題目":"5.同學…時，我也覺得很開心","正面負面":"positive","向度":"E"},{"題目":"6.我不喜歡跟同學相處","正面負面":"negative","向度":"F"},{"題目":"7.我會和同學互相分享事情或東西","正面負面":"positive","向度":"G"},{"題目":"8.和同學有衝突的時候，我會先到旁邊冷靜一下","正面負面":"positive","向度":"H"}]</textarea></th>
+                    <th><textarea rows="3" cols="20" id="week4_quiz">[{"題目":"1.我喜歡現在的生活","正面負面":"positive","向度":"A"},{"題目":"2.在認識的人面前說話，我會覺得不自在","正面負面":"negative","向度":"B"},{"題目":"3.碰到問題時，我會去請教老師","正面負面":"positive","向度":"C"},{"題目":"4.我會盡力完成分配給我的打掃工作","正面負面":"positive","向度":"D"},{"題目":"5.同學…時，我也覺得很開心","正面負面":"positive","向度":"E"},{"題目":"6.我不喜歡跟同學相處","正面負面":"negative","向度":"F"},{"題目":"7.我會和同學互相分享事情或東西","正面負面":"positive","向度":"G"},{"題目":"8.和同學有衝突的時候，我會先到旁邊冷靜一下","正面負面":"positive","向度":"H"}]</textarea></th> 
+                </tr>
+                <!-- Answers -->
+                <tr>
+                    <th><textarea rows="3" cols="20" id="week0_score">[   {     "Timestamp": "11/22/2018 10:13:12",     "學號": 12345,     "1.我喜歡現在的生活": 1,     "2.在認識的人面前說話，我會覺得不自在": 2,     "3.碰到問題時，我會去請教老師": 3,     "4.我會盡力完成分配給我的打掃工作": 4,     "5.同學…時，我也覺得很開心": 5,     "6.我不喜歡跟同學相處": 4,     "7.我會和同學互相分享事情或東西": 3,     "8.和同學有衝突的時候，我會先到旁邊冷靜一下": 2   },   {     "Timestamp": "11/22/2018 10:35:15",     "學號": 11111,     "1.我喜歡現在的生活": 1,     "2.在認識的人面前說話，我會覺得不自在": 1,     "3.碰到問題時，我會去請教老師": 1,     "4.我會盡力完成分配給我的打掃工作": 1,     "5.同學…時，我也覺得很開心": 1,     "6.我不喜歡跟同學相處": 1,     "7.我會和同學互相分享事情或東西": 1,     "8.和同學有衝突的時候，我會先到旁邊冷靜一下": 1   },   {     "Timestamp": "11/22/2018 10:38:11",     "學號": 55555,     "1.我喜歡現在的生活": 1,     "2.在認識的人面前說話，我會覺得不自在": 1,     "3.碰到問題時，我會去請教老師": 1,     "4.我會盡力完成分配給我的打掃工作": 1,     "5.同學…時，我也覺得很開心": 1,     "6.我不喜歡跟同學相處": 1,     "7.我會和同學互相分享事情或東西": 1,     "8.和同學有衝突的時候，我會先到旁邊冷靜一下": 1   } ]</textarea></th>
+                    <th><textarea rows="3" cols="20" id="week4_score">[   {     "Timestamp": "11/22/2018 10:13:12",     "學號": 12345,     "1.我喜歡現在的生活": 1,     "2.在認識的人面前說話，我會覺得不自在": 2,     "3.碰到問題時，我會去請教老師": 3,     "4.我會盡力完成分配給我的打掃工作": 4,     "5.同學…時，我也覺得很開心": 5,     "6.我不喜歡跟同學相處": 4,     "7.我會和同學互相分享事情或東西": 3,     "8.和同學有衝突的時候，我會先到旁邊冷靜一下": 2   },   {     "Timestamp": "11/22/2018 10:35:15",     "學號": 11111,     "1.我喜歡現在的生活": 1,     "2.在認識的人面前說話，我會覺得不自在": 1,     "3.碰到問題時，我會去請教老師": 1,     "4.我會盡力完成分配給我的打掃工作": 1,     "5.同學…時，我也覺得很開心": 1,     "6.我不喜歡跟同學相處": 1,     "7.我會和同學互相分享事情或東西": 1,     "8.和同學有衝突的時候，我會先到旁邊冷靜一下": 1   },   {     "Timestamp": "11/22/2018 10:38:11",     "學號": 55555,     "1.我喜歡現在的生活": 5,     "2.在認識的人面前說話，我會覺得不自在": 5,     "3.碰到問題時，我會去請教老師": 5,     "4.我會盡力完成分配給我的打掃工作": 5,     "5.同學…時，我也覺得很開心": 5,     "6.我不喜歡跟同學相處": 5,     "7.我會和同學互相分享事情或東西": 5,     "8.和同學有衝突的時候，我會先到旁邊冷靜一下": 5   } ]</textarea></th>
+                </tr>
+                <!-- Buttonas -->
+                <tr>
+                    <th><button id="ClickMEE" type="button" class="btn btn-outline-primary" onclick="calculateWeek(0)">calculate</button></th>
+                    <th><button type="button" class="btn btn-outline-primary" onclick="calculateWeek(4)">calculate</button></th>
+                </tr>
+            </table>
+            <div class="row justify-content-center pt-2">
+                <div class="col-11">
+                <button type="button" class="btn btn-primary btn-block" onclick="analyzeSummary()">summary</button>
+                </div>
+            </div>
+            </div>
+            <p class="text-center">
+            主觀幸福:<span id="quiz_type1"></span><br/>
+            生活壓力:<span id="quiz_type2"></span><br/>
+            壓力抒發:<span id="quiz_type3"></span><br/>
+            自我激勵:<span id="quiz_type4"></span><br/>
+            同理他人:<span id="quiz_type5"></span><br/>
+            同儕相處:<span id="quiz_type6"></span><br/>
+            同儕合作:<span id="quiz_type7"></span><br/>
+            衝突處理:<span id="quiz_type8"></span>
+            </p>
+            <hr class="div-hr">
+            <a id="downloadAnchorElem" style="display:none">download</a>
+            <p id="result_text"></p>
+        </section>
+
+        
+        <!-- jQuery CDN -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <!-- jQuery local fallback -->
+        <script>
+            window.jQuery || document.write('<script src="javascript/jquery-3.3.1.min.js"><\/script>')
+        </script>
+        <!-- Bootstrap JS CDN -->
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <!-- Bootstrap JS local fallback -->
+        <script>
+            if (typeof ($.fn.modal) === 'undefined') {
+                document.write('<script src="javascript/bootstrap.min.js"><\/script>')
+            }
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+        <script src="javascript/parallax.min.js"></script>
+        <script src="javascript/jquery.bcSwipe.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+        <script src="javascript/analyze.js"></script>
+    </body>
+</html>
