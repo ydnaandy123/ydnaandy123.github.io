@@ -1,5 +1,6 @@
 let students_container, student_container;
 let labels = ["主觀幸福", "生活壓力", "壓力抒發", "自我激勵", "同理他人", "同儕相處", "同儕合作", "衝突處理"];
+let labelNames = ["主觀幸福", "生活壓力", "自我反省", "自我接納", "自我情緒察覺", "壓力抒發", "自我激勵", "參照經驗", "情緒管理", "同理他人", "同儕相處", "同儕合作", "衝突處理"]
 let summaryScore = [[], [], [], [], []];
 function analyzeSummary(){
   analyzeInitial();
@@ -120,7 +121,6 @@ function analyze(quizzes, score, week){
     cur_student.attr("id", cur_student_id);
 
     let cur_student_score = ""
-      console.log(cur_score_all)
     for(let j=0; j<labels.length; j++){
       cur_student_score += labels[j];
       cur_student_score += ": ";
@@ -193,6 +193,7 @@ function analyzeInitial(){
   $("#quiz_type8").children().remove()
 }
 function quizAnalyze(quizzes){
+  console.log(quizzes)
   for(let i=0; i<quizzes.length; i++){
     let quiz_element = $("<span></span>").text(quizzes[i]["題目"]).addClass("px-2"); 
     if(quizzes[i]["正面負面"] == "negative"){
@@ -225,6 +226,7 @@ function quizAnalyze(quizzes){
   }
 }
 function calculateWeek(week_number){  
+  areaCheck();
   analyzeInitial();
   let quizzes_text = document.getElementById("week"+String(week_number)+"_quiz").value;
   let quizzes = JSON.parse(quizzes_text);
@@ -232,6 +234,48 @@ function calculateWeek(week_number){
   let score = JSON.parse(score_text);
   quizAnalyze(quizzes);
   analyze(quizzes, score, week_number);
+}
+function areaCheck(){
+  labels = []
+  if(document.getElementById("check_areaA").checked){
+    labels.push(labelNames[0])
+  }
+  if(document.getElementById("check_areaB").checked){
+    labels.push(labelNames[1])
+  }
+  if(document.getElementById("check_areaC").checked){
+    labels.push(labelNames[2])
+  }
+  if(document.getElementById("check_areaD").checked){
+    labels.push(labelNames[3])
+  }
+  if(document.getElementById("check_areaE").checked){
+    labels.push(labelNames[4])
+  }
+  if(document.getElementById("check_areaF").checked){
+    labels.push(labelNames[5])
+  }
+  if(document.getElementById("check_areaG").checked){
+    labels.push(labelNames[6])
+  }
+  if(document.getElementById("check_areaH").checked){
+    labels.push(labelNames[7])
+  }
+  if(document.getElementById("check_areaI").checked){
+    labels.push(labelNames[8])
+  }
+  if(document.getElementById("check_areaJ").checked){
+    labels.push(labelNames[9])
+  }
+  if(document.getElementById("check_areaK").checked){
+    labels.push(labelNames[10])
+  }
+  if(document.getElementById("check_areaL").checked){
+    labels.push(labelNames[11])
+  }
+  if(document.getElementById("check_areaM").checked){
+    labels.push(labelNames[12])
+  }
 }
 function checkDuplicateID() {
   // Warning Duplicate IDs
