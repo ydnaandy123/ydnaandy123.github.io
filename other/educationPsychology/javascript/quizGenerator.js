@@ -8,11 +8,55 @@ function shuffle(a) {
   }
   return a;
 }
-function quizSample(){
-  
+function quizSampleManually(){  
   let quizzes_text = document.getElementById("input_quizzes").value;
   let quizzes = JSON.parse(quizzes_text);
+  quizzes.sort(function (a, b) {
+    return a["向度"].localeCompare(b["向度"]);
+  });
+  let quizAreaSet = new Set()
+  for(let i=0; i<quizzes.length; i++){
+    quizAreaSet.add(quizzes[i]["向度"]);
+  }
+  let quizAreaArray = Array.from(quizAreaSet);
+  let quizSelectSection = $("#quizSelectSection");
+  quizSelectSection.children().remove()
+  for(let i=0; i<quizAreaArray.length; i++){
+    let curArea = quizAreaArray[i];
+    let curQuizFiltered = quizzes.filter(function(quiz){return quiz["向度"] ==  curArea});
+    // Create node
+    let curQuizSection = $("#quizSection_template").clone(true);
+    curQuizSection.attr("id", "quizSection" + i);
+    curQuizSection.find(".quizCollapse").attr("id", "quizCollapse"+i);
+    curQuizSection.find(".quizSection_areaText").text((i+1) + "." +curArea).attr("data-target", "#quizCollapse"+i);    
+    
+    let curQuizBtnRow = curQuizSection.find(".quizSection_btnRow");
+    for(let j=0; j<curQuizFiltered.length; j++){        
+      let curQuizBtn = $("#quizButton_template").clone(true);
+      curQuizBtn.attr("id", "quizBtn" + i).find("button").text(curQuizFiltered[j]["題目"]);
+      curQuizBtnRow.append(curQuizBtn);
+    }
+    // Whole Block Attribute
+    //cur_gallery_cell.attr("id", "gallery_cell_" + i);
+    //cur_gallery_cell.attr("title", gallery_videos[i]["title"]);
+    //cur_gallery_cell.attr("category_class", cell_category_class)
+    // Image
+    //cur_gallery_cell.find("a").attr("href", cell_video_url);
+    //cur_gallery_cell.find("img").attr("src", "https://img.youtube.com/vi/" + cell_video_id + "/mqdefault.jpg");
+    // Description
+
+    quizSelectSection.append(curQuizSection)
+  }
+}
+function quizSample(){
+  return;
+  let quizzes_text = document.getElementById("input_quizzes").value;
+  let quizzes = JSON.parse(quizzes_text);
+  quizzes.sort(function (a, b) {
+    return a["向度"].localeCompare(b["向度"]);
+  });
   // count different field quiz numbers
+  return;
   let fields_count = [0, 0, 0, 0, 0, 0, 0, 0];
   for (let i = 0; i < quizzes.length; i++) {
     if(quizzes[i]["向度"]=="A"){
@@ -125,6 +169,9 @@ function quizSample(){
     $(this).select();
   });
 }
+$("textarea").on("focus", function () {
+  $(this).select();
+});
 function checkDuplicateID() {
   // Warning Duplicate IDs
   $('[id]').each(function() {
@@ -133,11 +180,9 @@ function checkDuplicateID() {
           console.warn('Multiple IDs #' + this.id);
   });
 }
-$("textarea").on("focus", function () {
-  $(this).select();
-});
 $(document).ready(function (e) {
   checkDuplicateID();
+  //$("#button_manually").click();
 });
 $(window).on('load', function (e) {
 })
