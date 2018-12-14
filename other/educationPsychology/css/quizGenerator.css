@@ -1,4 +1,7 @@
 /* ROOT NECESSAORY */
+html, body{
+  position: relative;
+}
 .div-hr {
   height: 2px;
   border: none;
@@ -6,6 +9,7 @@
   background-color: #333;
   width: 75%;
 }
+/* Tutorial */
 #collapseTutorial {
   background-color: rgb(191, 191, 191);
 }
@@ -18,4 +22,27 @@
 }
 .quizSection{
   background-color: rgb(211, 211, 211);
+}
+/* Selected Box */
+#selectedBox_template{
+  display: none;
+}
+#selectedBoxArea{
+  position: sticky;
+  bottom: 0;
+}
+#selectedTable{
+  position: relative;
+  background-color: bisque;
+  opacity: 0.65;
+  transition-duration: .4s;
+}
+#selectedTable:hover{
+  opacity: 1.0;
+}
+/* Download link*/
+#downloadAnchorElem{
+  padding: 10px 20px;
+  color: white;
+  text-decoration-color: white;
 }

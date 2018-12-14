@@ -1,5 +1,7 @@
+let selectNum = 0;
+let sampled_quizzes_obj = [];
 function shuffle(a) {
-  var j, x, i;
+  let j, x, i;
   for (i = a.length - 1; i > 0; i--) {
       j = Math.floor(Math.random() * (i + 1));
       x = a[i];
@@ -8,9 +10,46 @@ function shuffle(a) {
   }
   return a;
 }
+function insertQuiz(event){
+  let curQuiz = event.data.curQuiz;
+  let selectedTable = $("#selectedTable");
+  // Create node
+  let curSelectedQuiz = $("#selectedQuiz_template").clone(true);
+  curSelectedQuiz.attr("id", "selectedQuiz" + selectNum);
+  selectNum = selectNum +1;
+  // Show quiz
+  curSelectedQuiz.find("textarea").text((selectNum) + "." + curQuiz["題目"])
+  selectedTable.append(curSelectedQuiz)
+  // Store quiz
+  sampled_quizzes_obj.push(curQuiz)
+}
+function confirmSelection(){
+  // DEEP COPY
+  // https://medium.com/@gamshan001/javascript-deep-copy-for-array-and-object-97e3d4bc401a
+  let curSampled_quizzes_obj = sampled_quizzes_obj.slice(0);
+  // Adding indices
+  for(let i = 0; i < curSampled_quizzes_obj.length; i++){
+    curSampled_quizzes_obj[i]["題目"]  = String(i+1) + '.' + curSampled_quizzes_obj[i]["題目"] ;
+  }                
+  // Download link      
+  let dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(sampled_quizzes_obj));
+  let dlAnchorElem = document.getElementById('downloadQuizLink');
+  dlAnchorElem.setAttribute("href",     dataStr     );
+  dlAnchorElem.setAttribute("download", "quiz_meta.json");
+  dlAnchorElem.click();   
+}
+function initialQuiz(){
+  let quizSelectSection = $("#quizSelectSection");
+  quizSelectSection.children().remove()
+  $("#selectedTable").children().remove()
+  selectNum = 0;
+  sampled_quizzes_obj = [];
+  return quizSelectSection;
+}
 function quizSampleManually(){  
   let quizzes_text = document.getElementById("input_quizzes").value;
   let quizzes = JSON.parse(quizzes_text);
+  // Sort and check area numbers
   quizzes.sort(function (a, b) {
     return a["向度"].localeCompare(b["向度"]);
   });
@@ -19,8 +58,9 @@ function quizSampleManually(){
     quizAreaSet.add(quizzes[i]["向度"]);
   }
   let quizAreaArray = Array.from(quizAreaSet);
-  let quizSelectSection = $("#quizSelectSection");
-  quizSelectSection.children().remove()
+  // Initial
+  let quizSelectSection = initialQuiz();
+  // Display Quizzes
   for(let i=0; i<quizAreaArray.length; i++){
     let curArea = quizAreaArray[i];
     let curQuizFiltered = quizzes.filter(function(quiz){return quiz["向度"] ==  curArea});
@@ -34,6 +74,8 @@ function quizSampleManually(){
     for(let j=0; j<curQuizFiltered.length; j++){        
       let curQuizBtn = $("#quizButton_template").clone(true);
       curQuizBtn.attr("id", "quizBtn" + i).find("button").text(curQuizFiltered[j]["題目"]);
+      //curQuizBtn.click(curQuizFiltered[j], insertQuiz());
+      curQuizBtn.click({curQuiz: curQuizFiltered[j]}, insertQuiz);
       curQuizBtnRow.append(curQuizBtn);
     }
     // Whole Block Attribute
@@ -47,6 +89,9 @@ function quizSampleManually(){
 
     quizSelectSection.append(curQuizSection)
   }
+  // Display confirm button
+  let dlAnchorElem = document.getElementById('downloadAnchorElem');
+  dlAnchorElem.setAttribute("style", "display:block");
 }
 function quizSample(){
   return;
@@ -175,7 +220,7 @@ $("textarea").on("focus", function () {
 function checkDuplicateID() {
   // Warning Duplicate IDs
   $('[id]').each(function() {
-      var ids = $('[id="' + this.id + '"]');
+      let ids = $('[id="' + this.id + '"]');
       if (ids.length > 1 && ids[0] == this)
           console.warn('Multiple IDs #' + this.id);
   });
