@@ -9,6 +9,10 @@ html, body{
   background-color: #333;
   width: 75%;
 }
+.test-welfare{
+  padding: 5px;
+  background-color: rgb(197, 197, 197)
+}
 /* Tutorial */
 #collapseTutorial {
   background-color: rgb(191, 191, 191);
@@ -28,13 +32,11 @@ html, body{
   display: none;
 }
 #selectedBoxArea{
-  position: sticky;
-  bottom: 0;
 }
 #selectedTable{
   position: relative;
   background-color: bisque;
-  opacity: 0.65;
+  opacity: 0.75;
   transition-duration: .4s;
 }
 #selectedTable:hover{

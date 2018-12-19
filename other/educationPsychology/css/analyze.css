@@ -87,14 +87,18 @@ section.student-container{
 }
 .a4-review{
   text-indent: 40px;
-  margin: 8px auto 14px auto;
+  margin: 10px auto 14px auto;
   font-size: 20px;
 }
-.a4-conclusion{
-  margin: 40px auto 20px auto;  
+.a4-parent{
+  margin: 20px auto 20px auto;  
   font-size: 20px;
 }
 .a4-sign{
+  margin: 80px auto 20px auto;  
+  font-size: 20px;
+}
+.a4-school{
   margin: 40px auto 20px auto;
   font-size: 20px;
   position: absolute;

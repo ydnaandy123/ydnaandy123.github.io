@@ -270,7 +270,7 @@ function checkDuplicateID() {
 $(document).ready(function (e) {
   // Debug
   checkDuplicateID();
-  //$("#ClickMEE").click();
+  $("#ClickMEE").click();
 });
 $(window).on('load', function (e) {
 })
