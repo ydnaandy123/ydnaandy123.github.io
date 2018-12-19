@@ -21,14 +21,52 @@ section div{
 .center-h{
   margin: auto;
 }
+/* dashboard */
+#quiz-preview{
+  margin: auto;
+  padding-left: 30px;
+  color: gray;
+}
+.quiz-preview-area{
+  color: black;
+  margin: auto;
+  padding-left: 60px;
+  margin-bottom: 15px;
+}
+/* template */
+#student_container_template{
+  display: none;
+}
 /* A4 student typeset */
+section.student-container{  
+  font-family: DFKai-sb;
+}
 .a4-title{
   text-align: center;
-  font-size: 60px;
+  font-size: 26px;
+  font-weight: bolder;
+  margin-bottom: 25px;
+  letter-spacing: 3px;
+}
+.a4-to{
+  margin: 10px auto;
+  font-size: 20px;
+  letter-spacing: 1px;
 }
 .a4-intro{
-  margin: 30px auto;
+  margin: 10px auto;
   text-indent: 40px;
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+.a4-intro2{
+  margin: 10px auto;
+  text-indent: 40px;
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+.a4-recordTime{
+  margin: 12px auto 14px auto;
   font-size: 20px;
 }
 .a4-student_id{
@@ -36,23 +74,30 @@ section div{
 }
 .a4-student_score{
   color: rgb(122, 122, 255);
+  display: none;
 }
 .a4-chart{
   margin: auto;
   width: 40%;
 }
+.a4-reviewTitle{
+  margin: 12px auto 2px auto;
+  font-size: 20px;
+  letter-spacing: 1px;
+}
 .a4-review{
-  margin: 30px auto;
-  font-size: 30px;
+  text-indent: 40px;
+  margin: 8px auto 14px auto;
+  font-size: 20px;
 }
 .a4-conclusion{
-  margin: 10px auto;
-  text-indent: 40px;
+  margin: 40px auto 20px auto;  
   font-size: 20px;
 }
 .a4-sign{
-  font-size: 40px;
+  margin: 40px auto 20px auto;
+  font-size: 20px;
   position: absolute;
-  bottom: 50px;
-  right: 60px;
+  bottom: 100px;
+  right: 100px;
 }

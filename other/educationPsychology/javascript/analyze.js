@@ -1,7 +1,6 @@
-let students_container, student_container;
-let labels = ["主觀幸福", "生活壓力", "壓力抒發", "自我激勵", "同理他人", "同儕相處", "同儕合作", "衝突處理"];
+let labels = [];
 let labelSet = new Set();
-let labelNames = ["主觀幸福", "生活壓力", "自我反省", "自我接納", "自我情緒察覺", "壓力抒發", "自我激勵", "參照經驗", "情緒管理", "同理他人", "同儕相處", "同儕合作", "衝突處理"]
+let score_background;
 let summaryScore = [[], [], [], [], []];
 function analyzeSummary(){
   analyzeInitial();
@@ -17,10 +16,10 @@ function analyzeSummary(){
         cur_score_all[j] = (cur_score_all[j]) + weightedScore;
       }
     }
-    let cur_student = student_container.clone()
+    let cur_student = $("#student_container_template").clone()
     let cur_student_id = i;
-    //let cur_student_id = "student_" + score[i]["學號"]
-    //cur_student.attr("id", cur_student_id);
+    let cur_student_id = "student_" + score[i]["學號"]
+    cur_student.attr("id", cur_student_id);
 
     let cur_student_score = ""
     for(let j=0; j<labels.length; j++){
@@ -28,6 +27,7 @@ function analyzeSummary(){
       cur_student_score += ": ";
       cur_student_score += String(parseFloat(cur_score_all[j]).toFixed(1));
       cur_student_score += ", ";
+      /*
       let review_text = "";
       let review_class = ""
       if(cur_score_all[j] > 4){
@@ -42,13 +42,15 @@ function analyzeSummary(){
       }
       cur_student.find(".review" + String(j+1)).text(review_text)
       cur_student.find(".review" + String(j+1)).addClass(review_class)
+      */
     }    
     //cur_student.find(".student_id").text(String(i+1) + ". " + score[i]["學號"])
+    console.log(cur_student_score)
     cur_student.find(".student_id").text(String(i+1) + ". ")
     cur_student.find(".student_score").text(cur_student_score)
 
     cur_student.find(".chart_container canvas").attr("id", "canvas_" + cur_student_id);
-    cur_student.appendTo(students_container);    
+    cur_student.appendTo($("#students_container"));    
 
     let canvas = document.getElementById("canvas_" + cur_student_id);
     let ctx = canvas.getContext('2d');
@@ -84,77 +86,70 @@ function analyzeSummary(){
   }
 }
 function analyze(quizzes, score, week){
+  // For each student 
   for(let i = 0; i < score.length; i++){
-    let cur_score_all = [0, 0, 0, 0, 0, 0, 0, 0];
+    let cur_student = $("#student_container_template").clone()
+    cur_student.attr("id", "student_container_" + score[i]["學號"]);
+    let cur_score_all = [];
+    let cur_score_obj = {}
+    // For each answer (in one student response)
     for(let j = 0; j < quizzes.length; j++){
       let cur_score = score[i][quizzes[j]["題目"]]    
       if(quizzes[j]["正面負面"] == "negative"){
         cur_score = 6 - cur_score;
       }
-      if(quizzes[j]["向度"] == "A"){
-        cur_score_all[0] += cur_score;
-      }
-      else if(quizzes[j]["向度"] == "B"){
-        cur_score_all[1] += cur_score;
-      }
-      else if(quizzes[j]["向度"] == "C"){
-        cur_score_all[2] += cur_score;
-      }
-      else if(quizzes[j]["向度"] == "D"){
-        cur_score_all[3] += cur_score;
-      }
-      else if(quizzes[j]["向度"] == "E"){
-        cur_score_all[4] += cur_score;
-      }    
-      else if(quizzes[j]["向度"] == "F"){
-        cur_score_all[5] += cur_score;
-      }  
-      else if(quizzes[j]["向度"] == "G"){
-        cur_score_all[6] += cur_score;
-      }  
-      else if(quizzes[j]["向度"] == "H"){
-        cur_score_all[7] += cur_score;
-      }    
+      cur_score_obj[quizzes[j]["向度"]] = cur_score;
     }   
+    for (let i=0; i<labels.length; i++) {
+      cur_score_all.push(cur_score_obj[labels[i]])
+    }
+    //console.log(cur_score_obj, cur_score_all)
     summaryScore[week][i] = cur_score_all;
-    let cur_student = student_container.clone()
-    let cur_student_id = "student_" + score[i]["學號"]
-    cur_student.attr("id", cur_student_id);
 
-    let cur_student_score = ""
-    for(let j=0; j<labels.length; j++){
-      cur_student_score += labels[j];
-      cur_student_score += ": ";
-      cur_student_score += String(cur_score_all[j]);
-      cur_student_score += ", ";
-      let review_text = "";
+    // Generate Text from score   
+    let teacher_review = ""    
+    function judgeText(input_score){   
+      let review_text = ""
       let review_class = ""
-      if(cur_score_all[j] > 3){
+      if(input_score > 3){
         review_text = "良好";
         review_class = "review_red";
-      }else if(cur_score_all[j] > 2){
+      }else if(input_score > 2){
         review_text = "尚可";
         review_class = "review_green";
       }else{
         review_text = "待加強";
         review_class = "review_blue";
       }
-      cur_student.find(".review" + String(j+1)).text(review_text)
-      cur_student.find(".review" + String(j+1)).addClass(review_class)
-    }    
-    cur_student.find(".student_id").text(String(i+1) + ". " + score[i]["學號"])
-    //cur_student.find(".student_id").text(String(i+1) + ". " )
-    cur_student.find(".student_score").text(cur_student_score)
-
-    cur_student.find(".chart_container canvas").attr("id", "canvas_" + cur_student_id);
-    cur_student.appendTo(students_container);    
-
-    let canvas = document.getElementById("canvas_" + cur_student_id);
+      return [review_class, review_text];
+    }
+    // Generate whole description
+    for(let j=0; j<labels.length-1; j++){
+      let review_return;
+      review_return = judgeText(cur_score_all[j]);
+      teacher_review += labels[j] + ": <span class="+ review_return[0] +">";
+      teacher_review += review_return[1];
+      teacher_review += "</span>，";
+    } 
+    // Last one    
+    let j=labels.length-1;
+    let review_return;
+    review_return = judgeText(cur_score_all[j]);
+    teacher_review += labels[j] + ": <span class="+ review_return[0] +">";
+    teacher_review += review_return[1];
+    teacher_review += "</span>，";
+    cur_student.find(".review").html(teacher_review);
+    
+    // Edit A4
+    //cur_student.find(".student_id").text(String(i+1) + ". " + score[i]["學號"])
+    cur_student.find(".student_id").text(score[i]["姓名"])
+    cur_student.find(".chart_container canvas").attr("id", "canvas_" + score[i]["學號"]);
+    cur_student.appendTo($("#students_container"));    
+    // Canvas
+    let canvas = document.getElementById("canvas_" + score[i]["學號"]);
     let ctx = canvas.getContext('2d');
     let chart = new Chart(ctx, {
-        // The type of chart we want to create
         type: 'radar',    
-        // The data for our dataset
         data: {
             labels: labels,
             datasets: [{
@@ -167,7 +162,7 @@ function analyze(quizzes, score, week){
               borderColor: 'rgba(255, 255, 255, 0)',
               backgroundColor: 'rgba(255, 255, 255, 0)',
               pointRadius: 0,
-              data: [5, 0, 0, 0, 0, 0, 0, 0],
+              data: score_background,
           }]
         },    
         // Configuration options go here
@@ -182,60 +177,83 @@ function analyze(quizzes, score, week){
     });
   }
 }
-function analyzeInitial(){
-  students_container.children().remove()
-  $("#quiz_type1").children().remove()
-  $("#quiz_type2").children().remove()
-  $("#quiz_type3").children().remove()
-  $("#quiz_type4").children().remove()
-  $("#quiz_type5").children().remove()
-  $("#quiz_type6").children().remove()
-  $("#quiz_type7").children().remove()
-  $("#quiz_type8").children().remove()
-}
 function quizAnalyze(quizzes){
   for(let i=0; i<quizzes.length; i++){
     let quiz_element = $("<span></span>").text(quizzes[i]["題目"]).addClass("px-2"); 
     if(quizzes[i]["正面負面"] == "negative"){
       quiz_element.addClass("review_red")
     }
-    if(quizzes[i]["向度"] == "A"){
+    if(quizzes[i]["向度"] == "主觀幸福"){
       $("#quiz_type1").append(quiz_element)
+      labelSet.add(quizzes[i]["向度"])    
     }
-    else if(quizzes[i]["向度"] == "B"){
+    else if(quizzes[i]["向度"] == "生活壓力"){
       $("#quiz_type2").append(quiz_element)
+      labelSet.add(quizzes[i]["向度"])    
     }
-    else if(quizzes[i]["向度"] == "C"){
+    else if(quizzes[i]["向度"] == "自我反省"){
       $("#quiz_type3").append(quiz_element)
+      labelSet.add(quizzes[i]["向度"])    
     }
-    else if(quizzes[i]["向度"] == "D"){
+    else if(quizzes[i]["向度"] == "自我接納"){
       $("#quiz_type4").append(quiz_element)
+      labelSet.add(quizzes[i]["向度"])    
     }
-    else if(quizzes[i]["向度"] == "E"){
+    else if(quizzes[i]["向度"] == "自我情緒察覺"){
       $("#quiz_type5").append(quiz_element)
+      labelSet.add(quizzes[i]["向度"])    
     }     
-    else if(quizzes[i]["向度"] == "F"){
+    else if(quizzes[i]["向度"] == "壓力抒發"){
       $("#quiz_type6").append(quiz_element)
+      labelSet.add(quizzes[i]["向度"])    
     }   
-    else if(quizzes[i]["向度"] == "G"){
+    else if(quizzes[i]["向度"] == "自我激勵"){
       $("#quiz_type7").append(quiz_element)
+      labelSet.add(quizzes[i]["向度"])    
     }   
-    else if(quizzes[i]["向度"] == "H"){
+    else if(quizzes[i]["向度"] == "參照經驗"){
       $("#quiz_type8").append(quiz_element)
-    }   
-  }
-}
-function areaCheck(quizzes){
-  for (let i=0; i < quizzes.length; i++){
-    labelSet.add(quizzes[i]["向度"])    
+      labelSet.add(quizzes[i]["向度"])    
+    }       
+    else if(quizzes[i]["向度"] == "情緒管理"){
+      $("#quiz_type9").append(quiz_element)
+      labelSet.add(quizzes[i]["向度"])    
+    }  
+    else if(quizzes[i]["向度"] == "同理他人"){
+      $("#quiz_type10").append(quiz_element)
+      labelSet.add(quizzes[i]["向度"])    
+    }  
+    else if(quizzes[i]["向度"] == "同儕相處"){
+      $("#quiz_type11").append(quiz_element)
+      labelSet.add(quizzes[i]["向度"])    
+    }  
+    else if(quizzes[i]["向度"] == "同儕合作"){
+      $("#quiz_type12").append(quiz_element)
+      labelSet.add(quizzes[i]["向度"])    
+    }  
+    else if(quizzes[i]["向度"] == "衝突處理"){
+      $("#quiz_type13").append(quiz_element)
+      labelSet.add(quizzes[i]["向度"])    
+    }  
   }
   labels = Array.from(labelSet)
+  // Score background for canvas
+  score_background = [5]
+  for (let i=1; i<labels.length; i++){
+    score_background.push(0)
+  }
+  //for(let i=0; i<labels.length; i++){
+  //  $("#quiz_type1").addClass("quiz-preview-selected")
+  //}
+}
+function analyzeInitial(){
+  $("#students_container").children().remove()
+  $(".quiz-preview-area").children().remove()
 }
 function calculateWeek(week_number){  
   analyzeInitial();
   let quizzes_text = document.getElementById("week"+String(week_number)+"_quiz").value;
   let quizzes = JSON.parse(quizzes_text);
-  areaCheck(quizzes);
   let score_text = document.getElementById("week"+String(week_number)+"_score").value;
   let score = JSON.parse(score_text);
   quizAnalyze(quizzes);
@@ -252,51 +270,7 @@ function checkDuplicateID() {
 $(document).ready(function (e) {
   // Debug
   checkDuplicateID();
-  students_container = $("#students_container");
-  student_container = $("#student_container_template").clone();
-  analyzeInitial();
-  $("#ClickMEE").click();
+  //$("#ClickMEE").click();
 });
 $(window).on('load', function (e) {
 })
-/*
-if(document.getElementById("check_areaA").checked){
-  labels.push(labelNames[0])
-}
-if(document.getElementById("check_areaB").checked){
-  labels.push(labelNames[1])
-}
-if(document.getElementById("check_areaC").checked){
-  labels.push(labelNames[2])
-}
-if(document.getElementById("check_areaD").checked){
-  labels.push(labelNames[3])
-}
-if(document.getElementById("check_areaE").checked){
-  labels.push(labelNames[4])
-}
-if(document.getElementById("check_areaF").checked){
-  labels.push(labelNames[5])
-}
-if(document.getElementById("check_areaG").checked){
-  labels.push(labelNames[6])
-}
-if(document.getElementById("check_areaH").checked){
-  labels.push(labelNames[7])
-}
-if(document.getElementById("check_areaI").checked){
-  labels.push(labelNames[8])
-}
-if(document.getElementById("check_areaJ").checked){
-  labels.push(labelNames[9])
-}
-if(document.getElementById("check_areaK").checked){
-  labels.push(labelNames[10])
-}
-if(document.getElementById("check_areaL").checked){
-  labels.push(labelNames[11])
-}
-if(document.getElementById("check_areaM").checked){
-  labels.push(labelNames[12])
-}
-*/
