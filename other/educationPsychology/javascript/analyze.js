@@ -1,92 +1,14 @@
-let labels = [];
-let labelSet = new Set();
-let score_background;
-let summaryScore = [[], [], [], [], []];
+let labels, labelSet, score_background;
 function analyzeSummary(){
+  let summaryScore = []
+  summaryScore.push(calculateWeek(0));
+  summaryScore.push(calculateWeek(4));
   analyzeInitial();
-  console.log(summaryScore)
-  for(let i = 0; i < summaryScore[0].length; i++){
-    let cur_score_all = [0, 0, 0, 0, 0, 0, 0, 0];
-    for(let j = 0; j < cur_score_all.length; j++){
-      for(let k = 0; k < summaryScore.length; k++){
-        let weightedScore = (summaryScore[k][i][j]) * 0.2;
-        //if(k!=3){
-        //  weightedScore *= 0.5;
-        //}
-        cur_score_all[j] = (cur_score_all[j]) + weightedScore;
-      }
-    }
-    let cur_student = $("#student_container_template").clone()
-    let cur_student_id = i;
-    let cur_student_id = "student_" + score[i]["學號"]
-    cur_student.attr("id", cur_student_id);
-
-    let cur_student_score = ""
-    for(let j=0; j<labels.length; j++){
-      cur_student_score += labels[j];
-      cur_student_score += ": ";
-      cur_student_score += String(parseFloat(cur_score_all[j]).toFixed(1));
-      cur_student_score += ", ";
-      /*
-      let review_text = "";
-      let review_class = ""
-      if(cur_score_all[j] > 4){
-        review_text = "良好";
-        review_class = "review_red";
-      }else if(cur_score_all[j] > 3){
-        review_text = "尚可";
-        review_class = "review_green";
-      }else{
-        review_text = "待加強";
-        review_class = "review_blue";
-      }
-      cur_student.find(".review" + String(j+1)).text(review_text)
-      cur_student.find(".review" + String(j+1)).addClass(review_class)
-      */
-    }    
-    //cur_student.find(".student_id").text(String(i+1) + ". " + score[i]["學號"])
-    console.log(cur_student_score)
-    cur_student.find(".student_id").text(String(i+1) + ". ")
-    cur_student.find(".student_score").text(cur_student_score)
-
-    cur_student.find(".chart_container canvas").attr("id", "canvas_" + cur_student_id);
-    cur_student.appendTo($("#students_container"));    
-
-    let canvas = document.getElementById("canvas_" + cur_student_id);
-    let ctx = canvas.getContext('2d');
-    let chart = new Chart(ctx, {
-        // The type of chart we want to create
-        type: 'radar',    
-        // The data for our dataset
-        data: {
-            labels: labels,
-            datasets: [{
-                backgroundColor: 'rgba(255, 99, 132, 0.5)',
-                borderColor: 'rgb(255, 99, 132)',
-                pointBorderColor: 'rgb(255, 99, 132)',
-                pointBackgroundColor: 'rgb(255, 99, 132)',
-                data: cur_score_all,
-            },{
-              borderColor: 'rgba(255, 255, 255, 0)',
-              backgroundColor: 'rgba(255, 255, 255, 0)',
-              pointRadius: 0,
-              data: [5, 0, 0, 0, 0, 0, 0, 0],
-          }]
-        },    
-        // Configuration options go here
-        options: {
-          scale: {
-            display: 10
-          },
-          legend: {
-              display: false,
-          }
-        }
-    });
-  }
+  return;
 }
 function analyze(quizzes, score, week){
   // For each student 
+  let all_score_all = []
   for(let i = 0; i < score.length; i++){
     let cur_student = $("#student_container_template").clone()
     cur_student.attr("id", "student_container_" + score[i]["學號"]);
@@ -103,9 +25,6 @@ function analyze(quizzes, score, week){
     for (let i=0; i<labels.length; i++) {
       cur_score_all.push(cur_score_obj[labels[i]])
     }
-    //console.log(cur_score_obj, cur_score_all)
-    summaryScore[week][i] = cur_score_all;
-
     // Generate Text from score   
     let teacher_review = ""    
     function judgeText(input_score){   
@@ -175,6 +94,7 @@ function analyze(quizzes, score, week){
           }
         }
     });
+    all_score_all.push(cur_score_all);
   }
   // Success
   $("#execution-msg").show();
@@ -186,6 +106,7 @@ function analyze(quizzes, score, week){
   else if(week==4){
     $("#execution-msg-event").text('學生自評');
   }
+  return all_score_all;
 }
 function quizAnalyze(quizzes){
   for(let i=0; i<quizzes.length; i++){
@@ -252,9 +173,6 @@ function quizAnalyze(quizzes){
   for (let i=1; i<labels.length; i++){
     score_background.push(0)
   }
-  //for(let i=0; i<labels.length; i++){
-  //  $("#quiz_type1").addClass("quiz-preview-selected")
-  //}
 }
 function analyzeInitial(){
   labels = [];
@@ -278,9 +196,10 @@ function calculateWeek(week_number){
     $("#execution-msg-wrong").show();
     return;
   }
-
   quizAnalyze(quizzes);
-  analyze(quizzes, score, week_number);
+  let all_score_all;
+  all_score_all = analyze(quizzes, score, week_number);
+  return all_score_all;
 }
 function inputText(selectNum){
   analyzeInitial();
