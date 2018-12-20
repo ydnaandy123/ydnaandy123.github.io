@@ -13,7 +13,6 @@
   border: none;
   color: #333;
   background-color: #333;
-  width: 75%;
 }
 section div{
   padding: 0px 0px;
@@ -22,6 +21,76 @@ section div{
   margin: auto;
 }
 /* dashboard */
+#dashboard-title{
+  text-align: center;
+  font-size: 36px;
+  font-weight: bolder;
+  margin: 0px auto 15px auto;
+  letter-spacing: 3px;
+}
+#dashboard-tutorial{
+  color: black;
+  font-size: 1.2rem;
+  margin: 0 auto 10px auto;  
+  font-weight: bolder;
+}
+#dashboard-tutorial-content{
+  color: rgb(56, 56, 56);
+  margin: 5px 0 0 0 ;
+  text-indent: 40px;
+  font-weight: normal;
+}
+#dashboard-notice{
+  color: black;
+  font-size: 1.2rem;
+  margin: 0 auto 10px auto;  
+  font-weight: bolder;
+}
+#dashboard-notice-items{
+  color: rgb(56, 56, 56);
+  margin: 5px 0 0 0 ;
+  text-indent: 40px;
+  font-weight: normal;
+}
+#dashboard-buttons{
+  margin: auto;
+}
+#dashboard-buttons button{
+  padding: 15px 10px;
+  margin: 5px 15px;
+}
+#dashboard-buttons2{
+  margin: auto;
+}
+#dashboard-buttons2 button{
+  padding: 15px 10px;
+  margin: 5px 15px;
+}
+#input_table {
+  border-spacing: 5px;
+}
+#execution-msg{
+  border-style: solid;
+  border-width: 5px;
+  padding: 10px;
+  display: none;
+  margin: 40px auto 0 auto;
+  font-size: 30px;
+}
+#execution-msg-event{
+  color: rgb(99, 99, 252);
+}
+#execution-msg-wrong{
+  color: rgb(168, 14, 14);
+}
+/* Quiz Meta */
+#quiz_meta_title{
+  text-align: center;
+  font-size: 36px;
+  font-weight: bolder;
+  margin: 0px auto 15px auto;
+  letter-spacing: 3px;
+}
 #quiz-preview{
   margin: auto;
   padding-left: 30px;

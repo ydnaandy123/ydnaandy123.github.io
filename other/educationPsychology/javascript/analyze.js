@@ -176,6 +176,16 @@ function analyze(quizzes, score, week){
         }
     });
   }
+  // Success
+  $("#execution-msg").show();
+  $("#execution-msg-correct").show();
+  $("#execution-msg-wrong").hide();
+  if (week==0){
+    $("#execution-msg-event").text('老師他評');
+  }
+  else if(week==4){
+    $("#execution-msg-event").text('學生自評');
+  }
 }
 function quizAnalyze(quizzes){
   for(let i=0; i<quizzes.length; i++){
@@ -247,17 +257,51 @@ function quizAnalyze(quizzes){
   //}
 }
 function analyzeInitial(){
-  $("#students_container").children().remove()
-  $(".quiz-preview-area").children().remove()
+  labels = [];
+  labelSet = new Set();
+  $("#execution-msg").hide();
+  $("#students_container").children().remove();
+  $(".quiz-preview-area").children().remove();
 }
 function calculateWeek(week_number){  
   analyzeInitial();
-  let quizzes_text = document.getElementById("week"+String(week_number)+"_quiz").value;
-  let quizzes = JSON.parse(quizzes_text);
-  let score_text = document.getElementById("week"+String(week_number)+"_score").value;
-  let score = JSON.parse(score_text);
+  let quizzes_text, quizzes, score_text, score;
+  try{
+    quizzes_text = document.getElementById("week"+String(week_number)+"_quiz").value;
+    quizzes = JSON.parse(quizzes_text);
+    score_text = document.getElementById("week"+String(week_number)+"_score").value;
+    score = JSON.parse(score_text);
+  }
+  catch(SyntaxError){    
+    $("#execution-msg").show();
+    $("#execution-msg-correct").hide();
+    $("#execution-msg-wrong").show();
+    return;
+  }
+
   quizAnalyze(quizzes);
   analyze(quizzes, score, week_number);
+}
+function inputText(selectNum){
+  analyzeInitial();
+  if(selectNum == 0){
+    document.getElementById("week0_quiz").value = '';
+    document.getElementById("week0_score").value = '';    
+    document.getElementById("week4_quiz").value = '';
+    document.getElementById("week4_score").value = ''; 
+  }
+  else if(selectNum == 1){    
+    document.getElementById("week0_quiz").value = '[{"題目":"1.覺得同學不能接納他","正面負面":"negative","向度":"同理他人"},{"題目":"2.在團體中屬於比較沉默的學生","正面負面":"negative","向度":"同儕相處"},{"題目":"3.會跟同儕分享心裡的想法","正面負面":"positive","向度":"同儕合作"},{"題目":"4.當遇到困難時，會嘗試看書本找出解決之道","正面負面":"positive","向度":"參照經驗"},{"題目":"5.勇於面對困難","正面負面":"positive","向度":"主觀幸福"}]';
+    document.getElementById("week0_score").value = '[{"Timestamp":"12/14/2018 15:27:37","學號":70101,"姓名":"王小華","1.覺得同學不能接納他":5,"2.在團體中屬於比較沉默的學生":4,"3.會跟同儕分享心裡的想法":3,"4.當遇到困難時，會嘗試看書本找出解決之道":3,"5.勇於面對困難":2},{"Timestamp":"12/14/2018 15:49:03","學號":70102,"姓名":"張大華","1.覺得同學不能接納他":3,"2.在團體中屬於比較沉默的學生":2,"3.會跟同儕分享心裡的想法":1,"4.當遇到困難時，會嘗試看書本找出解決之道":1,"5.勇於面對困難":3},{"Timestamp":"12/14/2018 15:49:29","學號":70103,"姓名":"李小花","1.覺得同學不能接納他":5,"2.在團體中屬於比較沉默的學生":5,"3.會跟同儕分享心裡的想法":4,"4.當遇到困難時，會嘗試看書本找出解決之道":1,"5.勇於面對困難":1},{"Timestamp":"12/14/2018 15:50:01","學號":70104,"姓名":"林大玲","1.覺得同學不能接納他":2,"2.在團體中屬於比較沉默的學生":1,"3.會跟同儕分享心裡的想法":4,"4.當遇到困難時，會嘗試看書本找出解決之道":1,"5.勇於面對困難":2},{"Timestamp":"12/14/2018 15:50:30","學號":70105,"姓名":"陳筱英","1.覺得同學不能接納他":2,"2.在團體中屬於比較沉默的學生":4,"3.會跟同儕分享心裡的想法":5,"4.當遇到困難時，會嘗試看書本找出解決之道":1,"5.勇於面對困難":1}]';    
+    document.getElementById("week4_quiz").value = '[{"題目":"1.我覺得任何困難都能解決","正面負面":"positive","向度":"主觀幸福"},{"題目":"2.當我遇到困難時，我會試著從書本中找出解決的方法","正面負面":"positive","向度":"參照經驗"},{"題目":"3.我會跟同學分享心裡的想法","正面負面":"positive","向度":"同儕合作"},{"題目":"4.與別人相處時，我是屬於比較沉默的一方","正面負面":"negative","向度":"同儕相處"},{"題目":"5.我覺得同學不喜歡我","正面負面":"negative","向度":"同理他人"}]';
+    document.getElementById("week4_score").value = '[{"Timestamp":"12/14/2018 15:27:37","學號":70101,"姓名":"王小華","1.我覺得任何困難都能解決":5,"2.當我遇到困難時，我會試著從書本中找出解決的方法":4,"3.我會跟同學分享心裡的想法":3,"4.與別人相處時，我是屬於比較沉默的一方":3,"5.我覺得同學不喜歡我":2},{"Timestamp":"12/14/2018 15:49:03","學號":70102,"姓名":"張大華","1.我覺得任何困難都能解決":3,"2.當我遇到困難時，我會試著從書本中找出解決的方法":2,"3.我會跟同學分享心裡的想法":1,"4.與別人相處時，我是屬於比較沉默的一方":1,"5.我覺得同學不喜歡我":3},{"Timestamp":"12/14/2018 15:49:29","學號":70103,"姓名":"李小花","1.我覺得任何困難都能解決":5,"2.當我遇到困難時，我會試著從書本中找出解決的方法":5,"3.我會跟同學分享心裡的想法":4,"4.與別人相處時，我是屬於比較沉默的一方":1,"5.我覺得同學不喜歡我":1},{"Timestamp":"12/14/2018 15:50:01","學號":70104,"姓名":"林大玲","1.我覺得任何困難都能解決":2,"2.當我遇到困難時，我會試著從書本中找出解決的方法":1,"3.我會跟同學分享心裡的想法":4,"4.與別人相處時，我是屬於比較沉默的一方":1,"5.我覺得同學不喜歡我":2},{"Timestamp":"12/14/2018 15:50:30","學號":70105,"姓名":"陳筱英","1.我覺得任何困難都能解決":2,"2.當我遇到困難時，我會試著從書本中找出解決的方法":4,"3.我會跟同學分享心裡的想法":5,"4.與別人相處時，我是屬於比較沉默的一方":1,"5.我覺得同學不喜歡我":1}]'; 
+  }
+  else if(selectNum == 2){    
+    document.getElementById("week0_quiz").value = '[{"題目":"1.受同學取笑欺負時，會生氣予以反擊","正面負面":"negative","向度":"衝突處理"},{"題目":"2.會盡力完成被分配到的工作","正面負面":"positive","向度":"自我激勵"},{"題目":"3.對現在的自己感到滿意","正面負面":"positive","向度":"自我接納"},{"題目":"4.能正確地表達出自己的情緒","正面負面":"positive","向度":"自我情緒覺察"},{"題目":"5.發脾氣後會感到懊悔","正面負面":"positive","向度":"自我反省"},{"題目":"6.不習慣在不熟的人面前說話","正面負面":"negative","向度":"生活壓力"},{"題目":"7.不好的情緒產生時能積極面對","正面負面":"positive","向度":"情緒管理"},{"題目":"8.能用運動、聽音樂等休閒方式調整自己的心情","正面負面":"positive","向度":"壓力抒發"}]';
+    document.getElementById("week0_score").value = '[{"Timestamp":"12/20/2018 8:43:50","學號":80101,"姓名":"劉德華","1.受同學取笑欺負時，會生氣予以反擊":1,"2.會盡力完成被分配到的工作":5,"3.對現在的自己感到滿意":5,"4.能正確地表達出自己的情緒":4,"5.發脾氣後會感到懊悔":5,"6.不習慣在不熟的人面前說話":2,"7.不好的情緒產生時能積極面對":4,"8.能用運動、聽音樂等休閒方式調整自己的心情":5},{"Timestamp":"12/20/2018 8:44:27","學號":80102,"姓名":"張學友","1.受同學取笑欺負時，會生氣予以反擊":5,"2.會盡力完成被分配到的工作":2,"3.對現在的自己感到滿意":4,"4.能正確地表達出自己的情緒":2,"5.發脾氣後會感到懊悔":5,"6.不習慣在不熟的人面前說話":4,"7.不好的情緒產生時能積極面對":2,"8.能用運動、聽音樂等休閒方式調整自己的心情":3},{"Timestamp":"12/20/2018 8:45:55","學號":80103,"姓名":"郭富城","1.受同學取笑欺負時，會生氣予以反擊":3,"2.會盡力完成被分配到的工作":3,"3.對現在的自己感到滿意":2,"4.能正確地表達出自己的情緒":2,"5.發脾氣後會感到懊悔":3,"6.不習慣在不熟的人面前說話":5,"7.不好的情緒產生時能積極面對":2,"8.能用運動、聽音樂等休閒方式調整自己的心情":2}]';    
+    document.getElementById("week4_quiz").value = '[{"題目":"1.同學取笑我、欺負我的時候，我會生氣罵回去","正面負面":"negative","向度":"衝突處理"},{"題目":"2.我會盡力完成被分配到的工作","正面負面":"positive","向度":"自我激勵"},{"題目":"3.我對現在的自己感到滿意","正面負面":"positive","向度":"自我接納"},{"題目":"4.我能夠正確地表達出自己的情緒。","正面負面":"positive","向度":"自我情緒覺察"},{"題目":"5.我如果隨便亂發脾氣，事後會很後悔","正面負面":"positive","向度":"自我反省"},{"題目":"6.在不認識的人面前說話，讓我很有壓力","正面負面":"negative","向度":"生活壓力"},{"題目":"7.當我產生不好的情緒時，能積極面對不逃避","正面負面":"positive","向度":"情緒管理"},{"題目":"8.當心情不好時，我會用運動、散步、聽音樂或玩手機等方式讓心情變好","正面負面":"positive","向度":"壓力抒發"}]';
+    document.getElementById("week4_score").value = '[{"Timestamp":"12/20/2018 8:47:09","學號":80101,"姓名":"劉德華","1.同學取笑我、欺負我的時候，我會生氣罵回去":2,"2.我會盡力完成被分配到的工作":5,"3.我對現在的自己感到滿意":1,"4.我能夠正確地表達出自己的情緒。":4,"5.我如果隨便亂發脾氣，事後會很後悔":5,"6.在不認識的人面前說話，讓我很有壓力":1,"7.當我產生不好的情緒時，能積極面對不逃避":4,"8.當心情不好時，我會用運動、散步、聽音樂或玩手機等方式讓心情變好":5},{"Timestamp":"12/20/2018 8:47:38","學號":80102,"姓名":"張學友","1.同學取笑我、欺負我的時候，我會生氣罵回去":2,"2.我會盡力完成被分配到的工作":3,"3.我對現在的自己感到滿意":3,"4.我能夠正確地表達出自己的情緒。":2,"5.我如果隨便亂發脾氣，事後會很後悔":4,"6.在不認識的人面前說話，讓我很有壓力":2,"7.當我產生不好的情緒時，能積極面對不逃避":3,"8.當心情不好時，我會用運動、散步、聽音樂或玩手機等方式讓心情變好":3},{"Timestamp":"12/20/2018 8:48:06","學號":80103,"姓名":"郭富城","1.同學取笑我、欺負我的時候，我會生氣罵回去":5,"2.我會盡力完成被分配到的工作":2,"3.我對現在的自己感到滿意":1,"4.我能夠正確地表達出自己的情緒。":2,"5.我如果隨便亂發脾氣，事後會很後悔":4,"6.在不認識的人面前說話，讓我很有壓力":5,"7.當我產生不好的情緒時，能積極面對不逃避":2,"8.當心情不好時，我會用運動、散步、聽音樂或玩手機等方式讓心情變好":2}]'; 
+  }
 }
 function checkDuplicateID() {
   // Warning Duplicate IDs
@@ -270,7 +314,17 @@ function checkDuplicateID() {
 $(document).ready(function (e) {
   // Debug
   checkDuplicateID();
-  $("#ClickMEE").click();
+  //$("#ClickMEE").click();
+  $("div a[href='#main-body']").on('click', function (event) {
+    if (this.hash !== "") {
+      event.preventDefault();
+      var hash = this.hash;$('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function () {
+        window.location.hash = hash;
+      });
+    }
+  });
 });
 $(window).on('load', function (e) {
 })

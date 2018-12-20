@@ -47,35 +47,81 @@
             <div class="a4-school">臺北市立ＯＯ國民中學</div>           
         </section>
         <!-- Dashboard-->
-        <section id="input_sheet" class="sheet">    
-            <!-- Input table-->
-            <table class="center-h">
-                <!-- Title -->
-                <tr>
-                    <th>Teacher</th>
-                    <th>Student</th> 
-                </tr>
-                <!-- Quizzes -->
-                <tr>
-                    <th><textarea rows="3" cols="20" id="week0_quiz">[{"題目":"1.我喜歡現在的生活","正面負面":"positive","向度":"A"},{"題目":"2.在認識的人面前說話，我會覺得不自在","正面負面":"negative","向度":"B"},{"題目":"3.碰到問題時，我會去請教老師","正面負面":"positive","向度":"C"},{"題目":"4.我會盡力完成分配給我的打掃工作","正面負面":"positive","向度":"D"},{"題目":"5.同學…時，我也覺得很開心","正面負面":"positive","向度":"E"},{"題目":"6.我不喜歡跟同學相處","正面負面":"negative","向度":"F"},{"題目":"7.我會和同學互相分享事情或東西","正面負面":"positive","向度":"G"},{"題目":"8.和同學有衝突的時候，我會先到旁邊冷靜一下","正面負面":"positive","向度":"H"}]</textarea></th>
-                    <th><textarea rows="3" cols="20" id="week4_quiz">[{"題目":"1.我覺得任何困難都能解決","正面負面":"positive","向度":"主觀幸福"},{"題目":"2.當我遇到困難時，我會試著從書本中找出解決的方法","正面負面":"positive","向度":"參照經驗"},{"題目":"3.我會跟同學分享心裡的想法","正面負面":"positive","向度":"同儕合作"},{"題目":"4.與別人相處時，我是屬於比較沉默的一方","正面負面":"negative","向度":"同儕相處"},{"題目":"5.我覺得同學不喜歡我","正面負面":"negative","向度":"同理他人"}]</textarea></th> 
-                </tr>
-                <!-- Answers -->
-                <tr>
-                    <th><textarea rows="3" cols="20" id="week0_score">[   {     "Timestamp": "11/22/2018 10:13:12",     "學號": 12345,     "1.我喜歡現在的生活": 1,     "2.在認識的人面前說話，我會覺得不自在": 2,     "3.碰到問題時，我會去請教老師": 3,     "4.我會盡力完成分配給我的打掃工作": 4,     "5.同學…時，我也覺得很開心": 5,     "6.我不喜歡跟同學相處": 4,     "7.我會和同學互相分享事情或東西": 3,     "8.和同學有衝突的時候，我會先到旁邊冷靜一下": 2   },   {     "Timestamp": "11/22/2018 10:35:15",     "學號": 11111,     "1.我喜歡現在的生活": 1,     "2.在認識的人面前說話，我會覺得不自在": 1,     "3.碰到問題時，我會去請教老師": 1,     "4.我會盡力完成分配給我的打掃工作": 1,     "5.同學…時，我也覺得很開心": 1,     "6.我不喜歡跟同學相處": 1,     "7.我會和同學互相分享事情或東西": 1,     "8.和同學有衝突的時候，我會先到旁邊冷靜一下": 1   },   {     "Timestamp": "11/22/2018 10:38:11",     "學號": 55555,     "1.我喜歡現在的生活": 1,     "2.在認識的人面前說話，我會覺得不自在": 1,     "3.碰到問題時，我會去請教老師": 1,     "4.我會盡力完成分配給我的打掃工作": 1,     "5.同學…時，我也覺得很開心": 1,     "6.我不喜歡跟同學相處": 1,     "7.我會和同學互相分享事情或東西": 1,     "8.和同學有衝突的時候，我會先到旁邊冷靜一下": 1   } ]</textarea></th>
-                    <th><textarea rows="3" cols="20" id="week4_score">[{"Timestamp":"12/14/2018 15:27:37","學號":70101,"姓名":"王小華","1.我覺得任何困難都能解決":5,"2.當我遇到困難時，我會試著從書本中找出解決的方法":4,"3.我會跟同學分享心裡的想法":3,"4.與別人相處時，我是屬於比較沉默的一方":3,"5.我覺得同學不喜歡我":2},{"Timestamp":"12/14/2018 15:49:03","學號":70102,"姓名":"張大華","1.我覺得任何困難都能解決":3,"2.當我遇到困難時，我會試著從書本中找出解決的方法":2,"3.我會跟同學分享心裡的想法":1,"4.與別人相處時，我是屬於比較沉默的一方":1,"5.我覺得同學不喜歡我":3},{"Timestamp":"12/14/2018 15:49:29","學號":70103,"姓名":"李小花","1.我覺得任何困難都能解決":5,"2.當我遇到困難時，我會試著從書本中找出解決的方法":5,"3.我會跟同學分享心裡的想法":4,"4.與別人相處時，我是屬於比較沉默的一方":1,"5.我覺得同學不喜歡我":1},{"Timestamp":"12/14/2018 15:50:01","學號":70104,"姓名":"林大玲","1.我覺得任何困難都能解決":2,"2.當我遇到困難時，我會試著從書本中找出解決的方法":1,"3.我會跟同學分享心裡的想法":4,"4.與別人相處時，我是屬於比較沉默的一方":1,"5.我覺得同學不喜歡我":2},{"Timestamp":"12/14/2018 15:50:30","學號":70105,"姓名":"陳筱英","1.我覺得任何困難都能解決":2,"2.當我遇到困難時，我會試著從書本中找出解決的方法":4,"3.我會跟同學分享心裡的想法":5,"4.與別人相處時，我是屬於比較沉默的一方":1,"5.我覺得同學不喜歡我":1}]</textarea></th>
-                </tr>
-                <!-- Buttonas -->
-                <tr>
-                    <th><button type="button" class="btn btn-outline-primary" onclick="calculateWeek(0)">calculate</button></th>
-                    <th><button id="ClickMEE" type="button" class="btn btn-outline-primary" onclick="calculateWeek(4)">calculate</button></th>
-                </tr>
-            </table>
-            <div class="row justify-content-center pt-2">
-                <div class="col-11">
-                <button type="button" class="btn btn-primary btn-block" onclick="analyzeSummary()">summary</button>
+        <section id="input_sheet" class="sheet padding-20mm">  
+            <div id="dashboard-title">成績單產生器</div>  
+            <hr class="div-hr">
+            <div id="dashboard-tutorial">使用說明: 
+                <div id="dashboard-tutorial-content">
+                    請將四個對應資訊填入下方對話框，按下按鈕即可產生成績單。右鍵此頁面選擇 Print 會跳出列印頁面，可直接列印或存成 PDF 再列印。推薦先存成 PDF 檢查有無問題再列印。
                 </div>
             </div>
+            <div id="dashboard-notice">
+                注意事項: 
+                <div id="dashboard-notice-items">
+                    <div>
+                        a.請使用Chrome瀏覽器操作此頁面。
+                    </div>
+                    <div>
+                        b.列印頁面的 Margins 請選擇 None。
+                    </div>
+                    <div>
+                        c.如果發現雷達圖太小模糊，請放大頁面。
+                    </div>                    
+                </div>
+            </div>
+            <hr class="div-hr">
+            <div id="dashboard-buttons2">
+                <button type="button" onclick="inputText(0)">清除</button>
+                <button type="button" onclick="inputText(1)">模擬事件1(五學生五向度)</button>
+                <button type="button" onclick="inputText(2)">模擬事件2(三學生八項度)</button>
+            </div>
+            <!-- Input table-->
+            <hr class="div-hr">
+            <table id="input_table" class="center-h">
+                <!-- Title -->
+                <tr>
+                    <th></th>
+                    <th>老師</th>
+                    <th>學生</th> 
+                </tr>
+                <!-- Quizzes -->
+                <tr>                    
+                    <th>題目資訊</th>
+                    <th><textarea rows="4" cols="18" id="week0_quiz"></textarea></th>
+                    <th><textarea rows="4" cols="18" id="week4_quiz"></textarea></th> 
+                </tr>
+                <!-- Answers -->
+                <tr>                    
+                    <th>測驗回答</th>
+                    <th><textarea rows="4" cols="18" id="week0_score"></textarea></th>
+                    <th><textarea rows="4" cols="18" id="week4_score"></textarea></th>
+                </tr>
+            </table>
+            </div>
+            <!-- Buttonas -->
+            <div id="dashboard-buttons">
+                產生成績單 根據:
+                <button type="button" onclick="calculateWeek(0)">老師他評</button>
+                <button id="ClickMEE" type="button" onclick="calculateWeek(4)">學生自評</button>
+                <button type="button" disabled  onclick="analyzeSummary()">老師學生加權綜合評量</button>
+            </div>
+            <div id="execution-msg">                
+                <div id="execution-msg-correct">
+                    順利產生 <span id="execution-msg-event"></span> 成功! 上面有本次成績單，下面有本次題目檢視。<br/>
+                    <a href="#main-body" title="To Top">
+                        點我往上
+                    <i class="fas fa-angle-up fa-2x"></i>
+                    </a>
+                </div>
+                <div id="execution-msg-wrong">
+                    發生錯誤，請檢查上方文字框資訊填入資訊格式正確。
+                </div>
+            </div>
+        </section>
+        <!-- Quiz meta-->
+        <section id="quiz_meta_sheet" class="sheet padding-20mm">   
+            <div id="quiz_meta_title">
+                題目檢視頁面
             </div>
             <hr class="div-hr">
             <div id="quiz-preview">
@@ -93,10 +139,7 @@
             L.同儕合作:<div class="quiz-preview-area" id="quiz_type12"></div>
             M.衝突處理:<div class="quiz-preview-area" id="quiz_type13"></div>
             </div>
-            <a id="downloadAnchorElem" style="display:none">download</a>
-            <p id="result_text"></p>
         </section>
-
         
         <!-- jQuery CDN -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
