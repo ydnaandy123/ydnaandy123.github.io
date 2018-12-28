@@ -6,6 +6,37 @@ function analyzeSummary(){
   analyzeInitial();
   return;
 }
+function drawChart(score_id, cur_score_all){
+  let canvas = document.getElementById("canvas_" + score_id);
+  let ctx = canvas.getContext('2d');
+  let chart = new Chart(ctx, {
+      type: 'radar',    
+      data: {
+          labels: labels,
+          datasets: [{
+              backgroundColor: 'rgba(255, 99, 132, 0.5)',
+              borderColor: 'rgb(255, 99, 132)',
+              pointBorderColor: 'rgb(255, 99, 132)',
+              pointBackgroundColor: 'rgb(255, 99, 132)',
+              data: cur_score_all,
+          },{
+            borderColor: 'rgba(255, 255, 255, 0)',
+            backgroundColor: 'rgba(255, 255, 255, 0)',
+            pointRadius: 0,
+            data: score_background,
+        }]
+      },    
+      // Configuration options go here
+      options: {
+        scale: {
+          display: 10
+        },
+        legend: {
+            display: false,
+        }
+      }
+  });
+}
 function analyze(quizzes, score, week){
   // For each student 
   let all_score_all = []
@@ -43,57 +74,36 @@ function analyze(quizzes, score, week){
       return [review_class, review_text];
     }
     // Generate whole description
-    for(let j=0; j<labels.length-1; j++){
+    for(let j=0; j<labels.length; j++){
       let review_return;
       review_return = judgeText(cur_score_all[j]);
       teacher_review += labels[j] + ": <span class="+ review_return[0] +">";
       teacher_review += review_return[1];
-      teacher_review += "</span>，";
+      if(j!=labels.length-1){
+        teacher_review += "</span>，";
+      }
+      else{
+        teacher_review += "</span>。";
+      }
+      // SkillBar      
+      let cur_skillBar = $("#a4-skill-template").clone()
+      cur_skillBar.attr("id", "skillBar_" + score[i]["學號"] + "_" + j);
+      cur_skillBar.find(".a4-skillName").text(labels[j])      
+      console.log(cur_score_all[j], ((1 - cur_score_all[j]/5) * 100))
+      cur_skillBar.find(".a4-skillBar").css("width", ((1 - cur_score_all[j]/5) * 100 + 20) + "%")
+      cur_student.find(".chart2_container").append(cur_skillBar);
     } 
-    // Last one    
-    let j=labels.length-1;
-    let review_return;
-    review_return = judgeText(cur_score_all[j]);
-    teacher_review += labels[j] + ": <span class="+ review_return[0] +">";
-    teacher_review += review_return[1];
-    teacher_review += "</span>，";
     cur_student.find(".review").html(teacher_review);
     
     // Edit A4
-    //cur_student.find(".student_id").text(String(i+1) + ". " + score[i]["學號"])
     cur_student.find(".student_id").text(score[i]["姓名"])
     cur_student.find(".chart_container canvas").attr("id", "canvas_" + score[i]["學號"]);
     cur_student.appendTo($("#students_container"));    
     // Canvas
-    let canvas = document.getElementById("canvas_" + score[i]["學號"]);
-    let ctx = canvas.getContext('2d');
-    let chart = new Chart(ctx, {
-        type: 'radar',    
-        data: {
-            labels: labels,
-            datasets: [{
-                backgroundColor: 'rgba(255, 99, 132, 0.5)',
-                borderColor: 'rgb(255, 99, 132)',
-                pointBorderColor: 'rgb(255, 99, 132)',
-                pointBackgroundColor: 'rgb(255, 99, 132)',
-                data: cur_score_all,
-            },{
-              borderColor: 'rgba(255, 255, 255, 0)',
-              backgroundColor: 'rgba(255, 255, 255, 0)',
-              pointRadius: 0,
-              data: score_background,
-          }]
-        },    
-        // Configuration options go here
-        options: {
-          scale: {
-            display: 10
-          },
-          legend: {
-              display: false,
-          }
-        }
-    });
+    //drawChart(score[i]["學號"], cur_score_all)
+    // Canvas2
+
+    //
     all_score_all.push(cur_score_all);
   }
   // Success
@@ -233,7 +243,8 @@ function checkDuplicateID() {
 $(document).ready(function (e) {
   // Debug
   checkDuplicateID();
-  //$("#ClickMEE").click();
+  $("#ClickMEE2").click();
+  $("#ClickMEE").click();
   $("div a[href='#main-body']").on('click', function (event) {
     if (this.hash !== "") {
       event.preventDefault();

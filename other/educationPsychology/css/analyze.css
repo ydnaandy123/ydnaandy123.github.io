@@ -148,6 +148,28 @@ section.student-container{
 .a4-chart{
   margin: auto;
   width: 40%;
+  display: none;
+}
+.a4-chart2{
+  margin: 24px auto 20px auto;
+}
+.a4-chart2 #a4-skill-template{
+  display: none;
+}
+.a4-chart2 .a4-skillName{
+  font-size: 20px;
+  width: 100px;
+  background-color: rgb(255, 255, 255);
+}
+.a4-chart2 .a4-skillBarContainer{
+  width: 500px;
+  height: 50px;
+  background-image: url('../src/thermometer_empty.png')
+}
+.a4-chart2 .a4-skillBar{
+  width: 60%;
+  height: 50px;
+  background-image: url('../src/thermometer.png')
 }
 .a4-reviewTitle{
   margin: 12px auto 2px auto;
@@ -171,6 +193,6 @@ section.student-container{
   margin: 40px auto 20px auto;
   font-size: 20px;
   position: absolute;
-  bottom: 100px;
+  bottom: 60px;
   right: 100px;
 }

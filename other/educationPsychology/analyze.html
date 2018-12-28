@@ -33,7 +33,21 @@
             </div>   
             <div class="a4-chart chart_container">
                 <canvas></canvas>
-            </div>        
+            </div>  
+            <div class="a4-chart2">
+                <table class="chart2_container">
+                    <tr id="a4-skill-template">
+                        <td>
+                            <div class="a4-skillName"></div>
+                        </td>
+                        <td>
+                            <div class="a4-skillBarContainer">
+                                <div class="a4-skillBar"></div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>      
             <div class="a4-recordTime">
                 紀錄週期：<span contenteditable="true">________________</span>
             </div>
@@ -72,7 +86,7 @@
             <hr class="div-hr">
             <div id="dashboard-buttons2">
                 <button type="button" onclick="inputText(0)">清除</button>
-                <button type="button" onclick="inputText(1)">模擬事件1(五學生五向度)</button>
+                <button id="ClickMEE2" type="button" onclick="inputText(1)">模擬事件1(五學生五向度)</button>
                 <button type="button" onclick="inputText(2)">模擬事件2(三學生八項度)</button>
             </div>
             <!-- Input table-->
