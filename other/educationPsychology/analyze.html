@@ -43,7 +43,7 @@
                             </div>
                         </th>
                     </tr>
-                    <tr class="a4-skillbar-names">                        
+                    <tr class="a4-skillbar-names">     
                     </tr>
                 </table>
             </div>      
@@ -113,6 +113,10 @@
             </table>
             </div>
             <!-- Buttonas -->
+            <div>                
+                <input id="radio_chart_radar" type="radio" name="chart_type" value="radar" checked="checked" onclick="selectChart('radar')"> 雷達圖<br>
+                <input id="radio_chart_skillBar" type="radio" name="chart_type" value="skillBar" onclick="selectChart('skillBar')"> 溫度計<br>
+            </div>
             <div id="dashboard-buttons">
                 產生成績單 根據:
                 <button type="button" onclick="calculateWeek(0)">老師他評</button>

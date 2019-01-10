@@ -6,6 +6,16 @@ function analyzeSummary(){
   analyzeInitial();
   return;
 }
+function selectChart(chart_type){
+  if(chart_type=="radar"){
+    $(".a4-chart").show();
+    $(".a4-chart2").hide();
+  }
+  else if(chart_type=="skillBar"){
+    $(".a4-chart2").show();
+    $(".a4-chart").hide();
+  }
+}
 function drawChart(score_id, cur_score_all){  
   let canvas = document.getElementById("canvas_" + score_id);
   let ctx = canvas.getContext('2d');
@@ -48,7 +58,6 @@ function drawChart2(cur_student, score_id, cur_score_all){
     cur_skillBar_name.innerHTML = labels[i]
     cur_student.find(".a4-skillbar-names").append(cur_skillBar_name);
   }
-
 }
 function analyze(quizzes, score, week){
   // For each student 
@@ -104,12 +113,23 @@ function analyze(quizzes, score, week){
     // Edit A4
     cur_student.find(".student_id").text(score[i]["姓名"])
     cur_student.find(".chart_container canvas").attr("id", "canvas_" + score[i]["學號"]);
-    cur_student.appendTo($("#students_container"));    
+    cur_student.appendTo($("#students_container"));     
     // Canvas Radar
-    //drawChart(score[i]["學號"], cur_score_all)
-    //cur_student.find(".a4-chart").show();
+    drawChart(score[i]["學號"], cur_score_all)
     // Canvas SkillBar
     drawChart2(cur_student, score[i]["學號"], cur_score_all)
+    if(document.getElementById("radio_chart_radar").checked) {        
+      // Canvas Radar
+      //drawChart(score[i]["學號"], cur_score_all)
+      cur_student.find(".a4-chart").show();
+      cur_student.find(".a4-chart2").hide();
+    }
+    else if(document.getElementById("radio_chart_skillBar").checked){
+      // Canvas SkillBar
+      //drawChart2(cur_student, score[i]["學號"], cur_score_all)
+      cur_student.find(".a4-chart2").show();
+      cur_student.find(".a4-chart").hide();
+    }
 
     all_score_all.push(cur_score_all);
   }
@@ -257,8 +277,8 @@ function checkDuplicateID() {
 $(document).ready(function (e) {
   // Debug
   checkDuplicateID();
-  $("#ClickMEE2").click();
-  $("#ClickMEE").click();
+  //$("#ClickMEE2").click();
+  //$("#ClickMEE").click();
   $("div a[href='#main-body']").on('click', function (event) {
     if (this.hash !== "") {
       event.preventDefault();
