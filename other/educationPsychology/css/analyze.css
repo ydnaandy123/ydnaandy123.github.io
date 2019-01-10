@@ -153,6 +153,9 @@ section.student-container{
 .a4-chart2{
   margin: 24px auto 20px auto;
 }
+.a4-chart2 .chart2_container{
+  border-spacing: 30px 0px;
+}
 .a4-chart2 #a4-skill-template{
   display: none;
 }
@@ -161,14 +164,14 @@ section.student-container{
   width: 100px;
   background-color: rgb(255, 255, 255);
 }
-.a4-chart2 .a4-skillBarContainer{
-  width: 500px;
-  height: 50px;
+.a4-chart2 .a4-skillBarContainer{  
+  transform: scaleY(-1);
+  width: 94px;
+  height: 335px;
   background-image: url('../src/thermometer_empty.png')
 }
 .a4-chart2 .a4-skillBar{
-  width: 60%;
-  height: 50px;
+  width: 94px;
   background-image: url('../src/thermometer.png')
 }
 .a4-reviewTitle{

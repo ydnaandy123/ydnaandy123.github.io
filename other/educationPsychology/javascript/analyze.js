@@ -6,7 +6,7 @@ function analyzeSummary(){
   analyzeInitial();
   return;
 }
-function drawChart(score_id, cur_score_all){
+function drawChart(score_id, cur_score_all){  
   let canvas = document.getElementById("canvas_" + score_id);
   let ctx = canvas.getContext('2d');
   let chart = new Chart(ctx, {
@@ -37,6 +37,19 @@ function drawChart(score_id, cur_score_all){
       }
   });
 }
+function drawChart2(cur_student, score_id, cur_score_all){  
+  for(let i=0; i<cur_score_all.length; i++){        
+    let cur_skillBar_img = $("#a4-skill-template").clone()
+    cur_skillBar_img.attr("id", score_id + "_skillBar_img_" + i);
+    cur_skillBar_img.find(".a4-skillBar").css("height", ((1 - cur_score_all[i]/5) * 100 + 20) + "%")
+    cur_student.find(".a4-skillbar-imgs").append(cur_skillBar_img);
+
+    let cur_skillBar_name = document.createElement("th");  
+    cur_skillBar_name.innerHTML = labels[0]
+    cur_student.find(".a4-skillbar-names").append(cur_skillBar_name);
+  }
+
+}
 function analyze(quizzes, score, week){
   // For each student 
   let all_score_all = []
@@ -63,13 +76,13 @@ function analyze(quizzes, score, week){
       let review_class = ""
       if(input_score > 3){
         review_text = "良好";
-        review_class = "review_red";
+        review_class = "review_blue";
       }else if(input_score > 2){
         review_text = "尚可";
         review_class = "review_green";
       }else{
-        review_text = "待加強";
-        review_class = "review_blue";
+        review_text = "危險";
+        review_class = "review_red";
       }
       return [review_class, review_text];
     }
@@ -77,7 +90,7 @@ function analyze(quizzes, score, week){
     for(let j=0; j<labels.length; j++){
       let review_return;
       review_return = judgeText(cur_score_all[j]);
-      teacher_review += labels[j] + ": <span class="+ review_return[0] +">";
+      teacher_review += labels[j] + ":<span class="+ review_return[0] +">";
       teacher_review += review_return[1];
       if(j!=labels.length-1){
         teacher_review += "</span>，";
@@ -85,13 +98,6 @@ function analyze(quizzes, score, week){
       else{
         teacher_review += "</span>。";
       }
-      // SkillBar      
-      let cur_skillBar = $("#a4-skill-template").clone()
-      cur_skillBar.attr("id", "skillBar_" + score[i]["學號"] + "_" + j);
-      cur_skillBar.find(".a4-skillName").text(labels[j])      
-      console.log(cur_score_all[j], ((1 - cur_score_all[j]/5) * 100))
-      cur_skillBar.find(".a4-skillBar").css("width", ((1 - cur_score_all[j]/5) * 100 + 20) + "%")
-      cur_student.find(".chart2_container").append(cur_skillBar);
     } 
     cur_student.find(".review").html(teacher_review);
     
@@ -99,11 +105,12 @@ function analyze(quizzes, score, week){
     cur_student.find(".student_id").text(score[i]["姓名"])
     cur_student.find(".chart_container canvas").attr("id", "canvas_" + score[i]["學號"]);
     cur_student.appendTo($("#students_container"));    
-    // Canvas
+    // Canvas Radar
     //drawChart(score[i]["學號"], cur_score_all)
-    // Canvas2
+    //cur_student.find(".a4-chart").show();
+    // Canvas SkillBar
+    drawChart2(cur_student, score[i]["學號"], cur_score_all)
 
-    //
     all_score_all.push(cur_score_all);
   }
   // Success
@@ -204,6 +211,7 @@ function calculateWeek(week_number){
     $("#execution-msg").show();
     $("#execution-msg-correct").hide();
     $("#execution-msg-wrong").show();
+    console.log('err in function calculateWeek()')
     return;
   }
   quizAnalyze(quizzes);
@@ -230,6 +238,12 @@ function inputText(selectNum){
     document.getElementById("week0_score").value = '[{"Timestamp":"12/20/2018 8:43:50","學號":80101,"姓名":"劉德華","1.受同學取笑欺負時，會生氣予以反擊":1,"2.會盡力完成被分配到的工作":5,"3.對現在的自己感到滿意":5,"4.能正確地表達出自己的情緒":4,"5.發脾氣後會感到懊悔":5,"6.不習慣在不熟的人面前說話":2,"7.不好的情緒產生時能積極面對":4,"8.能用運動、聽音樂等休閒方式調整自己的心情":5},{"Timestamp":"12/20/2018 8:44:27","學號":80102,"姓名":"張學友","1.受同學取笑欺負時，會生氣予以反擊":5,"2.會盡力完成被分配到的工作":2,"3.對現在的自己感到滿意":4,"4.能正確地表達出自己的情緒":2,"5.發脾氣後會感到懊悔":5,"6.不習慣在不熟的人面前說話":4,"7.不好的情緒產生時能積極面對":2,"8.能用運動、聽音樂等休閒方式調整自己的心情":3},{"Timestamp":"12/20/2018 8:45:55","學號":80103,"姓名":"郭富城","1.受同學取笑欺負時，會生氣予以反擊":3,"2.會盡力完成被分配到的工作":3,"3.對現在的自己感到滿意":2,"4.能正確地表達出自己的情緒":2,"5.發脾氣後會感到懊悔":3,"6.不習慣在不熟的人面前說話":5,"7.不好的情緒產生時能積極面對":2,"8.能用運動、聽音樂等休閒方式調整自己的心情":2}]';    
     document.getElementById("week4_quiz").value = '[{"題目":"1.同學取笑我、欺負我的時候，我會生氣罵回去","正面負面":"negative","向度":"衝突處理"},{"題目":"2.我會盡力完成被分配到的工作","正面負面":"positive","向度":"自我激勵"},{"題目":"3.我對現在的自己感到滿意","正面負面":"positive","向度":"自我接納"},{"題目":"4.我能夠正確地表達出自己的情緒。","正面負面":"positive","向度":"自我情緒覺察"},{"題目":"5.我如果隨便亂發脾氣，事後會很後悔","正面負面":"positive","向度":"自我反省"},{"題目":"6.在不認識的人面前說話，讓我很有壓力","正面負面":"negative","向度":"生活壓力"},{"題目":"7.當我產生不好的情緒時，能積極面對不逃避","正面負面":"positive","向度":"情緒管理"},{"題目":"8.當心情不好時，我會用運動、散步、聽音樂或玩手機等方式讓心情變好","正面負面":"positive","向度":"壓力抒發"}]';
     document.getElementById("week4_score").value = '[{"Timestamp":"12/20/2018 8:47:09","學號":80101,"姓名":"劉德華","1.同學取笑我、欺負我的時候，我會生氣罵回去":2,"2.我會盡力完成被分配到的工作":5,"3.我對現在的自己感到滿意":1,"4.我能夠正確地表達出自己的情緒。":4,"5.我如果隨便亂發脾氣，事後會很後悔":5,"6.在不認識的人面前說話，讓我很有壓力":1,"7.當我產生不好的情緒時，能積極面對不逃避":4,"8.當心情不好時，我會用運動、散步、聽音樂或玩手機等方式讓心情變好":5},{"Timestamp":"12/20/2018 8:47:38","學號":80102,"姓名":"張學友","1.同學取笑我、欺負我的時候，我會生氣罵回去":2,"2.我會盡力完成被分配到的工作":3,"3.我對現在的自己感到滿意":3,"4.我能夠正確地表達出自己的情緒。":2,"5.我如果隨便亂發脾氣，事後會很後悔":4,"6.在不認識的人面前說話，讓我很有壓力":2,"7.當我產生不好的情緒時，能積極面對不逃避":3,"8.當心情不好時，我會用運動、散步、聽音樂或玩手機等方式讓心情變好":3},{"Timestamp":"12/20/2018 8:48:06","學號":80103,"姓名":"郭富城","1.同學取笑我、欺負我的時候，我會生氣罵回去":5,"2.我會盡力完成被分配到的工作":2,"3.我對現在的自己感到滿意":1,"4.我能夠正確地表達出自己的情緒。":2,"5.我如果隨便亂發脾氣，事後會很後悔":4,"6.在不認識的人面前說話，讓我很有壓力":5,"7.當我產生不好的情緒時，能積極面對不逃避":2,"8.當心情不好時，我會用運動、散步、聽音樂或玩手機等方式讓心情變好":2}]'; 
+  }
+  else if(selectNum == 3){    
+    document.getElementById("week0_quiz").value = '[{"題目":"1.覺得同學不能接納他","正面負面":"negative","向度":"同理他人"},{"題目":"2.在團體中屬於比較沉默的學生","正面負面":"negative","向度":"同儕相處"},{"題目":"3.會跟同儕分享心裡的想法","正面負面":"positive","向度":"同儕合作"},{"題目":"4.當遇到困難時，會嘗試看書本找出解決之道","正面負面":"positive","向度":"參照經驗"}]';
+    document.getElementById("week0_score").value = '[{"Timestamp":"12/14/2018 15:27:37","學號":70101,"姓名":"王小華","1.覺得同學不能接納他":5,"2.在團體中屬於比較沉默的學生":4,"3.會跟同儕分享心裡的想法":3,"4.當遇到困難時，會嘗試看書本找出解決之道":3},{"Timestamp":"12/14/2018 15:49:03","學號":70102,"姓名":"張大華","1.覺得同學不能接納他":3,"2.在團體中屬於比較沉默的學生":2,"3.會跟同儕分享心裡的想法":1,"4.當遇到困難時，會嘗試看書本找出解決之道":1},{"Timestamp":"12/14/2018 15:49:29","學號":70103,"姓名":"李小花","1.覺得同學不能接納他":5,"2.在團體中屬於比較沉默的學生":5,"3.會跟同儕分享心裡的想法":4,"4.當遇到困難時，會嘗試看書本找出解決之道":1},{"Timestamp":"12/14/2018 15:50:01","學號":70104,"姓名":"林大玲","1.覺得同學不能接納他":2,"2.在團體中屬於比較沉默的學生":1,"3.會跟同儕分享心裡的想法":4,"4.當遇到困難時，會嘗試看書本找出解決之道":1},{"Timestamp":"12/14/2018 15:50:30","學號":70105,"姓名":"陳筱英","1.覺得同學不能接納他":2,"2.在團體中屬於比較沉默的學生":4,"3.會跟同儕分享心裡的想法":5,"4.當遇到困難時，會嘗試看書本找出解決之道":1}]'; 
+    document.getElementById("week4_quiz").value = '[{"題目":"1.我覺得任何困難都能解決","正面負面":"positive","向度":"主觀幸福"},{"題目":"2.當我遇到困難時，我會試著從書本中找出解決的方法","正面負面":"positive","向度":"參照經驗"},{"題目":"3.我會跟同學分享心裡的想法","正面負面":"positive","向度":"同儕合作"},{"題目":"4.與別人相處時，我是屬於比較沉默的一方","正面負面":"negative","向度":"同儕相處"}]';
+    document.getElementById("week4_score").value = '[{"Timestamp":"12/14/2018 15:27:37","學號":70101,"姓名":"王小華","1.我覺得任何困難都能解決":5,"2.當我遇到困難時，我會試著從書本中找出解決的方法":4,"3.我會跟同學分享心裡的想法":3,"4.與別人相處時，我是屬於比較沉默的一方":3},{"Timestamp":"12/14/2018 15:49:03","學號":70102,"姓名":"張大華","1.我覺得任何困難都能解決":3,"2.當我遇到困難時，我會試著從書本中找出解決的方法":2,"3.我會跟同學分享心裡的想法":1,"4.與別人相處時，我是屬於比較沉默的一方":1},{"Timestamp":"12/14/2018 15:49:29","學號":70103,"姓名":"李小花","1.我覺得任何困難都能解決":5,"2.當我遇到困難時，我會試著從書本中找出解決的方法":5,"3.我會跟同學分享心裡的想法":4,"4.與別人相處時，我是屬於比較沉默的一方":1},{"Timestamp":"12/14/2018 15:50:01","學號":70104,"姓名":"林大玲","1.我覺得任何困難都能解決":2,"2.當我遇到困難時，我會試著從書本中找出解決的方法":1,"3.我會跟同學分享心裡的想法":4,"4.與別人相處時，我是屬於比較沉默的一方":1},{"Timestamp":"12/14/2018 15:50:30","學號":70105,"姓名":"陳筱英","1.我覺得任何困難都能解決":2,"2.當我遇到困難時，我會試著從書本中找出解決的方法":4,"3.我會跟同學分享心裡的想法":5,"4.與別人相處時，我是屬於比較沉默的一方":1}]';        
   }
 }
 function checkDuplicateID() {
