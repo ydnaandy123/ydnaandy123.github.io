@@ -45,7 +45,7 @@ function drawChart2(cur_student, score_id, cur_score_all){
     cur_student.find(".a4-skillbar-imgs").append(cur_skillBar_img);
 
     let cur_skillBar_name = document.createElement("th");  
-    cur_skillBar_name.innerHTML = labels[0]
+    cur_skillBar_name.innerHTML = labels[i]
     cur_student.find(".a4-skillbar-names").append(cur_skillBar_name);
   }
 
