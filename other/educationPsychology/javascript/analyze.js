@@ -344,8 +344,8 @@ function checkDuplicateID() {
 $(document).ready(function (e) {
   // Debug
   checkDuplicateID();
-  $("#ClickMEE2").click();
-  $("#ClickMEE").click();
+  //$("#ClickMEE2").click();
+  //$("#ClickMEE").click();
   $("div a[href='#main-body']").on('click', function (event) {
     if (this.hash !== "") {
       event.preventDefault();
