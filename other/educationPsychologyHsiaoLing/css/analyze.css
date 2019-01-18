@@ -114,7 +114,6 @@ section.sheet{
 }
 section.sheet.page1{  
   background-image: url('../src/background_1.jpg');
-  display: none;
 }
 section.sheet.page2{  
   background-image: url('../src/background_2.jpg');
@@ -122,7 +121,7 @@ section.sheet.page2{
 .a4-title{
   font-family: DFKai-sb;
   text-align: left;
-  font-size: 40px;
+  font-size: 38px;
   font-weight: bolder;
   letter-spacing: 3px;
   padding: 0px 40px;
@@ -131,14 +130,14 @@ section.sheet.page2{
 .a4-title .a4-hr{
   display: inline-block;
   width: 120px;
-  height: 4px;
+  height: 2px;
   vertical-align: middle;
   background-color:black;
 }
 .a4-title2{
   font-family: DFKai-sb;
   text-align: left;
-  font-size: 34px;
+  font-size: 32px;
   font-weight: bolder;
   padding: 0px 40px;
   margin: 5px auto 25px auto;
@@ -159,7 +158,6 @@ section.sheet.page2{
   line-height: 26px;
   font-size: 18px;
   letter-spacing: 1px;
-  font-weight:600;
 }
 .a4-intro2{
   padding: 0px 16px;
@@ -168,7 +166,6 @@ section.sheet.page2{
   line-height: 26px;
   font-size: 18px;
   letter-spacing: 1px;
-  font-weight:600;
 }
 .a4-chart-text{
   font-size: 18px;
@@ -221,28 +218,50 @@ section.sheet.page2{
   font-weight: 600;
   letter-spacing: 2px;
 }
+.a4-explain{
+  font-size: 18px;
+  margin: 40px auto 0px auto;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+.a4-explain-field{
+  padding-left: 15px;
+  font-size: 16px;
+  margin-top: 18px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  width: 90%;
+}
+.a4-explain-field2{  
+  font-size: 16px;
+  margin: 8px auto;
+  letter-spacing: px;
+  padding-left: 30px;
+  font-weight: normal;
+}
 .a4-reviewTitle{
-  margin: 12px auto 2px auto;
-  font-size: 20px;
+  margin: 40px auto 2px auto;
+  font-size: 18px;
   letter-spacing: 1px;
+  font-weight: bold;
 }
 .a4-review{
   text-indent: 40px;
   margin: 10px auto 14px auto;
-  font-size: 20px;
+  font-size: 18px;
 }
 .a4-parent{
-  margin: 20px auto 20px auto;  
-  font-size: 20px;
+  margin: 40px auto 20px auto;
+  font-size: 18px;
+  position: absolute;
+  bottom: 300px;
+  font-weight: bold;
 }
 .a4-sign{
-  margin: 80px auto 20px auto;  
-  font-size: 20px;
-}
-.a4-school{
   margin: 40px auto 20px auto;
-  font-size: 20px;
+  font-size: 18px;
   position: absolute;
   bottom: 60px;
   right: 100px;
+  font-weight: bold;
 }
