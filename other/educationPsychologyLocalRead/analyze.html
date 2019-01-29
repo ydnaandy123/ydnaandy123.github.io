@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>評量分析</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="keywords" content="評量分析">
+        <!-- ref:https://github.com/cognitom/paper-css/blob/master/examples/a4.html -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">    
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/paper-css/0.4.1/paper.css">      
+        <style>@page { size: A4 }</style>
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+        <!-- disabled -->
+        <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"> -->
+        <link rel="stylesheet" href="css/analyze.css">
+    </head>
+    <body id="main-body" class="A4">
+        <!-- Student A4 sheets-->
+        <div id="students_container">
+        </div>
+        <!-- Invisible template-->
+        <section class="student-container sheet padding-20mm" id="student_container_template">
+            <div class="a4-title">給家長  關於孩子的情緒智能觀察紀錄</div>                
+            <div class="a4-to">
+                致親愛的 <span class="a4-student_id student_id"></span> 的家長:
+            </div>
+            <div class="a4-intro">
+                情緒是生命經驗的一環，透過耐心、坦誠的接納情緒，才能藉此認識和成為更完整的自己，而管理情緒亦是重要的生命課題之一。透過情緒智能觀察紀錄，我們希望讓孩子更能瞭解及掌握自己的情緒反應，也讓家長知道孩子在某個時期的情緒變化，適時予以孩子協助及安慰。
+            </div>   
+            <div class="a4-intro2">
+                觀察紀錄分為量化紀錄及質性描述。量化紀錄由教師透過向度量表評估孩子近期的情緒狀態，並繪製成雷達圖，再進行重要向度的質性描述，分析近期觀察孩子在校表現後，可能影響孩子情緒起伏的原因。此份紀錄僅供家長作為與孩子溝通的參考依據，不納入學校學習評量或輔導資料內。 
+            </div>   
+            <div class="a4-chart chart_container">
+                <canvas></canvas>
+            </div>  
+            <div class="a4-chart2">
+                <table class="chart2_container center-h">
+                    <tr class="a4-skillbar-imgs">
+                        <th id="a4-skill-template">
+                            <div class="a4-skillBarContainer">
+                                <div class="a4-skillBar"></div>
+                            </div>
+                        </th>
+                    </tr>
+                    <tr class="a4-skillbar-names">     
+                    </tr>
+                </table>
+            </div>      
+            <div class="a4-recordTime">
+                紀錄週期：<span contenteditable="true">________________</span>
+            </div>
+            <div class="a4-reviewTitle">                    
+                教師觀察:
+            </div> 
+            <div class="a4-review review" contenteditable="true">
+            </div>
+            <div class="a4-parent">家長觀察：</div>
+            <div class="a4-sign">家長簽名：________________</div>   
+            <div class="a4-school">臺北市立ＯＯ國民中學</div>           
+        </section>
+        <!-- Dashboard-->
+        <section id="input_sheet" class="sheet padding-20mm">  
+            <div id="dashboard-title">成績單產生器</div>  
+            <hr class="div-hr">
+            <div id="dashboard-tutorial">使用說明: 
+                <div id="dashboard-tutorial-content">
+                    請將四個對應資訊填入下方對話框，按下按鈕即可產生成績單。右鍵此頁面選擇 Print 會跳出列印頁面，可直接列印或存成 PDF 再列印。推薦先存成 PDF 檢查有無問題再列印。
+                </div>
+            </div>
+            <div id="dashboard-notice">
+                注意事項: 
+                <div id="dashboard-notice-items">
+                    <div>
+                        a.請使用Chrome瀏覽器操作此頁面。
+                    </div>
+                    <div>
+                        b.列印頁面的 Margins 請選擇 None。
+                    </div>        
+                    <div>
+                        c.列印頁面的 Options 請將 Background graphics 勾選。
+                    </div>                
+                </div>
+            </div>
+            <hr class="div-hr">
+            <div id="dashboard-buttons2">
+                <button type="button" onclick="inputText(0)">清除</button>
+                <button type="button" onclick="inputText(1)">模擬事件1<br/>(五學生五向度)</button>
+                <button type="button" onclick="inputText(2)">模擬事件2<br/>(三學生八項度)</button>
+                <button id="ClickMEE2" type="button" onclick="inputText(3)">模擬事件3<br/>(五學生四項度)</button>
+            </div>
+            <!-- Input table-->
+            <hr class="div-hr">
+            <table id="input_table" class="center-h">
+                <!-- Title -->
+                <tr>
+                    <th></th>
+                    <th>老師</th>
+                    <th>學生</th> 
+                </tr>
+                <!-- Quizzes -->
+                <tr>                    
+                    <th>題目資訊</th>
+                    <th><textarea rows="4" cols="18" id="week0_quiz"></textarea></th>
+                    <th><textarea rows="4" cols="18" id="week4_quiz"></textarea></th> 
+                </tr>
+                <!-- Answers -->
+                <tr>                    
+                    <th>測驗回答</th>
+                    <th><textarea rows="4" cols="18" id="week0_score"></textarea></th>
+                    <th><textarea rows="4" cols="18" id="week4_score"></textarea></th>
+                </tr>
+            </table>
+            </div>
+            <!-- Buttonas -->
+            <div>                
+                <input id="radio_chart_radar" type="radio" name="chart_type" value="radar" checked="checked" onclick="selectChart('radar')"> 雷達圖<br>
+                <input id="radio_chart_skillBar" type="radio" name="chart_type" value="skillBar" onclick="selectChart('skillBar')"> 溫度計<br>
+            </div>
+            <div id="dashboard-buttons">
+                產生成績單 根據:
+                <button type="button" onclick="calculateWeek(0)">老師他評</button>
+                <button type="button" onclick="calculateWeek(4)">學生自評</button>
+                <button id="ClickMEE" type="button" onclick="analyzeSummary()">老師學生加權綜合評量</button>
+            </div>
+            <div id="execution-msg">                
+                <div id="execution-msg-correct">
+                    順利產生 <span id="execution-msg-event"></span> 成功! 上面有本次成績單，下面有本次題目檢視。<br/>
+                    <a href="#main-body" title="To Top">
+                        點我往上
+                    <i class="fas fa-angle-up fa-2x"></i>
+                    </a>
+                </div>
+                <div id="execution-msg-wrong">
+                    發生錯誤，請檢查上方文字框資訊填入資訊格式正確。
+                </div>
+            </div>
+        </section>
+        <!-- Quiz meta-->
+        <section id="quiz_meta_sheet" class="sheet padding-20mm">   
+            <div id="quiz_meta_title">
+                題目檢視頁面
+            </div>
+            <hr class="div-hr">
+            <div id="quiz-preview">
+            A.主觀幸福:<div class="quiz-preview-area" id="quiz_type1"></div>
+            B.生活壓力:<div class="quiz-preview-area" id="quiz_type2"></div>
+            C.自我反省:<div class="quiz-preview-area" id="quiz_type3"></div>
+            D.自我接納:<div class="quiz-preview-area" id="quiz_type4"></div>
+            E.自我情緒察覺:<div class="quiz-preview-area" id="quiz_type5"></div>
+            F.壓力抒發:<div class="quiz-preview-area" id="quiz_type6"></div>
+            G.自我激勵:<div class="quiz-preview-area" id="quiz_type7"></div>
+            H.參照經驗:<div class="quiz-preview-area" id="quiz_type8"></div>
+            I.情緒管理:<div class="quiz-preview-area" id="quiz_type9"></div>
+            J.同理他人:<div class="quiz-preview-area" id="quiz_type10"></div>
+            K.同儕相處:<div class="quiz-preview-area" id="quiz_type11"></div>
+            L.同儕合作:<div class="quiz-preview-area" id="quiz_type12"></div>
+            M.衝突處理:<div class="quiz-preview-area" id="quiz_type13"></div>
+            </div>
+        </section>
+        
+        <!-- jQuery CDN -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <!-- jQuery local fallback -->
+        <script>
+            window.jQuery || document.write('<script src="javascript/jquery-3.3.1.min.js"><\/script>')
+        </script>
+        <!-- Bootstrap JS CDN -->
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <!-- Bootstrap JS local fallback -->
+        <script>
+            if (typeof ($.fn.modal) === 'undefined') {
+                document.write('<script src="javascript/bootstrap.min.js"><\/script>')
+            }
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+        <script src="javascript/parallax.min.js"></script>
+        <script src="javascript/jquery.bcSwipe.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>        
+        <script src="javascript/xlsx.full.min.js"></script>
+        <script src="javascript/analyze.js"></script>
+    </body>
+</html>
