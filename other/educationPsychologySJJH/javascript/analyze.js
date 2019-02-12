@@ -13,7 +13,7 @@ let general_option = {
       color: 'rgba(0, 0, 0, 0.3)'
     },
     pointLabels: {
-      fontSize: 18,
+      fontSize: 14,
       fontStyle: 'normal',
       fontFamily: '微軟正黑體',
       fontColor: 'rgba(0, 0, 0, 0.7)'
@@ -56,7 +56,7 @@ function analyzeSummary(){
         review_text = "尚可";
         review_class = "review_green";
       }else{
-        review_text = "危險";
+        review_text = "較弱";
         review_class = "review_red";
       }
       return [review_class, review_text];
@@ -178,7 +178,7 @@ function analyze(quizzes, score, week){
         review_text = "尚可";
         review_class = "review_green";
       }else{
-        review_text = "危險";
+        review_text = "較弱";
         review_class = "review_red";
       }
       return [review_class, review_text];
@@ -293,8 +293,7 @@ function quizAnalyze(quizzes){
     }  
   }
   labels = Array.from(labelSet)
-  labels.sort();
-  console.log(quizzes)
+  //console.log(quizzes)
   // Score background for canvas
   score_background = [5]
   for (let i=1; i<labels.length; i++){

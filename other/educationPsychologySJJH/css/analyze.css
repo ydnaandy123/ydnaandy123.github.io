@@ -108,82 +108,77 @@ section div{
 }
 /* A4 student typeset */
 section.sheet{  
-  font-family: 微軟正黑體;
+  font-family: "DFKai-SB";
   background-size: cover;
   background-repeat: no-repeat;
 }
-section.sheet.page1{  
-  background-image: url('../src/background_1.jpg');
-}
-section.sheet.page2{  
-  background-image: url('../src/background_2.jpg');
-}
 .a4-title{
   font-family: DFKai-sb;
-  text-align: left;
-  font-size: 38px;
-  font-weight: bolder;
-  letter-spacing: 3px;
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  letter-spacing: 0px;
   padding: 0px 40px;
-  margin-top: 40px;
+  margin: -10px auto 0px auto;
+  font-family: 微軟正黑體;
 }
-.a4-title .a4-hr{
-  display: inline-block;
-  width: 120px;
-  height: 2px;
-  vertical-align: middle;
-  background-color:black;
-}
-.a4-title2{
-  font-family: DFKai-sb;
-  text-align: left;
-  font-size: 32px;
-  font-weight: bolder;
-  padding: 0px 40px;
-  margin: 5px auto 25px auto;
-  letter-spacing: 6px;
-}
-.a4-to{
-  padding: 0px 16px;
+.a4-PI-class{
+  padding: 0px 14px;
+  text-align: right;
   margin: 40px auto 10px;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 400;
   letter-spacing: 1px;
-  font-weight:600;
+  margin-right: 0px;
 }
-.a4-intro{
-  padding: 0px 16px;
-  margin: 20px auto;
-  text-indent: 40px;
-  line-height: 26px;
-  font-size: 18px;
-  letter-spacing: 1px;
-}
-.a4-intro2{
-  padding: 0px 16px;
-  margin: 30px auto;
-  text-indent: 40px;
-  line-height: 26px;
-  font-size: 18px;
-  letter-spacing: 1px;
-}
-.a4-chart-text{
-  font-size: 18px;
-  padding: 0px 16px;
-  margin: 70px auto 0px auto;
-  font-weight: 600;
-  letter-spacing: 1px;
+.a4-space{
+  margin-left: 50px;
 }
 .a4-student_id{
   color: rgb(122, 122, 255);
+}
+.a4-to{
+  padding: 0px 0px;
+  margin: 0px auto 10px;
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+.a4-intro{
+  padding: 0px 0px;
+  margin: 0px auto;
+  text-indent: 40px;
+  line-height: 24px;
+  font-size: 16px;
+  letter-spacing: 0px;
+}
+.a4-intro2{
+  padding: 0px 0px;
+  margin: 0px auto;
+  text-indent: 40px;
+  line-height: 24px;
+  font-size: 16px;
+  letter-spacing: 0px;
+}
+.a4-section-title{
+  padding: 0px 0px;
+  margin: 10px auto;
+  line-height: 17px;
+  font-size: 17px;
+  font-weight: bold;
 }
 .a4-student_score{
   color: rgb(122, 122, 255);
   display: none;
 }
+.a4-sec1-1{
+  margin: 15px auto 0px auto;
+  font-size: 15px;
+}
 .a4-chart{
-  margin: 0px auto;
-  width: 60%;
+  margin: -30px auto;
+  width: 40%;
   display: none;
 }
 .a4-chart2{
@@ -210,58 +205,83 @@ section.sheet.page2{
   width: 74px;
   background-image: url('../src/thermometer.png')
 }
-.a4-chart-discription{
-  width: 85%;
-  font-size: 17px;
-  padding: 0px 16px;
-  margin: 5px auto 0px auto;
-  font-weight: 600;
-  letter-spacing: 2px;
-}
-.a4-explain{
-  font-size: 18px;
-  margin: 40px auto 0px auto;
-  font-weight: 600;
-  letter-spacing: 2px;
-}
-.a4-explain-field{
-  padding-left: 15px;
-  font-size: 16px;
-  margin-top: 18px;
-  font-weight: 600;
-  letter-spacing: 2px;
-  width: 90%;
-}
-.a4-explain-field2{  
-  font-size: 16px;
-  margin: 8px auto;
-  letter-spacing: px;
-  padding-left: 30px;
-  font-weight: normal;
-}
-.a4-reviewTitle{
-  margin: 40px auto 2px auto;
-  font-size: 18px;
-  letter-spacing: 1px;
-  font-weight: bold;
+.a4-sec1-2{
+  font-size: 15px;
 }
 .a4-review{
   text-indent: 40px;
-  margin: 10px auto 14px auto;
-  font-size: 18px;
+  margin: 20px auto 14px auto;
+  font-size: 17px;
+  padding-left: 20px;
+}
+.a4-section-title2{  
+  padding: 0px 0px;
+  margin: 40px auto 12px auto;
+  line-height: 17px;
+  font-size: 17px;
+  font-weight: bold;
+}
+.a4-sec2-1{
+  margin-bottom: 100px;
+  margin-left: 6px;
+  font-size: 15px;
+}
+.a4-sec2-2{
+  margin-bottom: 100px;
+  margin-left: 6px;
+  font-size: 15px;
+}
+.a4-sec2-3{
+  margin-left: 6px;
+  font-size: 15px;
+}
+.a4-explain{
+  padding: 0px 0px;
+  margin: -10px auto;
+  line-height: 17px;
+  font-size: 17px;
+  font-weight: bold;  
+}
+.a4-explain-text1{  
+  padding: 0px 0px;
+  margin: 30px auto 0 auto;
+  text-indent: 40px;
+  line-height: 24px;
+  font-size: 16px;
+  letter-spacing: 0px;
+}
+.a4-explain-text2{  
+  padding: 0px 0px;
+  margin: 12px auto;
+  text-indent: 40px;
+  line-height: 24px;
+  font-size: 16px;
+  letter-spacing: 0px;
+}
+.a4-best-regards{
+  margin-top: 40px;
+  text-align: right;
+  margin-right: 210px;
+  font-size: 17px;
+  font-weight: bold;
+}
+.a4-space2{
+  margin-right: 20px;
+}
+.a4-school{
+  text-align: right;
+  font-weight: bold;
+  margin-top: 25px;
 }
 .a4-parent{
-  margin: 40px auto 20px auto;
+  margin: 80px auto 20px auto;
   font-size: 18px;
-  position: absolute;
-  bottom: 300px;
   font-weight: bold;
 }
 .a4-sign{
   margin: 40px auto 20px auto;
-  font-size: 18px;
+  font-size: 16px;
   position: absolute;
-  bottom: 60px;
-  right: 100px;
-  font-weight: bold;
+  bottom: 160px;
+  right: 140px;
 }

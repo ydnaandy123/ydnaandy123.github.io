@@ -22,20 +22,19 @@
         <!-- Invisible template-->
         <div class="student-container" id="student_container_template">
             <section class="sheet padding-20mm page1">
-                <div class="a4-title">給家長  <span class="a4-hr"></span> </div>
-                <div class="a4-title2">關於孩子的情緒智能觀察紀錄</div>                
+                <div class="a4-title">情緒智能觀察紀錄表</div>
+                <div class="a4-PI-class">班級：<span class="a4-space"></span>座號：<span class="a4-space"></span>姓名：<span class="student_id a4-student_id"></span></div>
                 <div class="a4-to">
-                    親愛的<span class="a4-student_id student_id"></span>家長:
+                    親愛的同學們:
                 </div>
                 <div class="a4-intro">
-                    您有多久沒跟孩子好好說說話了？您知道孩子心裡在想什麼嗎？您可以清楚感受孩子每天的情緒溫度嗎？為幫助孩子培養合宜的情緒智能，本學期學校特結合教育局專案試行「情緒智能觀察紀錄單」，希望能幫助家長及老師更懂孩子的心，能和她/他一起分享內心的喜樂與憂愁。
+                    還記得學期初輔導活動課進行的人際課程嗎？課程中，我們真實地檢核自己的人際狀態，輔導室透過你對自己的人際檢核，加上導師與輔導老師對你的觀察紀錄，做成以下的結果分析。透過此分析與建議，可以幫助你更了解自己在人際互動上的優勢與劣勢，進而創造和諧的人我關係，成為未來職場的贏家。 
                 </div>   
                 <div class="a4-intro2">
-                    本觀察紀錄單包含情緒雷達圖及綜合性觀察描述。情緒雷達圖以向度量表為工具，由學生自陳及教師他評產出；綜合性觀察描述主要是轉化雷達圖的訊息，再加上教師平日對學生的觀察。此份紀錄單非學習性評量，不會納入成績計算，請家長放心。
+                    請你詳細閱讀結果分析，並寫下省思與發現。自我探索是生命中重要的功課，這份觀察紀錄是一個很好的開始，祝福你對自己有更多的認識！
                 </div>   
-                <div class="a4-chart-text">
-                    孩子近日在各項度的表現:
-                </div>         
+                <div class="a4-section-title">1.情緒智能觀察紀錄結果分析與建議：</div>
+                <div class="a4-sec1-1">(1)人際智能雷達圖：</div>
                 <div class="a4-chart chart_container">
                     <canvas></canvas>
                 </div>  
@@ -51,58 +50,29 @@
                         <tr class="a4-skillbar-names">     
                         </tr>
                     </table>
-                </div>     
-                <div class="a4-chart-discription">
-                        盼望這張情緒智能觀察記錄單，能提醒您時時傾聽孩子的心聲、
-                        同理孩子的情緒，陪伴孩子在溫暖及支持性的環境下開心成長。                        
-                </div>       
+                </div>                  
+                <div class="a4-sec1-2">(2)結果分析與建議：</div>      
+                <div class="a4-review review" contenteditable="true"></div>
+                <div class="a4-section-title2">2.我的省思與發現：</div>
+                <div class="a4-sec2-1">(1)這樣的結果與建議，我的感覺是...</div>      
+                <div class="a4-sec2-2">(2)我發現我的人際優勢與劣勢是...</div>      
+                <div class="a4-sec2-3">(3)我想要做的努力及改變是...</div>      
             </section>
             <section class="sheet padding-20mm page2">
                 <div class="a4-explain">
-                    各項度所傳達的意義:                     
+                    親愛的家長您好：                  
                 </div>
-                <div class="a4-explain-field">
-                    一、個人內在覺察：著重於孩子對自身和周遭世界的感受。
-                    <div class="a4-explain-field2">
-                        1.主觀幸福：傳達的是孩子對於自己和生活的滿意程度。
-                    </div>
-                    <div class="a4-explain-field2">
-                        2.生活壓力：傳達的是孩子在學校生活所感受的壓力和負面情緒。
-                    </div>
+                <div class="a4-explain-text1">
+                    學期即將進入尾聲，感謝您這學期的陪伴，讓孩子更加成長、茁壯。 本學期透過導師、輔導老師的觀察，以及孩子對自己在人際智能方面的自我覺察，彙整成以上的「情緒智能觀察紀錄」。
                 </div>
-                <div class="a4-explain-field">
-                    二、個人情緒調節：此一層面著重於孩子如何面對生活中的挫折及挑戰。
-                    <div class="a4-explain-field2">
-                        3.	壓力抒發：傳達的是孩子心情不佳時的因應方式。
-                    </div>
-                    <div class="a4-explain-field2">
-                        4.	自我激勵：傳達的是孩子遭遇困難時，如何鼓勵自己堅持目標及突破困境。
-                    </div>
+                <div class="a4-explain-text2">
+                    期盼透過此結果，讓您了解孩子在「同理他人」、「同儕相處」、「同儕合作」及「衝突管理」等四方面的<span style="font-weight:bold">人際智能</span>能力，並透過孩子的省思與發現，讓您能了解孩子的想法，創造與孩子對話的機會。請您對孩子表現不錯的部分加以肯定，並對於孩子可更加努力的部分給予叮嚀，透過您的鼓勵與陪伴，相信孩子能有更穩定的情緒及人我關係，學校亦會持續進行情感教育的落實！                
                 </div>
-                <div class="a4-explain-field">
-                    三、人際覺察：此一層面著重於孩子目前的人際相處情形。
-                    <div class="a4-explain-field2">
-                        5.	同理他人：傳達的是孩子可設身處地、理解他人的情緒或需求。
-                    </div>
-                    <div class="a4-explain-field2">
-                        6.	同儕相處：傳達的是孩子對於自己跟同學相處狀況的描述。
-                    </div>
-                </div>
-                <div class="a4-explain-field">
-                    四、社交技巧：此一層面著重於孩子與他人相處時採取的策略。
-                    <div class="a4-explain-field2">
-                        7.	同儕合作：傳達的是孩子與他人分享、合作，並主動幫助他人。    
-                    </div>
-                    <div class="a4-explain-field2">
-                        8.	衝突處理：傳達的是孩子以理性方式跟意見不同的人相處。      
-                    </div>
-                </div>
-                <div class="a4-reviewTitle">                    
-                    教師的觀察描述是:
+                <div class="a4-best-regards">                    
+                    敬祝您<span class="a4-space2"></span>闔家平安！
                 </div> 
-                <div class="a4-review review" contenteditable="true">
-                </div>
-                <div class="a4-parent">家長觀察：</div>
+                <div class="a4-school">實踐國中輔導室敬啟 22362852-161</div>
+                <div class="a4-parent">家長給孩子的鼓勵與叮嚀：</div>
                 <div class="a4-sign">家長簽名：__________________</div>   
             </section>
         </div>
