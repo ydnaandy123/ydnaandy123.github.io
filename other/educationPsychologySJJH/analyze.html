@@ -20,45 +20,93 @@
         <div id="students_container">
         </div>
         <!-- Invisible template-->
-        <section class="student-container sheet padding-20mm" id="student_container_template">
-            <div class="a4-title">給家長  關於孩子的情緒智能觀察紀錄</div>                
-            <div class="a4-to">
-                致親愛的 <span class="a4-student_id student_id"></span> 的家長:
-            </div>
-            <div class="a4-intro">
-                情緒是生命經驗的一環，透過耐心、坦誠的接納情緒，才能藉此認識和成為更完整的自己，而管理情緒亦是重要的生命課題之一。透過情緒智能觀察紀錄，我們希望讓孩子更能瞭解及掌握自己的情緒反應，也讓家長知道孩子在某個時期的情緒變化，適時予以孩子協助及安慰。
-            </div>   
-            <div class="a4-intro2">
-                觀察紀錄分為量化紀錄及質性描述。量化紀錄由教師透過向度量表評估孩子近期的情緒狀態，並繪製成雷達圖，再進行重要向度的質性描述，分析近期觀察孩子在校表現後，可能影響孩子情緒起伏的原因。此份紀錄僅供家長作為與孩子溝通的參考依據，不納入學校學習評量或輔導資料內。 
-            </div>   
-            <div class="a4-chart chart_container">
-                <canvas></canvas>
-            </div>  
-            <div class="a4-chart2">
-                <table class="chart2_container center-h">
-                    <tr class="a4-skillbar-imgs">
-                        <th id="a4-skill-template">
-                            <div class="a4-skillBarContainer">
-                                <div class="a4-skillBar"></div>
-                            </div>
-                        </th>
-                    </tr>
-                    <tr class="a4-skillbar-names">     
-                    </tr>
-                </table>
-            </div>      
-            <div class="a4-recordTime">
-                紀錄週期：<span contenteditable="true">________________</span>
-            </div>
-            <div class="a4-reviewTitle">                    
-                教師觀察:
-            </div> 
-            <div class="a4-review review" contenteditable="true">
-            </div>
-            <div class="a4-parent">家長觀察：</div>
-            <div class="a4-sign">家長簽名：________________</div>   
-            <div class="a4-school">臺北市立ＯＯ國民中學</div>           
-        </section>
+        <div class="student-container" id="student_container_template">
+            <section class="sheet padding-20mm page1">
+                <div class="a4-title">給家長  <span class="a4-hr"></span> </div>
+                <div class="a4-title2">關於孩子的情緒智能觀察紀錄</div>                
+                <div class="a4-to">
+                    親愛的<span class="a4-student_id student_id"></span>家長:
+                </div>
+                <div class="a4-intro">
+                    您有多久沒跟孩子好好說說話了？您知道孩子心裡在想什麼嗎？您可以清楚感受孩子每天的情緒溫度嗎？為幫助孩子培養合宜的情緒智能，本學期學校特結合教育局專案試行「情緒智能觀察紀錄單」，希望能幫助家長及老師更懂孩子的心，能和她/他一起分享內心的喜樂與憂愁。
+                </div>   
+                <div class="a4-intro2">
+                    本觀察紀錄單包含情緒雷達圖及綜合性觀察描述。情緒雷達圖以向度量表為工具，由學生自陳及教師他評產出；綜合性觀察描述主要是轉化雷達圖的訊息，再加上教師平日對學生的觀察。此份紀錄單非學習性評量，不會納入成績計算，請家長放心。
+                </div>   
+                <div class="a4-chart-text">
+                    孩子近日在各項度的表現:
+                </div>         
+                <div class="a4-chart chart_container">
+                    <canvas></canvas>
+                </div>  
+                <div class="a4-chart2">
+                    <table class="chart2_container center-h">
+                        <tr class="a4-skillbar-imgs">
+                            <th id="a4-skill-template">
+                                <div class="a4-skillBarContainer">
+                                    <div class="a4-skillBar"></div>
+                                </div>
+                            </th>
+                        </tr>
+                        <tr class="a4-skillbar-names">     
+                        </tr>
+                    </table>
+                </div>     
+                <div class="a4-chart-discription">
+                        盼望這張情緒智能觀察記錄單，能提醒您時時傾聽孩子的心聲、
+                        同理孩子的情緒，陪伴孩子在溫暖及支持性的環境下開心成長。                        
+                </div>       
+            </section>
+            <section class="sheet padding-20mm page2">
+                <div class="a4-explain">
+                    各項度所傳達的意義:                     
+                </div>
+                <div class="a4-explain-field">
+                    一、個人內在覺察：著重於孩子對自身和周遭世界的感受。
+                    <div class="a4-explain-field2">
+                        1.主觀幸福：傳達的是孩子對於自己和生活的滿意程度。
+                    </div>
+                    <div class="a4-explain-field2">
+                        2.生活壓力：傳達的是孩子在學校生活所感受的壓力和負面情緒。
+                    </div>
+                </div>
+                <div class="a4-explain-field">
+                    二、個人情緒調節：此一層面著重於孩子如何面對生活中的挫折及挑戰。
+                    <div class="a4-explain-field2">
+                        3.	壓力抒發：傳達的是孩子心情不佳時的因應方式。
+                    </div>
+                    <div class="a4-explain-field2">
+                        4.	自我激勵：傳達的是孩子遭遇困難時，如何鼓勵自己堅持目標及突破困境。
+                    </div>
+                </div>
+                <div class="a4-explain-field">
+                    三、人際覺察：此一層面著重於孩子目前的人際相處情形。
+                    <div class="a4-explain-field2">
+                        5.	同理他人：傳達的是孩子可設身處地、理解他人的情緒或需求。
+                    </div>
+                    <div class="a4-explain-field2">
+                        6.	同儕相處：傳達的是孩子對於自己跟同學相處狀況的描述。
+                    </div>
+                </div>
+                <div class="a4-explain-field">
+                    四、社交技巧：此一層面著重於孩子與他人相處時採取的策略。
+                    <div class="a4-explain-field2">
+                        7.	同儕合作：傳達的是孩子與他人分享、合作，並主動幫助他人。    
+                    </div>
+                    <div class="a4-explain-field2">
+                        8.	衝突處理：傳達的是孩子以理性方式跟意見不同的人相處。      
+                    </div>
+                </div>
+                <div class="a4-reviewTitle">                    
+                    教師的觀察描述是:
+                </div> 
+                <div class="a4-review review" contenteditable="true">
+                </div>
+                <div class="a4-parent">家長觀察：</div>
+                <div class="a4-sign">家長簽名：__________________</div>   
+            </section>
+        </div>
+
         <!-- Dashboard-->
         <section id="input_sheet" class="sheet padding-20mm">  
             <div id="dashboard-title">成績單產生器</div>  
@@ -86,8 +134,8 @@
             <div id="dashboard-buttons2">
                 <button type="button" onclick="inputText(0)">清除</button>
                 <button type="button" onclick="inputText(1)">模擬事件1<br/>(五學生五向度)</button>
-                <button type="button" onclick="inputText(2)">模擬事件2<br/>(三學生八項度)</button>
-                <button id="ClickMEE2" type="button" onclick="inputText(3)">模擬事件3<br/>(五學生四項度)</button>
+                <button id="ClickMEE2" type="button" onclick="inputText(2)">模擬事件2<br/>(三學生八項度)</button>
+                <button type="button" onclick="inputText(3)">模擬事件3<br/>(五學生四項度)</button>
             </div>
             <!-- Input table-->
             <hr class="div-hr">
@@ -176,8 +224,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
         <script src="javascript/parallax.min.js"></script>
         <script src="javascript/jquery.bcSwipe.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>        
-        <script src="javascript/xlsx.full.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
         <script src="javascript/analyze.js"></script>
     </body>
 </html>

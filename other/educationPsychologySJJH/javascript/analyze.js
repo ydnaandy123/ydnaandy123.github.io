@@ -1,4 +1,32 @@
 let labels, labelSet, score_background;
+let general_option = {
+  scale: {
+    display: true,
+    angleLines :{
+      display: true,
+      lineWidth: 1,
+      color: 'rgba(0, 0, 0, 0.3)'
+    },
+    gridLines: {
+      display: true,
+      lineWidth: 1,
+      color: 'rgba(0, 0, 0, 0.3)'
+    },
+    pointLabels: {
+      fontSize: 18,
+      fontStyle: 'normal',
+      fontFamily: '微軟正黑體',
+      fontColor: 'rgba(0, 0, 0, 0.7)'
+    },
+    ticks: {
+      display: false,
+      fontSize: 12
+    }
+  },
+  legend: {
+    display: false
+  }
+}
 function analyzeSummary(){
   let summaryScore = []
   summaryScore.push(calculateWeek(0));
@@ -90,10 +118,11 @@ function drawChart(score_id, cur_score_all){
       data: {
           labels: labels,
           datasets: [{
-              backgroundColor: 'rgba(255, 99, 132, 0.5)',
-              borderColor: 'rgb(255, 99, 132)',
+              backgroundColor: 'rgba(244, 204, 116, 0.7)',
+              borderColor: 'rgb(244, 204, 116)',
               pointBorderColor: 'rgb(255, 99, 132)',
               pointBackgroundColor: 'rgb(255, 99, 132)',
+              pointRadius: 0,
               data: cur_score_all,
           },{
             borderColor: 'rgba(255, 255, 255, 0)',
@@ -103,14 +132,7 @@ function drawChart(score_id, cur_score_all){
         }]
       },    
       // Configuration options go here
-      options: {
-        scale: {
-          display: 10
-        },
-        legend: {
-            display: false,
-        }
-      }
+      options: general_option
   });
 }
 function drawChart2(cur_student, score_id, cur_score_all){  
@@ -233,7 +255,7 @@ function quizAnalyze(quizzes){
       $("#quiz_type4").append(quiz_element)
       labelSet.add(quizzes[i]["向度"])    
     }
-    else if(quizzes[i]["向度"] == "自我情緒察覺"){
+    else if(quizzes[i]["向度"] == "自我情緒覺察"){
       $("#quiz_type5").append(quiz_element)
       labelSet.add(quizzes[i]["向度"])    
     }     
@@ -269,12 +291,10 @@ function quizAnalyze(quizzes){
       $("#quiz_type13").append(quiz_element)
       labelSet.add(quizzes[i]["向度"])    
     }  
-    else{
-      labelSet.add(quizzes[i]["向度"])    
-    }  
   }
   labels = Array.from(labelSet)
   labels.sort();
+  console.log(quizzes)
   // Score background for canvas
   score_background = [5]
   for (let i=1; i<labels.length; i++){
@@ -347,8 +367,8 @@ function checkDuplicateID() {
 $(document).ready(function (e) {
   // Debug
   checkDuplicateID();
-  //$("#ClickMEE2").click();
-  //$("#ClickMEE").click();
+  $("#ClickMEE2").click();
+  $("#ClickMEE").click();
   $("div a[href='#main-body']").on('click', function (event) {
     if (this.hash !== "") {
       event.preventDefault();
@@ -359,39 +379,6 @@ $(document).ready(function (e) {
       });
     }
   });
-
-
-  
-        /* set up XMLHttpRequest */
-        var url = "local/response.xlsx";
-        var oReq = new XMLHttpRequest();
-        oReq.open("GET", url, true);
-        oReq.responseType = "arraybuffer";
- 
-        oReq.onload = function(e) {
-            var arraybuffer = oReq.response;
- 
-            /* convert data to binary string */
-            var data = new Uint8Array(arraybuffer);
-            var arr = new Array();
-            for (var i = 0; i != data.length; ++i) arr[i] = String.fromCharCode(data[i]);
-            var bstr = arr.join("");
- 
-            /* Call XLSX */
-            var workbook = XLSX.read(bstr, {
-                type: "binary"
-            });
- 
-            /* DO SOMETHING WITH workbook HERE */
-            var first_sheet_name = workbook.SheetNames[0];
-            /* Get worksheet */
-            var worksheet = workbook.Sheets[first_sheet_name];
-            console.log(XLSX.utils.sheet_to_json(worksheet, {
-                raw: true
-            }));
-        }
- 
-        oReq.send();
 });
 $(window).on('load', function (e) {
 })
