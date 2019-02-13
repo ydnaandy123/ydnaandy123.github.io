@@ -13,14 +13,14 @@ let general_option = {
       color: 'rgba(0, 0, 0, 0.3)'
     },
     pointLabels: {
-      fontSize: 14,
+      fontSize: 13,
       fontStyle: 'normal',
       fontFamily: '微軟正黑體',
       fontColor: 'rgba(0, 0, 0, 0.7)'
     },
     ticks: {
       display: false,
-      fontSize: 12
+      fontSize: 18
     }
   },
   legend: {
@@ -118,10 +118,10 @@ function drawChart(score_id, cur_score_all){
       data: {
           labels: labels,
           datasets: [{
-              backgroundColor: 'rgba(244, 204, 116, 0.7)',
-              borderColor: 'rgb(244, 204, 116)',
-              pointBorderColor: 'rgb(255, 99, 132)',
-              pointBackgroundColor: 'rgb(255, 99, 132)',
+              backgroundColor: 'rgba(0, 0, 0, 0.7)',
+              borderColor: 'rgba(0, 0, 0, 0.6)',
+              pointBorderColor: 'rgb(0, 0, 0)',
+              pointBackgroundColor: 'rgb(0, 0, 0)',
               pointRadius: 0,
               data: cur_score_all,
           },{
