@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>評量分析</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="keywords" content="評量分析">
+        <!-- ref:https://github.com/cognitom/paper-css/blob/master/examples/a4.html -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">    
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/paper-css/0.4.1/paper.css">      
+        <style>@page { size: A4 }</style>
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+        <!-- disabled -->
+        <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"> -->
+        <link rel="stylesheet" href="css/analyze.css">
+    </head>
+    <body id="main-body" class="A4">
+        <!-- Student A4 sheets-->
+        <div id="students_container">
+        </div>
+        <!-- Invisible template-->
+        <div class="student-container" id="student_container_template">
+            <section class="sheet padding-20mm page1">
+                <div class="a4-title">情緒智能觀察紀錄表</div>
+                <div class="a4-PI-class">班級:<span class="student_class a4-student_id"></span>座號:<span class="student_number a4-student_id"></span>姓名:<span class="student_id a4-student_id"></span></div>
+                <div class="a4-to">
+                    親愛的同學們:
+                </div>
+                <div class="a4-intro">
+                    還記得學期初輔導活動課進行的人際課程嗎？課程中，我們真實地檢核自己的人際狀態，輔導室透過你對自己的人際檢核，加上導師與輔導老師對你的觀察紀錄，做成以下的結果分析。透過此分析與建議，可以幫助你更了解自己在人際互動上的優勢與劣勢，進而創造和諧的人我關係，成為未來職場的贏家。 
+                </div>   
+                <div class="a4-intro2">
+                    請你詳細閱讀結果分析，並寫下省思與發現。自我探索是生命中重要的功課，這份觀察紀錄是一個很好的開始，祝福你對自己有更多的認識！
+                </div>   
+                <div class="a4-section-title">1.情緒智能觀察紀錄結果分析與建議：</div>
+                <div class="a4-parallel">           
+                    <table class="center-h">
+                        <!-- Title -->
+                        <tr>
+                            <th></th>
+                            <th  class="a4-review-col1">自己的觀察</th>
+                            <th>老師的觀察</th> 
+                        </tr>
+                        <!-- Quizzes -->
+                        <tr>                    
+                            <th>情緒智能<br/>雷達圖</th>
+                            <th>
+                                <div class="a4-chart chart_container1">
+                                    <canvas></canvas>
+                                </div> 
+                            </th>
+                            <th>
+                                <div class="a4-chart chart_container2">
+                                    <canvas></canvas>
+                                </div> 
+                            </th> 
+                        </tr>
+                        <!-- review1 -->
+                        <tr class="a4-review1">                    
+                            <th class="a4-review1-name"></th>
+                            <th class="a4-review-bold a4-review1-student"></th>
+                            <th class="a4-review-bold a4-review1-teacher"></th>
+                        </tr>
+                        <!-- review2 -->
+                        <tr class="a4-review2">                    
+                            <th class="a4-review2-name"></th>
+                            <th class="a4-review-bold a4-review2-student"></th>
+                            <th class="a4-review-bold a4-review2-teacher"></th>
+                        </tr>
+                        <!-- review3 -->
+                        <tr class="a4-review3">                    
+                            <th class="a4-review3-name"></th>
+                            <th class="a4-review-bold a4-review3-student"></th>
+                            <th class="a4-review-bold a4-review3-teacher"></th>
+                        </tr>
+                        <!-- review4 -->
+                        <tr class="a4-review4">                    
+                            <th class="a4-review4-name"></th>
+                            <th class="a4-review-bold a4-review4-student"></th>
+                            <th class="a4-review-bold a4-review4-teacher"></th>
+                        </tr>
+                    </table>
+                </div>           
+                <div class="a4-section-title2">2.我的省思與發現：</div>
+                <div class="a4-sec2-1">(1)這樣的結果與建議，我的感覺是...</div>      
+                <div class="a4-sec2-2">(2)我發現我的人際優勢與劣勢是...</div>      
+                <div class="a4-sec2-3">(3)我想要做的努力及改變是...</div>      
+            </section>
+            <section class="sheet padding-20mm page2">
+                <div class="a4-explain">
+                    親愛的家長您好：                  
+                </div>
+                <div class="a4-explain-text1">
+                    學期即將進入尾聲，感謝您這學期的陪伴，讓孩子更加成長、茁壯。 本學期透過導師、輔導老師的觀察，以及孩子對自己在人際智能方面的自我覺察，彙整成以上的「情緒智能觀察紀錄」。
+                </div>
+                <div class="a4-explain-text2">
+                    期盼透過此結果，讓您了解孩子的情緒智能，並透過孩子的省思與發現，讓您能了解孩子的想法，創造與孩子對話的機會。請您對孩子表現不錯的部分加以肯定，並對於孩子可更加努力的部分給予叮嚀，透過您的鼓勵與陪伴，相信孩子能有更穩定的情緒及人我關係，學校亦會持續進行情感教育的落實！                
+                </div>
+                <div class="a4-best-regards">                    
+                    敬祝您<span class="a4-space2"></span>闔家平安！
+                </div> 
+                <div class="a4-school">實踐國中輔導室敬啟 22362852-161</div>
+                <div class="a4-border">
+                    <div class="a4-parent">家長給孩子的鼓勵與叮嚀：</div>
+                </div>
+                <div class="a4-sign">家長簽名：__________________</div>   
+            </section>
+        </div>
+
+        <!-- Dashboard-->
+        <section id="input_sheet" class="sheet padding-20mm">  
+            <div id="dashboard-title">成績單產生器</div>  
+            <hr class="div-hr">
+            <div id="dashboard-tutorial">使用說明: 
+                <div id="dashboard-tutorial-content">
+                    請將四個對應資訊填入下方對話框，按下按鈕即可產生成績單。右鍵此頁面選擇 Print 會跳出列印頁面，可直接列印或存成 PDF 再列印。推薦先存成 PDF 檢查有無問題再列印。
+                </div>
+            </div>
+            <div id="dashboard-notice">
+                注意事項: 
+                <div id="dashboard-notice-items">
+                    <div>
+                        a.請使用Chrome瀏覽器操作此頁面。
+                    </div>
+                    <div>
+                        b.列印頁面的 Margins 請選擇 None。
+                    </div>        
+                    <div>
+                        c.列印頁面的 Options 請將 Background graphics 勾選。
+                    </div>                
+                </div>
+            </div>
+            <hr class="div-hr">
+            <div id="dashboard-buttons2">
+                <button type="button" onclick="inputText(0)">清除</button>
+                <button id="ClickMEE2" type="button" onclick="inputText(1)">模擬事件1<br/>(實踐國中)</button>
+                <button type="button" onclick="inputText(2)" style="display:none">模擬事件2<br/>(三學生八項度)</button>
+                <button type="button" onclick="inputText(3)" style="display:none">模擬事件3<br/>(五學生四項度)</button>
+            </div>
+            <!-- Input table-->
+            <hr class="div-hr">
+            <table id="input_table" class="center-h">
+                <!-- Title -->
+                <tr>
+                    <th></th>
+                    <th>學生</th>
+                    <th>老師</th> 
+                </tr>
+                <!-- Quizzes -->
+                <tr>                    
+                    <th>題目資訊</th>
+                    <th><textarea rows="4" cols="18" id="week4_quiz"></textarea></th>
+                    <th><textarea rows="4" cols="18" id="week0_quiz"></textarea></th> 
+                </tr>
+                <!-- Answers -->
+                <tr>                    
+                    <th>測驗回答</th>
+                    <th><textarea rows="4" cols="18" id="week4_score"></textarea></th>
+                    <th><textarea rows="4" cols="18" id="week0_score"></textarea></th>
+                </tr>
+            </table>
+            </div>
+            <!-- Buttonas -->
+            <div>                
+                <input id="radio_chart_radar" type="radio" name="chart_type" value="radar" checked="checked" onclick="selectChart('radar')" style="display:none"><br>
+                <input id="radio_chart_skillBar" type="radio" name="chart_type" value="skillBar" onclick="selectChart('skillBar')" style="display:none"><br>
+            </div>
+            <div id="dashboard-buttons">
+                產生成績單 根據:
+                <button type="button" onclick="calculateWeek(0)" style="display:none">老師他評</button>
+                <button type="button" onclick="calculateWeek(4)" style="display:none">學生自評</button>
+                <button type="button" onclick="analyzeSummary()" style="display:none">老師學生加權綜合評量</button>
+                <button id="ClickMEE"  type="button" onclick="analyzeParallel()">學生老師並列</button>
+            </div>
+            <div id="execution-msg">                
+                <div id="execution-msg-correct">
+                    順利產生 <span id="execution-msg-event"></span> 成功! 上面有本次成績單，下面有本次題目檢視。<br/>
+                    <a href="#main-body" title="To Top">
+                        點我往上
+                    <i class="fas fa-angle-up fa-2x"></i>
+                    </a>
+                </div>
+                <div id="execution-msg-wrong">
+                    發生錯誤，請檢查上方文字框資訊填入資訊格式正確。
+                </div>
+            </div>
+        </section>
+        <!-- Quiz meta-->
+        <section id="quiz_meta_sheet" class="sheet padding-20mm">   
+            <div id="quiz_meta_title">
+                題目檢視頁面
+            </div>
+            <hr class="div-hr">
+            <div id="quiz-preview">
+            A.主觀幸福:<div class="quiz-preview-area" id="quiz_type1"></div>
+            B.生活壓力:<div class="quiz-preview-area" id="quiz_type2"></div>
+            C.自我反省:<div class="quiz-preview-area" id="quiz_type3"></div>
+            D.自我接納:<div class="quiz-preview-area" id="quiz_type4"></div>
+            E.自我情緒察覺:<div class="quiz-preview-area" id="quiz_type5"></div>
+            F.壓力抒發:<div class="quiz-preview-area" id="quiz_type6"></div>
+            G.自我激勵:<div class="quiz-preview-area" id="quiz_type7"></div>
+            H.參照經驗:<div class="quiz-preview-area" id="quiz_type8"></div>
+            I.情緒管理:<div class="quiz-preview-area" id="quiz_type9"></div>
+            J.同理他人:<div class="quiz-preview-area" id="quiz_type10"></div>
+            K.同儕相處:<div class="quiz-preview-area" id="quiz_type11"></div>
+            L.同儕合作:<div class="quiz-preview-area" id="quiz_type12"></div>
+            M.衝突處理:<div class="quiz-preview-area" id="quiz_type13"></div>
+            </div>
+        </section>
+        
+        <!-- jQuery CDN -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <!-- jQuery local fallback -->
+        <script>
+            window.jQuery || document.write('<script src="javascript/jquery-3.3.1.min.js"><\/script>')
+        </script>
+        <!-- Bootstrap JS CDN -->
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <!-- Bootstrap JS local fallback -->
+        <script>
+            if (typeof ($.fn.modal) === 'undefined') {
+                document.write('<script src="javascript/bootstrap.min.js"><\/script>')
+            }
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+        <script src="javascript/parallax.min.js"></script>
+        <script src="javascript/jquery.bcSwipe.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+        <script src="javascript/analyze.js"></script>
+    </body>
+</html>

@@ -1,0 +1,206 @@
+/* ROOT NECESSAORY */
+.review_red { 
+  color: red;
+}
+.review_blue { 
+  color: blue;
+}
+.review_green { 
+  color: rgb(63, 216, 63);
+}
+.div-hr {
+  height: 2px;
+  border: none;
+  color: #333;
+  background-color: #333;
+}
+section div{
+  padding: 0px 0px;
+}
+.center-h{
+  margin: auto;
+}
+/* dashboard */
+#dashboard-title{
+  text-align: center;
+  font-size: 36px;
+  font-weight: bolder;
+  margin: 0px auto 15px auto;
+  letter-spacing: 3px;
+}
+#dashboard-tutorial{
+  color: black;
+  font-size: 1.2rem;
+  margin: 0 auto 10px auto;  
+  font-weight: bolder;
+}
+#dashboard-tutorial-content{
+  color: rgb(56, 56, 56);
+  margin: 5px 0 0 0 ;
+  text-indent: 40px;
+  font-weight: normal;
+}
+#dashboard-notice{
+  color: black;
+  font-size: 1.2rem;
+  margin: 0 auto 10px auto;  
+  font-weight: bolder;
+}
+#dashboard-notice-items{
+  color: rgb(56, 56, 56);
+  margin: 5px 0 0 0 ;
+  text-indent: 40px;
+  font-weight: normal;
+}
+#dashboard-buttons{
+  margin: auto;
+}
+#dashboard-buttons button{
+  padding: 15px 10px;
+  margin: 5px 15px;
+}
+#dashboard-buttons2{
+  margin: auto;
+}
+#dashboard-buttons2 button{
+  padding: 15px 10px;
+  margin: 5px 15px;
+}
+#input_table {
+  border-spacing: 5px;
+}
+#execution-msg{
+  border-style: solid;
+  border-width: 5px;
+  padding: 10px;
+  display: none;
+  margin: 40px auto 0 auto;
+  font-size: 30px;
+}
+#execution-msg-event{
+  color: rgb(99, 99, 252);
+}
+#execution-msg-wrong{
+  color: rgb(168, 14, 14);
+}
+/* Quiz Meta */
+#quiz_meta_title{
+  text-align: center;
+  font-size: 36px;
+  font-weight: bolder;
+  margin: 0px auto 15px auto;
+  letter-spacing: 3px;
+}
+#quiz-preview{
+  margin: auto;
+  padding-left: 30px;
+  color: gray;
+}
+.quiz-preview-area{
+  color: black;
+  margin: auto;
+  padding-left: 60px;
+  margin-bottom: 15px;
+}
+/* template */
+#student_container_template{
+  display: none;
+}
+/* A4 student typeset */
+section.sheet{  
+  font-family: DFKai-sb;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+section.sheet.student-container > div:not(.a4-chart2):not(.a4-school){  
+  width: 90%;
+}
+.a4-title{
+  text-align: center;
+  font-size: 26px;
+  font-weight: bolder;
+  margin-bottom: 25px;
+  letter-spacing: 3px;
+}
+.a4-to{
+  margin: 10px auto;
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+.a4-intro{
+  margin: 10px auto;
+  text-indent: 40px;
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+.a4-intro2{  
+  margin: 10px auto;
+  text-indent: 40px;
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+.a4-recordTime{  
+  margin: 16px auto 14px auto;
+  font-size: 20px;
+}
+.a4-student_id{
+  color: rgb(122, 122, 255);
+}
+.a4-student_score{
+  color: rgb(122, 122, 255);
+  display: none;
+}
+.a4-chart{
+  margin: auto;
+  width: 40%;
+  display: none;
+}
+.a4-chart2{
+  margin: 28px auto 20px auto;
+}
+.a4-chart2 .chart2_container{
+  border-spacing: 5px 0px;
+}
+.a4-chart2 #a4-skill-template{
+  display: none;
+}
+.a4-chart2 .a4-skillName{
+  font-size: 20px;
+  width: 74px;
+  background-color: rgb(255, 255, 255);
+}
+.a4-chart2 .a4-skillBarContainer{  
+  transform: scaleY(-1);
+  width: 74px;
+  height: 260px;
+  background-image: url('../src/thermometer_empty.png')
+}
+.a4-chart2 .a4-skillBar{
+  width: 74px;
+  background-image: url('../src/thermometer.png')
+}
+.a4-reviewTitle{
+  margin: 12px auto 2px auto;
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+.a4-review{
+  text-indent: 40px;
+  margin: 10px auto 14px auto;
+  font-size: 20px;
+}
+.a4-parent{
+  margin: 20px auto 20px auto;  
+  font-size: 20px;
+}
+.a4-sign{
+  margin: 80px auto 20px auto;  
+  font-size: 20px;
+}
+.a4-school{
+  margin: 40px auto 20px auto;
+  font-size: 20px;
+  position: absolute;
+  bottom: 60px;
+  right: 100px;
+}

@@ -1,0 +1,287 @@
+/* ROOT NECESSAORY */
+.review_red { 
+  font-weight: bold;
+  color: black;
+}
+.review_blue { 
+  font-weight: bold;
+  color: black;
+}
+.review_green { 
+  font-weight: bold;
+  color: black;
+}
+.div-hr {
+  height: 2px;
+  border: none;
+  color: #333;
+  background-color: #333;
+}
+section div{
+  padding: 0px 0px;
+}
+.center-h{
+  margin: auto;
+}
+/* dashboard */
+#dashboard-title{
+  text-align: center;
+  font-size: 36px;
+  font-weight: bolder;
+  margin: 0px auto 15px auto;
+  letter-spacing: 3px;
+}
+#dashboard-tutorial{
+  color: black;
+  font-size: 1.2rem;
+  margin: 0 auto 10px auto;  
+  font-weight: bolder;
+}
+#dashboard-tutorial-content{
+  color: rgb(56, 56, 56);
+  margin: 5px 0 0 0 ;
+  text-indent: 40px;
+  font-weight: normal;
+}
+#dashboard-notice{
+  color: black;
+  font-size: 1.2rem;
+  margin: 0 auto 10px auto;  
+  font-weight: bolder;
+}
+#dashboard-notice-items{
+  color: rgb(56, 56, 56);
+  margin: 5px 0 0 0 ;
+  text-indent: 40px;
+  font-weight: normal;
+}
+#dashboard-buttons{
+  margin: auto;
+}
+#dashboard-buttons button{
+  padding: 15px 5px;
+  margin: 5px 1px;
+}
+#dashboard-buttons2{
+  margin: auto;
+}
+#dashboard-buttons2 button{
+  padding: 15px 10px;
+  margin: 5px 15px;
+}
+#input_table {
+  border-spacing: 5px;
+}
+#execution-msg{
+  border-style: solid;
+  border-width: 5px;
+  padding: 10px;
+  display: none;
+  margin: 40px auto 0 auto;
+  font-size: 30px;
+}
+#execution-msg-event{
+  color: rgb(99, 99, 252);
+}
+#execution-msg-wrong{
+  color: rgb(168, 14, 14);
+}
+/* Quiz Meta */
+#quiz_meta_title{
+  text-align: center;
+  font-size: 36px;
+  font-weight: bolder;
+  margin: 0px auto 15px auto;
+  letter-spacing: 3px;
+}
+#quiz-preview{
+  margin: auto;
+  padding-left: 30px;
+  color: gray;
+}
+.quiz-preview-area{
+  color: black;
+  margin: auto;
+  padding-left: 60px;
+  margin-bottom: 15px;
+}
+/* template */
+#student_container_template{
+  display: none;
+}
+/* A4 student typeset */
+section.sheet{  
+  font-family: "DFKai-SB";
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.a4-title{
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  letter-spacing: 0px;
+  padding: 0px 20px;
+  margin: -10px auto 0px auto;
+}
+.a4-PI-class{
+  padding: 0px 0px;
+  text-align: right;
+  margin: 40px auto 10px;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin-right: -25px;
+}
+.a4-space{
+  margin-left: 50px;
+}
+.a4-student_id{
+  color: rgb(0, 0, 0);
+  padding: 0 25px 0 5px;
+}
+.a4-to{
+  padding: 0px 0px;
+  margin: 0px auto 10px;
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+.a4-intro{
+  padding: 0px 0px;
+  margin: 0px auto;
+  text-indent: 40px;
+  line-height: 24px;
+  font-size: 16px;
+  letter-spacing: 0px;
+}
+.a4-intro2{
+  padding: 0px 0px;
+  margin: 0px auto;
+  text-indent: 40px;
+  line-height: 24px;
+  font-size: 16px;
+  letter-spacing: 0px;
+}
+.a4-section-title{
+  padding: 0px 0px;
+  margin: 10px auto;
+  line-height: 17px;
+  font-size: 17px;
+  font-weight: bold;
+}
+.a4-student_score{
+  color: rgb(0, 0, 0);
+  display: none;
+}
+.a4-chart{
+  margin: -25px auto;
+  width: 250px;
+  padding: 0px 5px;
+}
+.a4-parallel table {
+  border-collapse: collapse;
+}
+.a4-parallel table,.a4-parallel th,.a4-parallel td {
+  border: 1px solid black;
+}
+.a4-parallel table th{
+  padding: 2px 6px;
+}
+.a4-parallel table th:not(.a4-review-bold){
+  padding: 2px 6px;
+  font-weight: normal;
+}
+.a4-review-col1{
+  font-size: 17px;
+}
+.a4-review1, .a4-review2, .a4-review3, .a4-review4{
+  font-size: 17px;
+  /* font-weight: normal; */
+  /* height: 30px; */
+}
+.a4-review{
+  text-indent: 40px;
+  margin: 20px auto 14px auto;
+  font-size: 17px;
+  padding-left: 20px;
+}
+.a4-section-title2{
+  padding: 0px 0px;
+  margin: 20px auto 12px auto;
+  line-height: 17px;
+  font-size: 17px;
+  font-weight: bold;
+}
+.a4-sec2-1{
+  margin-bottom: 100px;
+  margin-left: 6px;
+  font-size: 15px;
+}
+.a4-sec2-2{
+  margin-bottom: 100px;
+  margin-left: 6px;
+  font-size: 15px;
+}
+.a4-sec2-3{
+  margin-left: 6px;
+  font-size: 15px;
+}
+.a4-explain{
+  padding: 0px 0px;
+  margin: -10px auto;
+  line-height: 17px;
+  font-size: 17px;
+  font-weight: bold;  
+}
+.a4-explain-text1{  
+  padding: 0px 0px;
+  margin: 30px auto 0 auto;
+  text-indent: 40px;
+  line-height: 24px;
+  font-size: 16px;
+  letter-spacing: 0px;
+}
+.a4-explain-text2{  
+  padding: 0px 0px;
+  margin: 12px auto;
+  text-indent: 40px;
+  line-height: 24px;
+  font-size: 16px;
+  letter-spacing: 0px;
+}
+.a4-best-regards{
+  margin-top: 40px;
+  text-align: right;
+  margin-right: 210px;
+  font-size: 17px;
+  font-weight: bold;
+}
+.a4-space2{
+  margin-right: 20px;
+}
+.a4-school{
+  text-align: right;
+  font-weight: bold;
+  margin-top: 25px;
+}
+.a4-border{
+  margin: 40px auto 20px auto;
+  border-style: dashed;
+  border-radius: 50px;
+  border-color: gray;
+  height: 600px;
+}
+.a4-parent{
+  margin: 20px auto 20px auto;
+  padding-left: 25px;
+  font-size: 18px;
+  font-weight: bold;
+}
+.a4-sign{
+  margin: 40px auto 20px auto;
+  font-size: 16px;
+  position: absolute;
+  bottom: 100px;
+  right: 110px;
+}

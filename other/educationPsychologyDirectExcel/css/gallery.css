@@ -1,0 +1,195 @@
+/* General */
+html{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  font-size: 62.5%;
+}
+body{
+  cursor: default;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  overflow-y: scroll;
+  font-family: "Microsoft YaHei";
+}
+.center-block {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* TOP */
+#top-div img{
+  position: relative;
+  overflow: hidden;
+}
+#top-div img{
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  transition-duration: .7s;
+  opacity: 0.0;
+}
+#top-div #top-img0{
+  opacity: 1.0;
+}
+#top-div #top-img-blank{
+  position: relative;
+  width: 100%;
+  visibility: hidden;
+}
+#top-div .bg-filter{
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.65);
+}
+#top-div .center-block{
+  font-size: 2.5em;
+  color: black;
+  text-shadow: 0 0 25px white;
+}
+/* Color Class */
+.classColorAll {
+  background-color: #626f75;
+}
+.classColor1 {
+  background-color: #ef6236;
+}
+.classColor2 {
+  background-color: #789e4c;
+}
+.classColor3 {
+  background-color: #578ab3;
+}
+.classColor4 {
+  background-color: #dc8f1d;
+}
+.classColor5 {
+  background-color: #713e79;
+}
+.classColor6 {
+  background-color: #96553d;
+}
+/* Filter Button Group */
+#filterButton button {
+  cursor: pointer;
+  color: white;
+  width: 100%;
+  padding: 20px 0px;
+  margin: 0;
+  border: none;
+  text-shadow: 0 0 6px black;
+}
+#filterButton button:focus {
+  outline: none;
+}
+#filterButton button:hover {
+  text-shadow: none;
+}
+/* Sorting Division */
+#sorting-div{
+  margin: 0 auto;
+  padding: 0px 10px 3px 0;
+}
+#sorting-btn{
+  color: #e6e6e6;
+  border: none;
+  font-size: 1.4rem;
+  font-weight: 500;
+  letter-spacing: .007px;
+  font-family: Roboto, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  transition: all 0s ease;
+}
+#sorting-btn:hover{
+  color: #ffffff;
+  text-shadow: 0 0 1.2px white;
+}
+#sorting-btn:focus{
+  outline: none;
+  box-shadow: none;
+}
+#sorting-div .dropdown-menu .dropdown-item:hover{
+  background-color: #e0dfdf;
+}
+#sorting-div .dropdown-menu .dropdown-item:focus{
+  outline: none;
+}
+/* Gallery Division */
+#gallery-div{
+  position: relative;
+  margin: 0 auto;
+}
+#gallery-cell-template{
+  display: none;
+}
+#gallery-div .gallery-cell {
+  position: relative;
+  transition: all .6s ease;
+}
+#gallery-div .gallery-cell .cell-image {
+  max-width: 100%;
+  height: auto;
+}
+#gallery-div .gallery-cell .cell-title h6 {
+  font-weight: 560;
+  font-size: 1.7rem;
+  color: black;
+}
+#gallery-div .gallery-cell .cell-title:hover {
+  text-decoration: none;
+}
+#gallery-div .gallery-cell .cell-date {  
+  font-size: 1.5em;
+}
+#gallery-div .gallery-cell button{  
+  border-style: solid;
+  border-color: white;
+  font-size: 1.2em;
+  cursor: pointer;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 5px;
+}
+#gallery-div .gallery-cell button:hover{    
+  box-shadow: 0 0 10px black;
+}
+#gallery-div .gallery-cell button:focus{
+  outline: none;
+}
+/* Footer */
+#footer-div i{
+  color: white;
+  margin: 0px 5px;
+  transition: .2s;
+}
+#footer-div i:hover{
+  transform: scale(1.5);
+}
+#copyright a:link, #copyright a:visited, #copyright a:hover, #copyright a:active {
+  color: white;
+}
+#footer-div #copyright{
+  font-size: 1.3em;
+}
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+  /* Default CSS */
+ }
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+  #filterButton button{
+    font-size: 1.8rem;
+  }
+  #filterButton button {    
+    padding: 25px 25px;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
+
+ }
