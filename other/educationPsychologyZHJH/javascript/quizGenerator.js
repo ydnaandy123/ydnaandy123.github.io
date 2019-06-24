@@ -25,11 +25,9 @@ function insertQuiz(event){
   this.setAttribute("style", "display:none");
 }
 function confirmSelection(){
-  // SHALLOW COPY (BAD)
-  //let curSampled_quizzes_obj = sampled_quizzes_obj.slice(0);
   // DEEP COPY
   // https://medium.com/@gamshan001/javascript-deep-copy-for-array-and-object-97e3d4bc401a
-  let curSampled_quizzes_obj = JSON.parse(JSON.stringify(sampled_quizzes_obj.slice(0)));
+  let curSampled_quizzes_obj = sampled_quizzes_obj.slice(0);
   // Adding indices
   for(let i = 0; i < curSampled_quizzes_obj.length; i++){
     curSampled_quizzes_obj[i]["題目"]  = String(i+1) + '.' + curSampled_quizzes_obj[i]["題目"] ;

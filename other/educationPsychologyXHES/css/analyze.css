@@ -1,0 +1,247 @@
+/* ROOT NECESSAORY */
+.quiz_negative { 
+  color: red;
+}
+.review_0 { 
+  color: rgb(63, 216, 63);
+}
+.review_1 { 
+  color: blue;
+}
+.review_2 { 
+  color: orange;
+}
+.review_3 { 
+  color: red;
+}
+.div-hr {
+  height: 2px;
+  border: none;
+  color: #333;
+  background-color: #333;
+}
+section div{
+  padding: 0px 0px;
+}
+.center-h{
+  margin: auto;
+}
+/* dashboard */
+#dashboard-title{
+  text-align: center;
+  font-size: 36px;
+  font-weight: bolder;
+  margin: 0px auto 15px auto;
+  letter-spacing: 3px;
+}
+#dashboard-tutorial{
+  color: black;
+  font-size: 1.2rem;
+  margin: 0 auto 10px auto;  
+  font-weight: bolder;
+}
+#dashboard-tutorial-content{
+  color: rgb(56, 56, 56);
+  margin: 5px 0 0 0 ;
+  text-indent: 40px;
+  font-weight: normal;
+}
+#dashboard-notice{
+  color: black;
+  font-size: 1.2rem;
+  margin: 0 auto 10px auto;  
+  font-weight: bolder;
+}
+#dashboard-notice-items{
+  color: rgb(56, 56, 56);
+  margin: 5px 0 0 0 ;
+  text-indent: 40px;
+  font-weight: normal;
+}
+#dashboard-buttons{
+  margin: auto;
+}
+#dashboard-buttons button{
+  padding: 15px 10px;
+  margin: 5px 5px;
+}
+#dashboard-buttons2{
+  margin: auto;
+}
+#dashboard-buttons2 button{
+  padding: 15px 10px;
+  margin: 5px 15px;
+}
+#input_table {
+  border-spacing: 5px;
+}
+#execution-msg{
+  border-style: solid;
+  border-width: 5px;
+  padding: 10px;
+  display: none;
+  margin: 40px auto 0 auto;
+  font-size: 30px;
+}
+#execution-msg-event{
+  color: rgb(99, 99, 252);
+}
+#execution-msg-wrong{
+  color: rgb(168, 14, 14);
+}
+/* Quiz Meta */
+#quiz_meta_title{
+  text-align: center;
+  font-size: 36px;
+  font-weight: bolder;
+  margin: 0px auto 15px auto;
+  letter-spacing: 3px;
+}
+#quiz-preview{
+  margin: auto;
+  padding-left: 30px;
+  color: gray;
+}
+.quiz-preview-area{
+  color: black;
+  margin: auto;
+  padding-left: 60px;
+  margin-bottom: 15px;
+}
+/* template */
+#student_container_template{
+  display: none;
+}
+/* A4 student typeset */
+section.sheet{  
+  font-family: 微軟正黑體;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+section.sheet.page1{  
+}
+section.sheet.page2{  
+}
+.a4-title-png{
+  position: absolute;
+  right: 168px;
+  top: 50px;
+}
+.a4-dragon1-png{
+  position: absolute;
+  top: 450px;
+  right: 60px;
+  width: 17%;
+}
+.a4-dragon2-png{
+  position: absolute;
+  bottom: 295px;
+  right: 60px;
+  width: 22%;
+}
+.a4-to{
+  padding: 0px 16px ;
+  margin: 126px auto 10px;
+  font-size: 19px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  font-weight:600;
+  font-family: "DFKai-SB";
+}
+.a4-intro{
+  padding: 0px 16px;
+  margin: 10px auto 0px;
+  text-indent: 36px;
+  line-height: 27px;
+  font-size: 17px;
+  letter-spacing: 0px;
+  font-family: "DFKai-SB";
+}
+.a4-intro2{
+  padding: 0px 16px;
+  margin: 6px auto 0px;
+  text-indent: 36px;
+  line-height: 27px;
+  font-size: 17px;
+  letter-spacing: 0px;
+  font-family: "DFKai-SB";
+}
+.a4-chart-text{
+  font-size: 18px;
+  padding: 0px 16px;
+  margin: 24px auto 0px auto;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.a4-student_id{
+  padding: 0px 8px;
+  color: rgb(122, 122, 255);
+  font-family: "DFKai-SB";
+  border-bottom: 1.8px solid black;
+}
+.a4-student_score{
+  color: rgb(122, 122, 255);
+  display: none;
+}
+.a4-chart{
+  margin-left: 76px;
+  width: 56%;
+  display: none;
+}
+.a4-reviewTitle{
+  margin: 18px auto 2px auto;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+.a4-student_id2{
+  padding: 0px 8px;
+  color: rgb(122, 122, 255);
+  border-bottom: 1px solid black;
+}
+.a4-review{
+  margin: 10px auto 14px auto;
+  font-size: 18px;
+  line-height: 27px;
+}
+.a4-explain{
+  text-indent: 34px;
+  font-size: 18px;
+  margin: 10px auto 0px auto;
+  letter-spacing: 1px;
+}
+.a4-explan-field-title{
+  font-weight: bolder;
+}
+.a4-explain-field{
+  padding-left: 0px;
+  font-size: 17px;
+  margin-top: 16px;
+  letter-spacing: 0px;
+  line-height: 20px;
+  width: 90%;
+}
+.a4-explain-field2{  
+  font-size: 17px;
+  margin: 10px auto;
+  letter-spacing: px;
+  padding-left: 30px;
+  font-weight: normal;
+}
+.a4-chart-discription{
+  position: relative;
+  text-indent: 36px;
+  font-size: 17px;
+  margin: 35px auto 0px auto;
+  letter-spacing: 1px;
+  line-height: 26px;
+  z-index: 200;
+  font-family: "DFKai-SB";
+}
+.a4-ending-png{
+  transform: rotate(180deg);
+  position: absolute;
+  bottom: 30px;
+  left: 112px;
+  width: 70%;
+}

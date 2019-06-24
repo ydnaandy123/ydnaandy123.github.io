@@ -59,8 +59,8 @@ section div{
   margin: auto;
 }
 #dashboard-buttons button{
-  padding: 15px 10px;
-  margin: 5px 15px;
+  padding: 15px 5px;
+  margin: 5px 1px;
 }
 #dashboard-buttons2{
   margin: auto;
@@ -120,23 +120,24 @@ section.sheet{
   font-size: 28px;
   font-weight: bold;
   letter-spacing: 0px;
-  padding: 0px 40px;
+  padding: 0px 20px;
   margin: -10px auto 0px auto;
 }
 .a4-PI-class{
-  padding: 0px 14px;
+  padding: 0px 0px;
   text-align: right;
   margin: 40px auto 10px;
   font-size: 14px;
   font-weight: 400;
   letter-spacing: 1px;
-  margin-right: 0px;
+  margin-right: -25px;
 }
 .a4-space{
   margin-left: 50px;
 }
 .a4-student_id{
   color: rgb(0, 0, 0);
+  padding: 0 25px 0 5px;
 }
 .a4-to{
   padding: 0px 0px;
@@ -173,41 +174,31 @@ section.sheet{
   color: rgb(0, 0, 0);
   display: none;
 }
-.a4-sec1-1{
-  margin: 15px auto 0px auto;
-  font-size: 15px;
-}
 .a4-chart{
-  margin: -30px auto;
-  width: 40%;
-  display: none;
+  margin: -25px auto;
+  width: 250px;
+  padding: 0px 5px;
 }
-.a4-chart2{
-  margin: 24px auto 20px auto;
+.a4-parallel table {
+  border-collapse: collapse;
 }
-.a4-chart2 .chart2_container{
-  border-spacing: 30px 0px;
+.a4-parallel table,.a4-parallel th,.a4-parallel td {
+  border: 1px solid black;
 }
-.a4-chart2 #a4-skill-template{
-  display: none;
+.a4-parallel table th{
+  padding: 2px 6px;
 }
-.a4-chart2 .a4-skillName{
-  font-size: 20px;
-  width: 74px;
-  background-color: rgb(255, 255, 255);
+.a4-parallel table th:not(.a4-review-bold){
+  padding: 2px 6px;
+  font-weight: normal;
 }
-.a4-chart2 .a4-skillBarContainer{  
-  transform: scaleY(-1);
-  width: 74px;
-  height: 260px;
-  background-image: url('../src/thermometer_empty.png')
+.a4-review-col1{
+  font-size: 17px;
 }
-.a4-chart2 .a4-skillBar{
-  width: 74px;
-  background-image: url('../src/thermometer.png')
-}
-.a4-sec1-2{
-  font-size: 15px;
+.a4-review1, .a4-review2, .a4-review3, .a4-review4{
+  font-size: 17px;
+  /* font-weight: normal; */
+  /* height: 30px; */
 }
 .a4-review{
   text-indent: 40px;
@@ -215,9 +206,9 @@ section.sheet{
   font-size: 17px;
   padding-left: 20px;
 }
-.a4-section-title2{  
+.a4-section-title2{
   padding: 0px 0px;
-  margin: 40px auto 12px auto;
+  margin: 20px auto 12px auto;
   line-height: 17px;
   font-size: 17px;
   font-weight: bold;
@@ -274,8 +265,16 @@ section.sheet{
   font-weight: bold;
   margin-top: 25px;
 }
+.a4-border{
+  margin: 40px auto 20px auto;
+  border-style: dashed;
+  border-radius: 50px;
+  border-color: gray;
+  height: 600px;
+}
 .a4-parent{
-  margin: 80px auto 20px auto;
+  margin: 20px auto 20px auto;
+  padding-left: 25px;
   font-size: 18px;
   font-weight: bold;
 }
@@ -283,6 +282,6 @@ section.sheet{
   margin: 40px auto 20px auto;
   font-size: 16px;
   position: absolute;
-  bottom: 160px;
-  right: 140px;
+  bottom: 100px;
+  right: 110px;
 }

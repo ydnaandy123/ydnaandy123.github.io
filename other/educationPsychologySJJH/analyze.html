@@ -23,7 +23,7 @@
         <div class="student-container" id="student_container_template">
             <section class="sheet padding-20mm page1">
                 <div class="a4-title">情緒智能觀察紀錄表</div>
-                <div class="a4-PI-class">班級：<span class="a4-space"></span>座號：<span class="a4-space"></span>姓名：<span class="student_id a4-student_id"></span></div>
+                <div class="a4-PI-class">班級:<span class="student_class a4-student_id"></span>座號:<span class="student_number a4-student_id"></span>姓名:<span class="student_id a4-student_id"></span></div>
                 <div class="a4-to">
                     親愛的同學們:
                 </div>
@@ -34,25 +34,54 @@
                     請你詳細閱讀結果分析，並寫下省思與發現。自我探索是生命中重要的功課，這份觀察紀錄是一個很好的開始，祝福你對自己有更多的認識！
                 </div>   
                 <div class="a4-section-title">1.情緒智能觀察紀錄結果分析與建議：</div>
-                <div class="a4-sec1-1">(1)人際智能雷達圖：</div>
-                <div class="a4-chart chart_container">
-                    <canvas></canvas>
-                </div>  
-                <div class="a4-chart2">
-                    <table class="chart2_container center-h">
-                        <tr class="a4-skillbar-imgs">
-                            <th id="a4-skill-template">
-                                <div class="a4-skillBarContainer">
-                                    <div class="a4-skillBar"></div>
-                                </div>
-                            </th>
+                <div class="a4-parallel">           
+                    <table class="center-h">
+                        <!-- Title -->
+                        <tr>
+                            <th></th>
+                            <th  class="a4-review-col1">自己的觀察</th>
+                            <th>老師的觀察</th> 
                         </tr>
-                        <tr class="a4-skillbar-names">     
+                        <!-- Quizzes -->
+                        <tr>                    
+                            <th>情緒智能<br/>雷達圖</th>
+                            <th>
+                                <div class="a4-chart chart_container1">
+                                    <canvas></canvas>
+                                </div> 
+                            </th>
+                            <th>
+                                <div class="a4-chart chart_container2">
+                                    <canvas></canvas>
+                                </div> 
+                            </th> 
+                        </tr>
+                        <!-- review1 -->
+                        <tr class="a4-review1">                    
+                            <th class="a4-review1-name"></th>
+                            <th class="a4-review-bold a4-review1-student"></th>
+                            <th class="a4-review-bold a4-review1-teacher"></th>
+                        </tr>
+                        <!-- review2 -->
+                        <tr class="a4-review2">                    
+                            <th class="a4-review2-name"></th>
+                            <th class="a4-review-bold a4-review2-student"></th>
+                            <th class="a4-review-bold a4-review2-teacher"></th>
+                        </tr>
+                        <!-- review3 -->
+                        <tr class="a4-review3">                    
+                            <th class="a4-review3-name"></th>
+                            <th class="a4-review-bold a4-review3-student"></th>
+                            <th class="a4-review-bold a4-review3-teacher"></th>
+                        </tr>
+                        <!-- review4 -->
+                        <tr class="a4-review4">                    
+                            <th class="a4-review4-name"></th>
+                            <th class="a4-review-bold a4-review4-student"></th>
+                            <th class="a4-review-bold a4-review4-teacher"></th>
                         </tr>
                     </table>
-                </div>                  
-                <div class="a4-sec1-2">(2)結果分析與建議：</div>      
-                <div class="a4-review review" contenteditable="true"></div>
+                </div>           
                 <div class="a4-section-title2">2.我的省思與發現：</div>
                 <div class="a4-sec2-1">(1)這樣的結果與建議，我的感覺是...</div>      
                 <div class="a4-sec2-2">(2)我發現我的人際優勢與劣勢是...</div>      
@@ -66,13 +95,15 @@
                     學期即將進入尾聲，感謝您這學期的陪伴，讓孩子更加成長、茁壯。 本學期透過導師、輔導老師的觀察，以及孩子對自己在人際智能方面的自我覺察，彙整成以上的「情緒智能觀察紀錄」。
                 </div>
                 <div class="a4-explain-text2">
-                    期盼透過此結果，讓您了解孩子在「同理他人」、「同儕相處」、「同儕合作」及「衝突管理」等四方面的<span style="font-weight:bold">人際智能</span>能力，並透過孩子的省思與發現，讓您能了解孩子的想法，創造與孩子對話的機會。請您對孩子表現不錯的部分加以肯定，並對於孩子可更加努力的部分給予叮嚀，透過您的鼓勵與陪伴，相信孩子能有更穩定的情緒及人我關係，學校亦會持續進行情感教育的落實！                
+                    期盼透過此結果，讓您了解孩子的情緒智能，並透過孩子的省思與發現，讓您能了解孩子的想法，創造與孩子對話的機會。請您對孩子表現不錯的部分加以肯定，並對於孩子可更加努力的部分給予叮嚀，透過您的鼓勵與陪伴，相信孩子能有更穩定的情緒及人我關係，學校亦會持續進行情感教育的落實！                
                 </div>
                 <div class="a4-best-regards">                    
                     敬祝您<span class="a4-space2"></span>闔家平安！
                 </div> 
                 <div class="a4-school">實踐國中輔導室敬啟 22362852-161</div>
-                <div class="a4-parent">家長給孩子的鼓勵與叮嚀：</div>
+                <div class="a4-border">
+                    <div class="a4-parent">家長給孩子的鼓勵與叮嚀：</div>
+                </div>
                 <div class="a4-sign">家長簽名：__________________</div>   
             </section>
         </div>
@@ -103,9 +134,9 @@
             <hr class="div-hr">
             <div id="dashboard-buttons2">
                 <button type="button" onclick="inputText(0)">清除</button>
-                <button type="button" onclick="inputText(1)">模擬事件1<br/>(五學生五向度)</button>
-                <button id="ClickMEE2" type="button" onclick="inputText(2)">模擬事件2<br/>(三學生八項度)</button>
-                <button type="button" onclick="inputText(3)">模擬事件3<br/>(五學生四項度)</button>
+                <button id="ClickMEE2" type="button" onclick="inputText(1)">模擬事件1<br/>(實踐國中)</button>
+                <button type="button" onclick="inputText(2)" style="display:none">模擬事件2<br/>(三學生八項度)</button>
+                <button type="button" onclick="inputText(3)" style="display:none">模擬事件3<br/>(五學生四項度)</button>
             </div>
             <!-- Input table-->
             <hr class="div-hr">
@@ -113,33 +144,34 @@
                 <!-- Title -->
                 <tr>
                     <th></th>
-                    <th>老師</th>
-                    <th>學生</th> 
+                    <th>學生</th>
+                    <th>老師</th> 
                 </tr>
                 <!-- Quizzes -->
                 <tr>                    
                     <th>題目資訊</th>
-                    <th><textarea rows="4" cols="18" id="week0_quiz"></textarea></th>
-                    <th><textarea rows="4" cols="18" id="week4_quiz"></textarea></th> 
+                    <th><textarea rows="4" cols="18" id="week4_quiz"></textarea></th>
+                    <th><textarea rows="4" cols="18" id="week0_quiz"></textarea></th> 
                 </tr>
                 <!-- Answers -->
                 <tr>                    
                     <th>測驗回答</th>
-                    <th><textarea rows="4" cols="18" id="week0_score"></textarea></th>
                     <th><textarea rows="4" cols="18" id="week4_score"></textarea></th>
+                    <th><textarea rows="4" cols="18" id="week0_score"></textarea></th>
                 </tr>
             </table>
             </div>
             <!-- Buttonas -->
             <div>                
-                <input id="radio_chart_radar" type="radio" name="chart_type" value="radar" checked="checked" onclick="selectChart('radar')"> 雷達圖<br>
-                <input id="radio_chart_skillBar" type="radio" name="chart_type" value="skillBar" onclick="selectChart('skillBar')"> 溫度計<br>
+                <input id="radio_chart_radar" type="radio" name="chart_type" value="radar" checked="checked" onclick="selectChart('radar')" style="display:none"><br>
+                <input id="radio_chart_skillBar" type="radio" name="chart_type" value="skillBar" onclick="selectChart('skillBar')" style="display:none"><br>
             </div>
             <div id="dashboard-buttons">
                 產生成績單 根據:
-                <button type="button" onclick="calculateWeek(0)">老師他評</button>
-                <button type="button" onclick="calculateWeek(4)">學生自評</button>
-                <button id="ClickMEE" type="button" onclick="analyzeSummary()">老師學生加權綜合評量</button>
+                <button type="button" onclick="calculateWeek(0)" style="display:none">老師他評</button>
+                <button type="button" onclick="calculateWeek(4)" style="display:none">學生自評</button>
+                <button type="button" onclick="analyzeSummary()" style="display:none">老師學生加權綜合評量</button>
+                <button id="ClickMEE"  type="button" onclick="analyzeParallel()">學生老師並列</button>
             </div>
             <div id="execution-msg">                
                 <div id="execution-msg-correct">
