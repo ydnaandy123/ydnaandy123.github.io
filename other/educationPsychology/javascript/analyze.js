@@ -74,7 +74,7 @@ function analyze(quizzes, score, week){
       return [review_class, review_text];
     }
     // Generate whole description
-    for(let j=0; j<labels.length; j++){
+    for(let j=0; j<Math.min(labels.length, 4); j++){
       let review_return;
       review_return = judgeText(cur_score_all[j]);
       teacher_review += labels[j] + ": <span class="+ review_return[0] +">";
